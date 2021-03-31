@@ -1,2 +1,2 @@
 # PersonalWebsite
-The source code for my personal website: www.geertroks.com. Build with Vue.js, Nuxt.js, MongoDB and Express.js
+The source code for my personal website: www.geertroks.com. Built with MongoDB, Express.js and EJS.
