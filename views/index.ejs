@@ -18,25 +18,24 @@
 
 <body>
     <div id="page">
-        <header>
-            <div class="brand">
-                <h1>Geert Roks</h1>
-                <ul>
-                    <li>Maker</li>
-                    <li>Engineer</li>
-                </ul>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">About me</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+        <%- include('partials/header.ejs') %>
         <main>
-            <h1>Welcome to my site!</h1>
-            <p>The time now is: <%= new Date() %></p>
+            <div class="post">
+                <h1>Postname</h1>
+                <p>The time now is: <%= new Date() %></p>
+            </div>
+            <div class="post">
+                <h1>Postname</h1>
+                <p>The time now is: <%= new Date() %></p>
+            </div>
+            <div class="post">
+                <h1>Postname</h1>
+                <p>The time now is: <%= new Date() %></p>
+            </div>
+            <div class="post">
+                <h1>Postname</h1>
+                <p>The time now is: <%= new Date() %></p>
+            </div>
         </main>
     </div>
 </body>
