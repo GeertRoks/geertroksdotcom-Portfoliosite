@@ -73,7 +73,7 @@ nav a {
     color: black;
 }
 nav a:hover {
-    color: var(--clr-accent);
+    color: var(--clr-accent-light);
 }
 
 main .post {

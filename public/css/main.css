@@ -57,7 +57,8 @@ body {
 }
 
 
-#page {
+/* Utility classes */
+.container {
     margin: auto;
     width: min(90%, 70.5rem);
 }
