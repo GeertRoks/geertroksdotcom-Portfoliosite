@@ -1,0 +1,52 @@
+:root {
+    --clr-light: white;
+    --clr-primary: red;
+    --clr-accent: gold;
+    --clr-dark: black;
+
+    --ff-primary: "Roboto", sans-serif;
+    --ff-accent: "Playfair Display", serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, p {
+    margin: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+/* Mobile first */
+body {
+    font-family: var(--ff-primary);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.6;
+}
+/* Tablet Screens */
+@media (min-width: 575px) {
+    body {
+        font-size: 15px;
+    }
+}
+/* Desktop screens */
+@media (min-width: 900px) {
+    body {
+        font-size: 17px;
+    }
+}
+
+h1, h2, h3 {
+    font-family: var(--ff-accent);
+    font-weight: 900;
+    line-height: 1;
+}
+
+#page {
+    margin: auto;
+    width: min(90%, 70.5rem);
+}

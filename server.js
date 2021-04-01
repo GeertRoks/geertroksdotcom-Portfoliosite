@@ -24,7 +24,10 @@ app.use(cors());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.set('public', path.join(__dirname, 'public'));
+
 // ------------- ROUTES -------------
 app.get('/', (req, res) => {
     res.render('index');
 });
+app.use(express.static('public'));
