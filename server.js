@@ -37,3 +37,8 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about');
 });
+
+const posts_routes = require('./routes/posts-routes.js');
+app.use('/api', () => { 
+    app.use('/posts', posts_routes);
+});
