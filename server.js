@@ -6,9 +6,12 @@ const fileUpload = require('express-fileupload');
 const mongoose = require('mongoose');
 const path = require('path');
 const cors = require('cors');
+const datefns = require('date-fns');
 
 const config = require('./config');
 const PORT = config.PORT || 3000;
+
+const Posts = require('./models/post-model.js');
 
 // ------------- CONNECT TO MONGODB -------------
 // -------- AND START THE EXPRESS SERVER --------
@@ -31,7 +34,13 @@ app.use(express.static('public'));
 
 // ------------- ROUTES -------------
 app.get('/', (req, res) => {
-    res.render('index');
+    Posts.find()
+        .then(posts => {
+            res.render('index', {
+                posts: posts,
+                datefns: datefns
+            });
+        });
 });
 
 app.get('/about', (req, res) => {
@@ -39,6 +48,4 @@ app.get('/about', (req, res) => {
 });
 
 const posts_routes = require('./routes/posts-routes.js');
-app.use('/api', () => { 
-    app.use('/posts', posts_routes);
-});
+app.use('/api/posts', posts_routes);

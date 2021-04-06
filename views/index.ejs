@@ -1,6 +1,6 @@
     <!-- Quick about view -->
     <section id="about">
-        <div class="container about-container">
+        <div class="container">
             <div class="about-text">
                 <h1>Geert Roks</h1>
                 <h3>Maker</h3>
@@ -16,21 +16,14 @@
     <!-- Quick portfolio view -->
     <section id="portfolio">
         <div class="container">
-            <article class="post">
-                <h1>Postname</h1>
-                <p>The time now is: <%= new Date() %></p>
-            </article>
-            <article class="post">
-                <h1>Postname</h1>
-                <p>The time now is: <%= new Date() %></p>
-            </article>
-            <article class="post">
-                <h1>Postname</h1>
-                <p>The time now is: <%= new Date() %></p>
-            </article>
-            <article class="post">
-                <h1>Postname</h1>
-                <p>The time now is: <%= new Date() %></p>
-            </article>
+            <% posts.forEach(post => { %>
+                <article class="project">
+                    <h1><%= post.title %></h1>
+                    <p class="date"><%= datefns.format(post.createdAt, "MMM y" ) %></p>
+                    <p><%= post.snippet %>... <a href="#">read more</a> </p>
+                    <img src="https://source.unsplash.com/random" alt="post img" />
+                </article>
+
+            <% }); %>
         </div>
     </section>

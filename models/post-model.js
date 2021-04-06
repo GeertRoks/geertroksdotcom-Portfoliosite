@@ -12,8 +12,8 @@ const postSchema = new Schema({
     },
     image: {
         type: String,
-        default: 'http://site.com/placeholder.png'
-    }
+        default: 'https://source.unsplash.com/random'
+    },
     snippet: {
         type: String
     },
@@ -21,6 +21,13 @@ const postSchema = new Schema({
         type: String
     }
 }, { timestamps: true });
+
+postSchema.pre('save', function(next) {
+    if(this.snippet == null) {
+        this.snippet = this.content.substr(0, 100);
+    }
+    next();
+});
 
 const Post = mongoose.model('Post', postSchema);
 

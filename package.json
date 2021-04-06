@@ -19,6 +19,7 @@
   "homepage": "https://github.com/GeertRoks/PersonalWebsite#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "date-fns": "^2.19.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
