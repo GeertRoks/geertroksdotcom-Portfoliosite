@@ -18,16 +18,20 @@ header ul {
 header.to-top {
     height: 4em;
     font-size: 1em;
+    margin: 0;
+}
+header.to-top .container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items:center;
+    height: 100%;
 }
 header.to-top h1 {
     font-size: 2em;
     width: max-content;
     margin: 0;
-    margin-left: 1.5em;
+    margin: 0 1.5em;
 }
 header.to-top li {
     font-size: 1em;
@@ -38,11 +42,11 @@ header.to-top .brand ul {
 header.to-top .brand::after {
     display: none;
 }
-header.to-top .brand {
-    float: left;
-}
 header.to-top nav {
-    float: right;
+}
+header.to-top nav ul {
+    height: 100%;
+    align-items: center;
 }
 
 .brand {
@@ -78,9 +82,3 @@ nav a:hover {
     color: var(--clr-accent-light);
 }
 
-main .post {
-    width: 100%;
-    height: 15em;
-    margin: 0.5em 0;
-    border: 1px solid black;
-}
