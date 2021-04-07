@@ -25,12 +25,16 @@
 
 
 /* Quick portfolio view */
-#portfolio .container {
+#portfolio {
+    margin: 2.5em 0;
+}
+.cards {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 6;
+    grid-template-rows: repeat(6, 1fr);
     grid-gap: 1em;
-    margin: 1.5em auto;
+    margin-bottom: 1.5em;
+
 }
 .card {
     width: 100%;
@@ -46,14 +50,14 @@
 }
 
 @media (min-width: 600px) {
-    #portfolio .container {
+    .cards {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 3;
+        grid-template-rows: repeat(3, 1fr);
     }
 }
 @media (min-width: 1200px) {
-    #portfolio .container {
+    .cards {
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 2;
+        grid-template-rows: repeat(2, 1fr);
     }
 }
