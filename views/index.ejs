@@ -20,8 +20,8 @@
                 <article class="project">
                     <h1><%= post.title %></h1>
                     <p class="date"><%= datefns.format(post.createdAt, "MMM y" ) %></p>
-                    <p><%= post.snippet %>... <a href="#">read more</a> </p>
                     <img src="https://source.unsplash.com/random" alt="post img" />
+                    <p><%= post.snippet %>... <a href="#">read more</a> </p>
                 </article>
 
             <% }); %>
