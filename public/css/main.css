@@ -7,6 +7,12 @@
 
     --ff-primary: "Roboto", sans-serif;
     --ff-accent: "Playfair Display", serif;
+
+    --w-mobile-only: 599px; /* mobile portrait: 0 to 599px */
+    --w-tablet-portrait-up: 600px; /* tablet portrait + mobile landscape: 600px to 899px */
+    --w-tablet-landscape-up: 900px; /* small laptops + tablet landscape: 900px to 1199px */
+    --w-laptop-up: 1200px; /* laptops: 1200px to 1799px */
+    --w-desktop-up: 1800px; /* big desktops: 1800px and up */
 }
 
 *, *::before, *::after {
@@ -32,6 +38,9 @@ img {
     max-width: 100%;
 }
 
+/* ----------------- */
+/*    Breakpoints    */
+/* ----------------- */
 
 /* Mobile first */
 html {
@@ -43,17 +52,32 @@ body {
     line-height: 1.6;
     background-color: var(--clr-light);
 }
-/* Tablet Screens */
-@media (min-width: 650px) {
+
+/* Mobile screens only */
+@media (max-width: 599px) {
+
+}
+
+/* Tablet portrait and bigger screens */
+@media (min-width: 600px) {
     html {
         font-size: 15px;
     }
 }
-/* Desktop screens */
-@media (min-width: 1000px) {
+
+/* Tablet landscape and bigger screens */
+@media (min-width: 900px) {
+}
+
+/* Laptop and bigger screens */
+@media (min-width: 1200px) {
     html {
         font-size: 17px;
     }
+}
+
+/* Desktop and bigger screens */
+@media (min-width: 1800px;) {
 }
 
 
