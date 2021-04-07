@@ -23,10 +23,18 @@
             <div class="cards">
                 <% posts.forEach(post => { %>
                     <article class="card">
-                        <h1><%= post.title %></h1>
-                        <p class="date"><%= datefns.format(post.createdAt, "MMM y" ) %></p>
-                        <img src="https://source.unsplash.com/random" alt="post img" />
-                        <p><%= post.snippet %>... <a href="#">read more</a> </p>
+                        <% if (post.image != null) { %>
+                            <img src= <%= post.image %> />
+                        <% }%>
+                        <div class="card-content">
+                            <h1><%= post.title %></h1>
+                            <p class="date"><%= datefns.format(post.createdAt, "MMM y" ) %></p>
+                            <% if (post.snippet != null) { %>
+                                <p><%= post.snippet %></p>
+                            <% } else { %>
+                                <p><%= post.content.substr(0,80)%>... <a href="#">read more</a> </p>
+                            <% } %>
+                        </div>
                     </article>
 
                 <% }); %>

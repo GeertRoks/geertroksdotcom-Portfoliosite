@@ -10,6 +10,10 @@ const postSchema = new Schema({
         type: String,
         required: true
     },
+    date: {
+        type: Date,
+        default: new Date()
+    },
     image: {
         type: String,
         default: 'https://source.unsplash.com/random'
@@ -19,15 +23,12 @@ const postSchema = new Schema({
     },
     author: {
         type: String
+    },
+    highlight: {
+        type: Boolean,
+        default: false
     }
 }, { timestamps: true });
-
-postSchema.pre('save', function(next) {
-    if(this.snippet == null) {
-        this.snippet = this.content.substr(0, 100);
-    }
-    next();
-});
 
 const Post = mongoose.model('Post', postSchema);
 
