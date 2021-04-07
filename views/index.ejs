@@ -17,7 +17,7 @@
     <section id="portfolio">
         <div class="container">
             <% posts.forEach(post => { %>
-                <article class="project">
+                <article class="card">
                     <h1><%= post.title %></h1>
                     <p class="date"><%= datefns.format(post.createdAt, "MMM y" ) %></p>
                     <img src="https://source.unsplash.com/random" alt="post img" />

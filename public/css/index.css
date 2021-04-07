@@ -26,20 +26,34 @@
 
 /* Quick portfolio view */
 #portfolio .container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 6;
+    grid-gap: 1em;
+    margin: 1.5em auto;
 }
-.project {
-    width: 20em;
-    margin: 0.5em;
+.card {
+    width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
     padding: 1em 2em;
 }
-.project:hover {
+.card:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.project h1 {
+.card h1 {
     font-size: 1.5em;
+}
+
+@media (min-width: 600px) {
+    #portfolio .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 3;
+    }
+}
+@media (min-width: 1200px) {
+    #portfolio .container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 2;
+    }
 }
