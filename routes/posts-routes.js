@@ -12,12 +12,18 @@ router.get('/', (req, res) => {
         })
         .catch(err => {
             res.status(500).send(err);
-        })
+        });
 });
 
 router.get('/:id', (req, res) => {
     // get post by id
-
+    Post.findById()
+        .then(result => {
+            res.send(result);
+        })
+        .catch(err => {
+            res.status(500).send(err);
+        });
 });
 
 router.post('/', (req, res) => {

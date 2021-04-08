@@ -1,46 +1,58 @@
-    <!-- Quick about view -->
-    <section id="about">
-        <div class="container">
-            <div class="about-text">
-                <h1>Geert Roks</h1>
-                <h3>Maker</h3>
-                <p>Amet cupiditate error voluptas quaerat possimus veniam! Minus blanditiis delectus rerum obcaecati delectus, asperiores cumque quae. Esse rerum delectus explicabo itaque nam ut dolore Atque esse aut possimus mollitia tempora?</p>
-                <div class="btn-wrapper">
-                    <div class="btn btn-dark">Check out my work</div>
-                    <div class="btn btn-light">Get in contact</div>
-                </div>
-            </div>
-            <div class="about-img">
-                <img src="placeholder" alt="Picture of me">
+<link rel="stylesheet" href="/css/index.css">
+
+<!-- Quick about view -->
+<section id="about">
+    <div class="container">
+        <div class="about-text">
+            <h1>Geert Roks</h1>
+            <h3>Maker</h3>
+            <p>Amet cupiditate error voluptas quaerat possimus veniam! Minus blanditiis delectus rerum obcaecati delectus, asperiores cumque quae. Esse rerum delectus explicabo itaque nam ut dolore Atque esse aut possimus mollitia tempora?</p>
+            <div class="btn-wrapper">
+                <div class="btn btn-dark">Check out my work</div>
+                <div class="btn btn-light">Get in contact</div>
             </div>
         </div>
-
-    </section>
-
-    <!-- Quick portfolio view -->
-    <section id="portfolio">
-        <div class="container">
-            <div class="cards">
-                <% posts.forEach(post => { %>
-                    <article class="card">
-                        <% if (post.image != null) { %>
-                            <img src= <%= post.image %> />
-                        <% }%>
-                        <div class="card-content">
-                            <h1><%= post.title %></h1>
-                            <p class="date"><%= datefns.format(post.createdAt, "MMM y" ) %></p>
-                            <% if (post.snippet != null) { %>
-                                <p><%= post.snippet %></p>
-                            <% } else { %>
-                                <p><%= post.content.substr(0,80)%>... <a href="#">read more</a> </p>
-                            <% } %>
-                        </div>
-                    </article>
-
-                <% }); %>
-            </div>
-            <div class="btn-wrapper btn-wrapper-center">
-                <div class="btn btn-big btn-light">See more</div>
-            </div>
+        <div class="about-img">
+            <img src="https://source.unsplash.com/featured/?face,creative,portrait">
         </div>
-    </section>
+    </div>
+
+</section>
+
+<!-- Quick portfolio view -->
+<section id="portfolio">
+    <div class="container">
+        <div class="cards">
+            <% posts.forEach(post => { %>
+                <article class="card" id=<%=post._id%> >
+                    <% if (post.image != null) { %>
+                        <img src= <%= post.image %> />
+                    <% }%>
+                    <div class="card-content">
+                        <h1><%= post.title %></h1>
+                        <p class="date"><%= datefns.format(post.createdAt, "MMM y" ) %></p>
+                        <% if (post.snippet != null) { %>
+                            <p><%= post.snippet %></p>
+                        <% } else { %>
+                            <p><%= post.content.substr(0,80)%>... <a href="#">read more</a> </p>
+                        <% } %>
+                    </div>
+                </article>
+
+            <% }); %>
+        </div>
+        <div class="btn-wrapper btn-wrapper-center">
+            <div class="btn btn-big btn-light">See more</div>
+        </div>
+    </div>
+</section>
+
+<script>
+    let posts = document.getElementsByClassName('card');
+        Array.from(posts).forEach(post => {
+                post.addEventListener('click', (event) => {
+                        let _id = event.target.closest(".card").id;
+                        window.location = '/project/' + _id;
+                    });
+            });
+</script>

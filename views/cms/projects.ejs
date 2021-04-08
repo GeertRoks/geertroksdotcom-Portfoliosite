@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/css/cms/projects.css">
+
+<% posts.forEach(post => { %>
+    <article class="post" id=<%=post._id%> >
+        <% if (post.image != null) { %>
+            <img src= <%= post.image %> />
+        <% } %>
+        <div class="post-content">
+            <div class="header">
+                <h1><%= post.title%></h1>
+                <p class ="date">MMM YYYY</p>
+            </div>
+            <% if (post.snippet != null) { %>
+                <p><%= post.snippet %></p>
+            <% } else { %>
+                <p><%= post.content.substr(0,80)%>...</p>
+            <% } %>
+        </div>
+    </article>
+<% }); %>
+
+<script>
+    let posts = document.getElementsByClassName('post');
+    Array.from(posts).forEach(post => {
+        post.addEventListener('click', (event) => {
+            let _id = event.target.closest(".post").id;
+            window.location = '/cms/projects/' + _id;
+        });
+    });
+</script>
