@@ -1,0 +1,20 @@
+<p>projects page</p>
+
+<% posts.forEach(post => { %>
+    <article class="project">
+        <% if (post.image != null) { %>
+            <img src= <%= post.image %> />
+        <% } %>
+        <div class="project-content">
+            <div class="header">
+                <h1><%= post.title%></h1>
+                <p class ="date">MMM YYYY</p>
+            </div>
+            <% if (post.snippet != null) { %>
+                <p><%= post.snippet %></p>
+            <% } else { %>
+                <p><%= post.content.substr(0,80)%>...</p>
+            <% } %>
+        </div>
+    </article>
+<% }); %>

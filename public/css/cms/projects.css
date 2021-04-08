@@ -1,0 +1,30 @@
+.project {
+    height: 15em;
+    background-color: var(--clr-light);
+    border: 1px solid var(--clr-dark);
+    padding: 1em 2em;
+    margin: 2em 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+}
+.project:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
+}
+
+img {
+    height: 100%;
+    object-fit: cover;
+}
+.project-content {
+    width: 30em;
+}
+.project-content .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.date {
+    width: 7em;
+    text-align: right;
+}

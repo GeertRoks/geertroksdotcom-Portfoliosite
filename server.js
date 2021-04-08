@@ -27,12 +27,15 @@ app.use(fileUpload()); //middleware for easy uploading of files
 app.use(cors());
 
 app.use(expressLayouts);
+app.set('layout', 'layouts/main-layout');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
 
 // ------------- ROUTES -------------
+// ************* Views *************
+// Main
 app.get('/', (req, res) => {
     Posts.find()
         .then(posts => {
@@ -47,5 +50,10 @@ app.get('/about', (req, res) => {
     res.render('about');
 });
 
+// CMS
+const cms_routes = require('./routes/cms-routes.js');
+app.use('/cms', cms_routes);
+
+// ************* API *************
 const posts_routes = require('./routes/posts-routes.js');
 app.use('/api/posts', posts_routes);
