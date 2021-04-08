@@ -28,10 +28,6 @@ aside {
 nav ul {
     list-style: none;
 }
-nav a {
-    color: black;
-    text-decoration: none;
-}
 
 main {
     grid-area: main;
