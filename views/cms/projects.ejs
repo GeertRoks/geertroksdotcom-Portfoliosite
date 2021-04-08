@@ -1,11 +1,9 @@
-<p>projects page</p>
-
 <% posts.forEach(post => { %>
-    <article class="project">
+    <article class="post" id=<%=post._id%> >
         <% if (post.image != null) { %>
             <img src= <%= post.image %> />
         <% } %>
-        <div class="project-content">
+        <div class="post-content">
             <div class="header">
                 <h1><%= post.title%></h1>
                 <p class ="date">MMM YYYY</p>
@@ -18,3 +16,13 @@
         </div>
     </article>
 <% }); %>
+
+<script>
+    let posts = document.getElementsByClassName('post');
+    Array.from(posts).forEach(post => {
+        post.addEventListener('click', (event) => {
+            let _id = event.target.closest(".post").id;
+            window.location = '/cms/projects/' + _id;
+        });
+    });
+</script>

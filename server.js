@@ -28,6 +28,8 @@ app.use(cors());
 
 app.use(expressLayouts);
 app.set('layout', 'layouts/main-layout');
+app.set('layout extractScripts', true);
+app.set('layout extractStyles', true);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -48,6 +50,20 @@ app.get('/', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about');
+});
+app.get('/projects', (req, res) => {
+    res.render('projects');
+})
+app.get('/project/:id', (req, res) => {
+    Posts.findById(req.params.id)
+        .then(post => {
+            res.render('project', {
+                post: post
+            });
+        })
+        .catch(err => {
+            res.status(404).send(err);
+        });
 });
 
 // CMS
