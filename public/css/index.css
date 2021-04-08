@@ -9,9 +9,6 @@
     align-items: center;
     height: 100%;
 }
-.about-text {
-    width: 60%;
-}
 .about-text h1 {
     font-size: 5em;
     margin: 0.25em 0;
@@ -28,6 +25,20 @@
     object-fit: cover;
     height: 100%;
     width: 100%;
+}
+
+@media(max-width: 599px) {
+    .about-img {
+        display: none;
+    }
+
+}
+
+@media(min-width: 600px) {
+    .about-text {
+        width: 60%;
+    }
+
 }
 
 

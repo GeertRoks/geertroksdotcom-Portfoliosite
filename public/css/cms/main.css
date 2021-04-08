@@ -23,7 +23,7 @@ header h1 {
 
 aside {
     grid-area: aside;
-    background-color: var(--clr-primary);
+    background-color: tan;
 }
 nav ul {
     list-style: none;
