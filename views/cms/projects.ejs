@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="/css/cms/projects.css">
 
+<a class="btn btn-dark" href="/cms/projects/new">Add new project</a>
+
 <% projects.forEach(project => { %>
     <article class="project" id=<%=project._id%> >
         <% if (project.image != null) { %>

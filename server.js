@@ -22,7 +22,7 @@ mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true, useFin
 // app.listen(PORT, () => { console.log("Server is listening at port " + PORT) });
 
 // ------------- MIDDLEWARES -------------
-app.use(express.json()); //receive json from HTTP POST
+app.use(express.urlencoded({  extended: false })); //read forms from HTTP POST
 app.use(fileUpload()); //middleware for easy uploading of files
 app.use(cors());
 

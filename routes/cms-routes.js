@@ -20,6 +20,13 @@ router.get('/projects', (req, res) => {
         });
 });
 
+router.get('/projects/new', (req, res) => {
+    res.render('cms/project.ejs', {
+        layout: 'layouts/cms-layout',
+        project: new Project()
+    });
+});
+
 router.get('/projects/:id', (req, res) => {
     Project.findById(req.params.id)
         .then(project => {
@@ -35,10 +42,6 @@ router.get('/projects/:id', (req, res) => {
 
 router.get('/about', (req, res) => {
     res.render('cms/about.ejs', { layout: 'layouts/cms-layout' });
-});
-
-router.post('/projects', (req, res) => {
-
 });
 
 module.exports = router;
