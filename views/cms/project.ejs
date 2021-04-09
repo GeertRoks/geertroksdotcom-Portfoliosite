@@ -11,4 +11,8 @@
     <form action="/api/projects" method="POST">
         <%- include ('./partials/form-fields.ejs') %>
     </form>
+
+    <form action="/api/projects/<%= project._id %>?_method=DELETE" method="POST">
+        <button type="submit" class="btn btn-danger">Delete</div>
+    </form>
 </article>

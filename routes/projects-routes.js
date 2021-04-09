@@ -54,7 +54,13 @@ router.patch('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     // delete specific project by id
-
+    Project.findByIdAndDelete(req.params.id)
+        .then(result => {
+            res.redirect('/cms/projects');
+        })
+        .catch(err => {
+            res.status(404).send(err);
+        });
 });
 
 module.exports = router;

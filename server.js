@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const cors = require('cors');
 const datefns = require('date-fns');
+const methodOverride = require('method-override');
 
 const config = require('./config');
 const PORT = config.PORT || 3000;
@@ -25,6 +26,7 @@ mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true, useFin
 app.use(express.urlencoded({  extended: false })); //read forms from HTTP POST
 app.use(fileUpload()); //middleware for easy uploading of files
 app.use(cors());
+app.use(methodOverride('_method'));
 
 app.use(expressLayouts);
 app.set('layout', 'layouts/main-layout');
