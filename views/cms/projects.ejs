@@ -1,29 +1,29 @@
 <link rel="stylesheet" href="/css/cms/projects.css">
 
-<% posts.forEach(post => { %>
-    <article class="post" id=<%=post._id%> >
-        <% if (post.image != null) { %>
-            <img src= <%= post.image %> />
+<% projects.forEach(project => { %>
+    <article class="project" id=<%=project._id%> >
+        <% if (project.image != null) { %>
+            <img src= <%= project.image %> />
         <% } %>
-        <div class="post-content">
+        <div class="project-content">
             <div class="header">
-                <h1><%= post.title%></h1>
+                <h1><%= project.title%></h1>
                 <p class ="date">MMM YYYY</p>
             </div>
-            <% if (post.snippet != null) { %>
-                <p><%= post.snippet %></p>
+            <% if (project.snippet != null) { %>
+                <p><%= project.snippet %></p>
             <% } else { %>
-                <p><%= post.content.substr(0,80)%>...</p>
+                <p><%= project.content.substr(0,80)%>...</p>
             <% } %>
         </div>
     </article>
 <% }); %>
 
 <script>
-    let posts = document.getElementsByClassName('post');
-    Array.from(posts).forEach(post => {
-        post.addEventListener('click', (event) => {
-            let _id = event.target.closest(".post").id;
+    let projects = document.getElementsByClassName('project');
+    Array.from(projects).forEach(project => {
+        project.addEventListener('click', (event) => {
+            let _id = event.target.closest(".project").id;
             window.location = '/cms/projects/' + _id;
         });
     });

@@ -1,18 +1,18 @@
 const express = require('express');
 const router = express.Router();
 
-const Posts = require('../models/post-model.js');
+const Project = require('../models/project-model.js');
 
 router.get('/', (req, res) => {
     res.render('cms/index.ejs', { layout: 'layouts/cms-layout' });
 });
 
 router.get('/projects', (req, res) => {
-    Posts.find()
-        .then(posts => {
+    Project.find()
+        .then(projects => {
             res.render('cms/projects.ejs', { 
                 layout: 'layouts/cms-layout',
-                posts: posts
+                projects: projects
             });
         })
         .catch(err => {
@@ -21,11 +21,11 @@ router.get('/projects', (req, res) => {
 });
 
 router.get('/projects/:id', (req, res) => {
-    Posts.findById(req.params.id)
-        .then(post => {
+    Project.findById(req.params.id)
+        .then(project => {
             res.render('cms/project.ejs', {
                 layout: 'layouts/cms-layout',
-                post: post
+                project: project
             });
         })
         .catch(err => {
@@ -35,6 +35,10 @@ router.get('/projects/:id', (req, res) => {
 
 router.get('/about', (req, res) => {
     res.render('cms/about.ejs', { layout: 'layouts/cms-layout' });
+});
+
+router.post('/projects', (req, res) => {
+
 });
 
 module.exports = router;

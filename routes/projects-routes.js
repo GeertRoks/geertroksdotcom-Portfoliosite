@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const Post = require('../models/post-model.js');
+const Project = require('../models/project-model.js');
 
 
 router.get('/', (req, res) => {
-    // get all posts
-    Post.find()
+    // get all projects
+    Project.find()
         .then(result => {
             res.send(result);
         })
@@ -16,8 +16,8 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    // get post by id
-    Post.findById()
+    // get specific project by id
+    Project.findById()
         .then(result => {
             res.send(result);
         })
@@ -27,8 +27,8 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    // create new post
-    const post = new Post({
+    // create new project
+    const project = new Project({
         title: req.body.title,
         content: req.body.content,
         image: req.body.image,
@@ -36,22 +36,22 @@ router.post('/', (req, res) => {
         author: req.body.author
     });
 
-    post.save()
+    project.save()
         .then(result => {
             res.status(201).send(result);
         })
         .catch(err => {
-            res.status(400).send("Something went wrong. Post not saved: " + err);
+            res.status(400).send("Something went wrong. Project not saved: " + err);
         });
 });
 
 router.patch('/:id', (req, res) => {
-    // update post by id
+    // update specific project by id
 
 });
 
 router.delete('/:id', (req, res) => {
-    // delete post by id
+    // delete specific project by id
 
 });
 

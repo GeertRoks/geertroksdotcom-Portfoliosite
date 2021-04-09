@@ -11,7 +11,7 @@ const datefns = require('date-fns');
 const config = require('./config');
 const PORT = config.PORT || 3000;
 
-const Posts = require('./models/post-model.js');
+const Project = require('./models/project-model.js');
 
 // ------------- CONNECT TO MONGODB -------------
 // -------- AND START THE EXPRESS SERVER --------
@@ -39,10 +39,10 @@ app.use(express.static('public'));
 // ************* Views *************
 // Main
 app.get('/', (req, res) => {
-    Posts.find()
-        .then(posts => {
+    Project.find()
+        .then(projects => {
             res.render('index', {
-                posts: posts,
+                projects: projects,
                 datefns: datefns
             });
         });
@@ -55,10 +55,10 @@ app.get('/projects', (req, res) => {
     res.render('projects');
 })
 app.get('/project/:id', (req, res) => {
-    Posts.findById(req.params.id)
-        .then(post => {
+    Project.findById(req.params.id)
+        .then(project => {
             res.render('project', {
-                post: post
+                project: project
             });
         })
         .catch(err => {
@@ -71,5 +71,5 @@ const cms_routes = require('./routes/cms-routes.js');
 app.use('/cms', cms_routes);
 
 // ************* API *************
-const posts_routes = require('./routes/posts-routes.js');
-app.use('/api/posts', posts_routes);
+const projects_routes = require('./routes/projects-routes.js');
+app.use('/api/projects', projects_routes);
