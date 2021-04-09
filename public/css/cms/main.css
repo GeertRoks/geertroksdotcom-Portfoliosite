@@ -32,4 +32,5 @@ nav ul {
 main {
     grid-area: main;
     overflow-y: scroll;
+    margin-bottom: 3em;
 }

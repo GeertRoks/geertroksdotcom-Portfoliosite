@@ -1,7 +1,14 @@
 <link rel="stylesheet" href="/css/project.css">
+<link rel="stylesheet" href="/css/cms/project.css">
 
 <img src=<%=post.image%>>
 <article class="project container">
-    <h2><%= post.title %></h2>
-    <p><%= post.content %></p>
+    <div class="btn-wrapper">
+        <div class="btn selected">edit</div>
+        <div class="btn">preview</div>
+    </div>
+
+    <form action="/projects" method="POST">
+        <%- include ('./partials/form-fields.ejs') %>
+    </form>
 </article>

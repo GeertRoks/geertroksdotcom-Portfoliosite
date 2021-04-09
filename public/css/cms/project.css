@@ -1,0 +1,26 @@
+textarea {
+    width: 100%;
+}
+#title {
+    font-size: 2em;
+    font-weight: bold;
+    height: 1.25em;
+}
+#snippet {
+    height: 7em;
+}
+#content {
+    min-height: 30em;
+}
+
+.form-group {
+    margin: 0.7em 0;
+}
+input {
+    width: 100%;
+}
+
+.btn.selected {
+    background-color: #efefef;
+    border: 1px solid black;
+}
