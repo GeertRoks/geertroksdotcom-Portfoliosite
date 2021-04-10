@@ -89,6 +89,9 @@ body {
 
 
 /* Utility classes */
+.hidden {
+    display: none;
+}
 .container {
     margin: auto;
     width: min(90%, 70.5rem);
