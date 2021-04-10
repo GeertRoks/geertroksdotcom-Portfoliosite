@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const slugify = require('slugify');
+
 const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
@@ -27,8 +29,24 @@ const projectSchema = new Schema({
     highlight: {
         type: Boolean,
         default: false
+    },
+    slug: {
+        type: String,
+        required: true,
+        unique: true
     }
-}, { timestamps: true });
+});
+
+projectSchema.pre('validate', function(next) {
+    if (this.title) {
+        this.slug = slugify(this.title, {
+            lower: true,
+            strict: true
+        });
+    }
+    console.log(this.slug);
+    next();
+})
 
 const Project = mongoose.model('Project', projectSchema);
 

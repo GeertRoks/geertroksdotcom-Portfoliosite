@@ -17,7 +17,7 @@ const Project = require('./models/project-model.js');
 // ------------- CONNECT TO MONGODB -------------
 // -------- AND START THE EXPRESS SERVER --------
 const dbURI ='mongodb://mongo:27017/PersonalWebsite';
-mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
+mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
     .then((result) => { app.listen(PORT, () => { console.log("Server is listening at port " + PORT) }) })
     .catch((err) => console.log(err));
 // app.listen(PORT, () => { console.log("Server is listening at port " + PORT) });
@@ -56,8 +56,8 @@ app.get('/about', (req, res) => {
 app.get('/projects', (req, res) => {
     res.render('projects');
 })
-app.get('/project/:id', (req, res) => {
-    Project.findById(req.params.id)
+app.get('/projects/:slug', (req, res) => {
+    Project.findOne({ slug: req.params.slug })
         .then(project => {
             res.render('project', {
                 project: project

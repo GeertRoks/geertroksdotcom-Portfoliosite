@@ -24,13 +24,13 @@
     <div class="container">
         <div class="cards">
             <% projects.forEach(project => { %>
-                <article class="card" id=<%=project._id%> >
+                <article class="card" id=<%=project.slug%> >
                     <% if (project.image != null) { %>
                         <img src= <%= project.image %> />
                     <% }%>
                     <div class="card-content">
                         <h1><%= project.title %></h1>
-                        <p class="date"><%= datefns.format(project.createdAt, "MMM y" ) %></p>
+                        <p class="date">mmm yyyy</p>
                         <% if (project.snippet != null) { %>
                             <p><%= project.snippet %></p>
                         <% } else { %>
@@ -51,8 +51,8 @@
     let projects = document.getElementsByClassName('card');
         Array.from(projects).forEach(project => {
                 project.addEventListener('click', (event) => {
-                        let _id = event.target.closest(".card").id;
-                        window.location = '/project/' + _id;
+                        let slug = event.target.closest(".card").id;
+                        window.location = '/projects/' + slug;
                     });
             });
 </script>

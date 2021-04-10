@@ -27,8 +27,8 @@ router.get('/projects/new', (req, res) => {
     });
 });
 
-router.get('/projects/:id', (req, res) => {
-    Project.findById(req.params.id)
+router.get('/projects/:slug', (req, res) => {
+    Project.findOne({ slug: req.params.slug })
         .then(project => {
             res.render('cms/project.ejs', {
                 layout: 'layouts/cms-layout',

@@ -15,11 +15,11 @@ router.get('/', (req, res) => {
         });
 });
 
-router.get('/:id', (req, res) => {
-    // get specific project by id
-    Project.findById()
-        .then(result => {
-            res.send(result);
+router.get('/:slug', (req, res) => {
+    // get specific project by slug
+    Project.findOne({ slug: req.params.slug })
+        .then(project => {
+            res.send(project);
         })
         .catch(err => {
             res.status(500).send(err);
@@ -47,14 +47,14 @@ router.post('/',  async (req, res) => {
     }
 });
 
-router.patch('/:id', (req, res) => {
-    // update specific project by id
+router.patch('/:slug', (req, res) => {
+    // update specific project by slug
 
 });
 
-router.delete('/:id', (req, res) => {
-    // delete specific project by id
-    Project.findByIdAndDelete(req.params.id)
+router.delete('/:slug', (req, res) => {
+    // delete specific project by slug
+    Project.findOneAndDelete({ slug: req.params.slug })
         .then(result => {
             res.redirect('/cms/projects');
         })
