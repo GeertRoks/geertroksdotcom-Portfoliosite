@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
+const marked = require('marked');
 
 const Schema = mongoose.Schema;
 
@@ -8,7 +9,11 @@ const projectSchema = new Schema({
         type: String,
         required: true
     },
-    content: {
+    contentMD: {
+        type: String,
+        required: true
+    },
+    contentHTML: {
         type: String,
         required: true
     },
@@ -44,7 +49,9 @@ projectSchema.pre('validate', function(next) {
             strict: true
         });
     }
-    console.log(this.slug);
+    if (this.contentMD) {
+        this.contentHTML = marked(this.contentMD);
+    }
     next();
 })
 

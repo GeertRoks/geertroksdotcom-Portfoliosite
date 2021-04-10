@@ -30,7 +30,7 @@ router.post('/',  async (req, res) => {
     // create new project
     let project = new Project({
         title: req.body.title,
-        content: req.body.content,
+        contentMD: req.body.contentMD,
         image: req.body.image,
         snippet: req.body.snippet,
         author: req.body.author

@@ -18,15 +18,18 @@
   },
   "homepage": "https://github.com/GeertRoks/PersonalWebsite#readme",
   "dependencies": {
-    "cors": "^2.8.5",
     "date-fns": "^2.19.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
     "express-fileupload": "^1.2.1",
+    "marked": "^2.0.1",
     "method-override": "^3.0.0",
     "mongoose": "^5.12.2",
-    "nodemon": "^2.0.7",
     "slugify": "^1.5.0"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "nodemon": "^2.0.7"
   }
 }
