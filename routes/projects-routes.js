@@ -63,12 +63,16 @@ router.patch('/:slug', (req, res) => {
 
 router.delete('/:slug', (req, res) => {
     // delete specific project by slug
-    Project.findOneAndDelete({ slug: req.params.slug })
+    Project.deleteOne({ slug: req.params.slug })
         .then(result => {
-            res.redirect('/cms/projects');
+            if (result.deletedCount) {
+                res.status(200).send();
+            } else {
+                res.status(404).send();
+            }
         })
         .catch(err => {
-            res.status(404).send(err);
+            res.status(500).send(err);
         });
 });
 

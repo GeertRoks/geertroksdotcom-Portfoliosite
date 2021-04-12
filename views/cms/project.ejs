@@ -2,12 +2,7 @@
 <link rel="stylesheet" href="/css/cms/project.css">
 
 <img src=<%=project.image%>>
-<article class="project container">
-
-    <div class="btn-wrapper">
-        <div id="edit" class="btn selected btn-project-view">edit</div>
-        <div id="preview" class="btn btn-project-view">preview</div>
-    </div>
+<article id="<%= project.slug %>" class="project container">
     <% if (type == "new") { %>
         <%- include('./partials/form-new-project.ejs') %>
     <% } else { %>
@@ -15,23 +10,3 @@
     <% } %>
 </article>
 
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script>
-    let buttons = document.getElementsByClassName('btn-project-view');
-    Array.from(buttons).forEach(btn => {
-        btn.addEventListener('click', event => {
-            Array.from(document.getElementsByClassName('btn-project-view')).forEach(btn => {
-                btn.classList.remove("selected");
-            });
-            if (event.target.id == "edit") {
-                document.querySelector('.project-preview').classList.add('hidden');
-                document.querySelector('.project-edit').classList.remove('hidden');
-            } else if(event.target.id =="preview") {
-                document.querySelector('.project-preview').classList.remove('hidden');
-                document.querySelector('.project-edit').classList.add('hidden');
-                document.querySelector('.project-preview').innerHTML = marked(document.querySelector('textarea#content').value);
-            }
-            btn.classList.add("selected");
-        });
-    });
-</script>
