@@ -1,0 +1,22 @@
+<form action="/api/projects" method="POST" class="">
+    <div class="project-preview hidden"></div>
+
+    <div class="project-edit">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input required type="text" name="title" id="title" value="<%= project.title %>" >
+        </div>
+        <div class="form-group">
+            <label for="snippet">Snippet</label>
+            <textarea name="snippet" id="snippet"><%= project.snippet %></textarea>
+        </div>
+        <div class="form-group">
+            <label for="content">Content</label>
+            <textarea required name="contentMD" id="content"><%= project.contentMD %></textarea>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-dark">Save</button>
+    <a href="/cms/projects" class="btn btn-light">Cancel</a>
+</form>
+

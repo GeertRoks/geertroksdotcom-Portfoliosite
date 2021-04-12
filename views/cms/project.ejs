@@ -8,21 +8,11 @@
         <div id="edit" class="btn selected btn-project-view">edit</div>
         <div id="preview" class="btn btn-project-view">preview</div>
     </div>
-    <form action="/api/projects" method="POST" class="">
-        <div class="project-preview hidden">
-        </div>
-        <div class="project-edit">
-            <%- include ('./partials/form-fields.ejs') %>
-        </div>
-
-        <button type="submit" class="btn btn-dark">Save</button>
-        <a href="/cms/projects" class="btn btn-light">Cancel</a>
-    </form>
-
-
-    <form action="/api/projects/<%= project.slug %>?_method=DELETE" method="POST">
-        <button type="submit" class="btn btn-danger">Delete</div>
-    </form>
+    <% if (type == "new") { %>
+        <%- include('./partials/form-new-project.ejs') %>
+    <% } else { %>
+        <%- include('./partials/form-update-project.ejs') %>
+    <% } %>
 </article>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>

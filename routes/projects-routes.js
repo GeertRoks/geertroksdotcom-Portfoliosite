@@ -42,13 +42,22 @@ router.post('/',  async (req, res) => {
         console.log(err);
         res.render('cms/project.ejs', {
             layout: 'layouts/cms-layout.ejs',
-            project: project
+            project: project,
+            type: "new"
         });
     }
 });
 
 router.patch('/:slug', (req, res) => {
     // update specific project by slug
+    Project.findOneAndUpdate({ slug: req.params.slug }, req.body)
+        .then(result => {
+            res.redirect('/cms/projects');
+        })
+        .catch(err => {
+            res.status(500).send(err);
+            console.log(err);
+        });
 
 });
 
