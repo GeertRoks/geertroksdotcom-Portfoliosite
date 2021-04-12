@@ -10,7 +10,6 @@
     </div>
     <form action="/api/projects" method="POST" class="">
         <div class="project-preview hidden">
-            <%- project.contentHTML %>
         </div>
         <div class="project-edit">
             <%- include ('./partials/form-fields.ejs') %>
@@ -26,6 +25,7 @@
     </form>
 </article>
 
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
     let buttons = document.getElementsByClassName('btn-project-view');
     Array.from(buttons).forEach(btn => {
@@ -37,8 +37,9 @@
                 document.querySelector('.project-preview').classList.add('hidden');
                 document.querySelector('.project-edit').classList.remove('hidden');
             } else if(event.target.id =="preview") {
-                document.querySelector('.project-edit').classList.add('hidden');
                 document.querySelector('.project-preview').classList.remove('hidden');
+                document.querySelector('.project-edit').classList.add('hidden');
+                document.querySelector('.project-preview').innerHTML = marked(document.querySelector('textarea#content').value);
             }
             btn.classList.add("selected");
         });
