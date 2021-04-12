@@ -1,0 +1,73 @@
+<form action="/api/projects/<%- project.slug %>?_method=PATCH" method="POST">
+    <div class="project-preview hidden">
+    </div>
+
+    <div class="project-edit">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input required type="text" name="title" id="title" value="<%= project.title %>" >
+        </div>
+        <div class="form-group">
+            <label for="snippet">Snippet</label>
+            <textarea name="snippet" id="snippet"><%= project.snippet %></textarea>
+        </div>
+        <div class="form-group">
+            <label for="content">Content</label>
+            <textarea required name="contentMD" id="content"><%= project.contentMD %></textarea>
+        </div>
+    </div>
+
+    <div class="btn-wrapper">
+        <button type="submit" class="btn btn-dark">Save</button>
+        <div id="preview-btn" class="btn btn-toggle">Preview</div>
+        <a href="/cms/projects" class="btn btn-light">Cancel</a>
+        <div id="delete-btn" class="btn btn-danger">Delete</div>
+    </div>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+    let preview_btn = document.getElementById('preview-btn');
+    preview_btn.addEventListener('click', event => {
+            console.log(event);
+        if (event.target.innerHTML == "Edit") {
+             preview_btn.innerHTML = "Preview";
+             document.querySelector('.project-preview').classList.add('hidden');
+             document.querySelector('.project-edit').classList.remove('hidden');
+        } else if(event.target.innerHTML =="Preview") {
+             preview_btn.innerHTML = "Edit";
+             document.querySelector('.project-preview').classList.remove('hidden');
+             document.querySelector('.project-edit').classList.add('hidden');
+
+             let preview_window = document.querySelector('.project-preview');
+             preview_window.innerHTML = '<h1>' + document.querySelector('input#title').value + '</h1>';
+             preview_window.innerHTML += marked(document.querySelector('textarea#content').value);
+        }
+    });
+</script>
+<script>
+    const deleteProject = (slug) => {
+        const url = "http://localhost:3000/api/projects/" + slug;
+        fetch(url, {
+            method: 'Delete',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            cache: "no-cache",
+            redirect: "follow",
+            body: null
+        })
+        .then(response => {
+            if (response.ok) {
+                window.location.href = "/cms/projects";
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }
+    const delete_btn = document.getElementById('delete-btn');
+    delete_btn.addEventListener('click', event => {
+        deleteProject(event.target.closest('article').id);
+    });
+</script>

@@ -2,17 +2,11 @@
 <link rel="stylesheet" href="/css/cms/project.css">
 
 <img src=<%=project.image%>>
-<article class="project container">
-    <div class="btn-wrapper">
-        <div class="btn selected">edit</div>
-        <div class="btn">preview</div>
-    </div>
-
-    <form action="/api/projects" method="POST">
-        <%- include ('./partials/form-fields.ejs') %>
-    </form>
-
-    <form action="/api/projects/<%= project.slug %>?_method=DELETE" method="POST">
-        <button type="submit" class="btn btn-danger">Delete</div>
-    </form>
+<article id="<%= project.slug %>" class="project container">
+    <% if (type == "new") { %>
+        <%- include('./partials/form-new-project.ejs') %>
+    <% } else { %>
+        <%- include('./partials/form-update-project.ejs') %>
+    <% } %>
 </article>
+

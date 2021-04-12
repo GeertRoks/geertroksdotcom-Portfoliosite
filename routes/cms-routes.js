@@ -23,7 +23,8 @@ router.get('/projects', (req, res) => {
 router.get('/projects/new', (req, res) => {
     res.render('cms/project.ejs', {
         layout: 'layouts/cms-layout',
-        project: new Project()
+        project: new Project(),
+        type: "new"
     });
 });
 
@@ -32,7 +33,8 @@ router.get('/projects/:slug', (req, res) => {
         .then(project => {
             res.render('cms/project.ejs', {
                 layout: 'layouts/cms-layout',
-                project: project
+                project: project,
+                type: "edit"
             });
         })
         .catch(err => {

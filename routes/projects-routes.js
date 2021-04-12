@@ -42,24 +42,37 @@ router.post('/',  async (req, res) => {
         console.log(err);
         res.render('cms/project.ejs', {
             layout: 'layouts/cms-layout.ejs',
-            project: project
+            project: project,
+            type: "new"
         });
     }
 });
 
 router.patch('/:slug', (req, res) => {
     // update specific project by slug
+    Project.findOneAndUpdate({ slug: req.params.slug }, req.body)
+        .then(result => {
+            res.redirect('/cms/projects');
+        })
+        .catch(err => {
+            res.status(500).send(err);
+            console.log(err);
+        });
 
 });
 
 router.delete('/:slug', (req, res) => {
     // delete specific project by slug
-    Project.findOneAndDelete({ slug: req.params.slug })
+    Project.deleteOne({ slug: req.params.slug })
         .then(result => {
-            res.redirect('/cms/projects');
+            if (result.deletedCount) {
+                res.status(200).send();
+            } else {
+                res.status(404).send();
+            }
         })
         .catch(err => {
-            res.status(404).send(err);
+            res.status(500).send(err);
         });
 });
 
