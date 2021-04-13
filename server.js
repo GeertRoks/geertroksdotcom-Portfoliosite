@@ -54,8 +54,13 @@ app.get('/about', (req, res) => {
     res.render('about');
 });
 app.get('/projects', (req, res) => {
-    res.render('projects');
-})
+    Project.find()
+        .then( projects => {
+            res.render('projects', {
+                projects: projects
+            });
+        });
+});
 app.get('/projects/:slug', (req, res) => {
     Project.findOne({ slug: req.params.slug })
         .then(project => {
@@ -73,5 +78,5 @@ const cms_routes = require('./routes/cms-routes.js');
 app.use('/cms', cms_routes);
 
 // ************* API *************
-const projects_routes = require('./routes/projects-routes.js');
+const projects_routes = require('./routes/api/projects-routes.js');
 app.use('/api/projects', projects_routes);
