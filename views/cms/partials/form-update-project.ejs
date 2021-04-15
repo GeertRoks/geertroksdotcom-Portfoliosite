@@ -1,10 +1,6 @@
 <form action="/api/projects/<%- project.slug %>?_method=PATCH" method="POST">
-    <div class="project-preview hidden">
-    </div>
 
-    <div class="project-edit">
-        <%- include('./form-fields.ejs') %>
-    </div>
+    <%- include('./form-fields.ejs') %>
 
     <div class="btn-wrapper">
         <button type="submit" class="btn btn-dark">Save</button>
@@ -14,37 +10,6 @@
     </div>
 </form>
 
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script>
-    let preview_btn = document.getElementById('preview-btn');
-    preview_btn.addEventListener('click', event => {
-        if (event.target.innerHTML == "Edit") {
-            preview_btn.innerHTML = "Preview";
-            document.querySelector('.project-preview').classList.add('hidden');
-            document.querySelector('.project-edit').classList.remove('hidden');
-            while(preview_window.firstChild) {
-                preview_window.removeChild(preview_window.lastChild);
-            }
-        } else if(event.target.innerHTML =="Preview") {
-            preview_btn.innerHTML = "Edit";
-            document.querySelector('.project-preview').classList.remove('hidden');
-            document.querySelector('.project-edit').classList.add('hidden');
-
-            let preview_window = document.querySelector('.project-preview');
-            let headerdiv = document.createElement('div');
-            let title = document.createElement('h1');
-            title.innerHTML = document.querySelector('input#title').value;
-            let date = document.createElement('p');
-            const month = document.querySelector('#date-month').value;
-            const year = document.querySelector('#date-year').value;
-            date.innerHTML = new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric" }).format(new Date(year, month));
-            headerdiv.appendChild(title);
-            headerdiv.appendChild(date);
-            preview_window.appendChild(headerdiv);
-            preview_window.innerHTML += marked(document.querySelector('textarea#content').value);
-        }
-    });
-</script>
 <script>
     const deleteProject = (slug) => {
         const url = "http://localhost:3000/api/projects/" + slug;

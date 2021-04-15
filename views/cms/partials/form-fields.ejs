@@ -1,33 +1,39 @@
-<div class="form-group">
-    <label for="title">Title</label>
-    <input required type="text" name="title" id="title" value="<%= project.title %>" >
-</div>
-<div class="form-group">
-    <label for="date">Date</label>
-    <select required id="date-month" name="month" value="<%= project.date.getMonth() %>">
-        <option value="0">Jan</option>
-        <option value="1">Feb</option>
-        <option value="2">Mar</option>
-        <option value="3">Apr</option>
-        <option value="4">May</option>
-        <option value="5">Jun</option>
-        <option value="6">Jul</option>
-        <option value="7">Aug</option>
-        <option value="8">Sep</option>
-        <option value="9">Okt</option>
-        <option value="10">Nov</option>
-        <option value="11">Dec</option>
-    </select>
-    <select id="date-year" name="year" value="<%= project.date.getFullYear() %>">
-    </select>
-</div>
-<div class="form-group">
-    <label for="snippet">Snippet</label>
-    <textarea name="snippet" id="snippet"><%= project.snippet %></textarea>
-</div>
-<div class="form-group">
-    <label for="content">Content</label>
-    <textarea required name="contentMD" id="content"><%= project.contentMD %></textarea>
+<div class="project-preview hidden"></div>
+
+<div class="project-edit">
+
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input required type="text" name="title" id="title" value="<%= project.title %>" >
+    </div>
+    <div class="form-group">
+        <label for="date">Date</label>
+        <select required id="date-month" name="month" value="<%= project.date.getMonth() %>">
+            <option value="0">Jan</option>
+            <option value="1">Feb</option>
+            <option value="2">Mar</option>
+            <option value="3">Apr</option>
+            <option value="4">May</option>
+            <option value="5">Jun</option>
+            <option value="6">Jul</option>
+            <option value="7">Aug</option>
+            <option value="8">Sep</option>
+            <option value="9">Okt</option>
+            <option value="10">Nov</option>
+            <option value="11">Dec</option>
+        </select>
+        <select id="date-year" name="year" value="<%= project.date.getFullYear() %>">
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="snippet">Snippet</label>
+        <textarea name="snippet" id="snippet"><%= project.snippet %></textarea>
+    </div>
+    <div class="form-group">
+        <label for="content">Content</label>
+        <textarea required name="contentMD" id="content"><%= project.contentMD %></textarea>
+    </div>
+
 </div>
 
 <script>
@@ -41,6 +47,39 @@
             option.value = year;
             option.innerHTML = year;
             year_selector.appendChild(option);
+        }
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+    // preview toggle
+    let preview_btn = document.getElementById('preview-btn');
+    let preview_window = document.querySelector('.project-preview');
+    preview_btn.addEventListener('click', event => {
+        if (event.target.innerHTML == "Edit") {
+            preview_btn.innerHTML = "Preview";
+            document.querySelector('.project-preview').classList.add('hidden');
+            document.querySelector('.project-edit').classList.remove('hidden');
+            while(preview_window.firstChild) {
+                preview_window.removeChild(preview_window.lastChild);
+            }
+        } else if(event.target.innerHTML =="Preview") {
+            preview_btn.innerHTML = "Edit";
+            document.querySelector('.project-preview').classList.remove('hidden');
+            document.querySelector('.project-edit').classList.add('hidden');
+
+            let headerdiv = document.createElement('div');
+            let title = document.createElement('h1');
+            title.innerHTML = document.querySelector('input#title').value;
+            let date = document.createElement('p');
+            const month = document.querySelector('#date-month').value;
+            const year = document.querySelector('#date-year').value;
+            date.innerHTML = new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric" }).format(new Date(year, month));
+            headerdiv.appendChild(title);
+            headerdiv.appendChild(date);
+            preview_window.appendChild(headerdiv);
+            preview_window.innerHTML += marked(document.querySelector('textarea#content').value);
         }
     });
 </script>
