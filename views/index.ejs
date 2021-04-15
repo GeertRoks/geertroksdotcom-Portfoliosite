@@ -31,9 +31,9 @@
                     <% }%>
                     <div class="card-content">
                         <h1><%= project.title %></h1>
-                        <p class="date">
+                        <h4 class="date">
                         <%= new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric" }).format(project.date) %>
-                        </p>
+                        </h4>
                         <% if (project.snippet != null) { %>
                             <p><%= project.snippet %></p>
                         <% } else { %>

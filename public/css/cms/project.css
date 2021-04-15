@@ -26,6 +26,9 @@ select {
     width: 10em;
 }
 
+.project-preview, .project-edit {
+    margin-bottom: 1.5em;
+}
 .btn.selected {
     background-color: #efefef;
     border: 1px solid black;

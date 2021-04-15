@@ -70,16 +70,21 @@
             document.querySelector('.project-edit').classList.add('hidden');
 
             let headerdiv = document.createElement('div');
+            headerdiv.classList.add('project-header');
             let title = document.createElement('h1');
             title.innerHTML = document.querySelector('input#title').value;
-            let date = document.createElement('p');
+            let date = document.createElement('h4');
             const month = document.querySelector('#date-month').value;
             const year = document.querySelector('#date-year').value;
             date.innerHTML = new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric" }).format(new Date(year, month));
             headerdiv.appendChild(title);
             headerdiv.appendChild(date);
             preview_window.appendChild(headerdiv);
-            preview_window.innerHTML += marked(document.querySelector('textarea#content').value);
+
+            let contentdiv = document.createElement('div');
+            contentdiv.classList.add('project-content');
+            contentdiv.innerHTML = marked(document.querySelector('textarea#content').value);
+            preview_window.appendChild(contentdiv);
         }
     });
 </script>
