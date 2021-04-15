@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="/css/cms/project.css">
 
 <img src=<%=project.image%>>
-<article id="<%= project.slug %>" class="project container">
+<article id="<%= project.slug %>" class="project container-text">
     <% if (type == "new") { %>
         <%- include('./partials/form-new-project.ejs') %>
     <% } else { %>

@@ -51,7 +51,7 @@ a {
 
 /* Mobile first */
 html {
-    font-size: 13px;
+    font-size: clamp(15px, 1.7vw, 17px);
 }
 body {
     font-family: var(--ff-primary);
@@ -62,14 +62,10 @@ body {
 
 /* Mobile screens only */
 @media (max-width: 599px) {
-
 }
 
 /* Tablet portrait and bigger screens */
 @media (min-width: 600px) {
-    html {
-        font-size: 15px;
-    }
 }
 
 /* Tablet landscape and bigger screens */
@@ -78,9 +74,6 @@ body {
 
 /* Laptop and bigger screens */
 @media (min-width: 1200px) {
-    html {
-        font-size: 17px;
-    }
 }
 
 /* Desktop and bigger screens */
@@ -95,6 +88,10 @@ body {
 .container {
     margin: auto;
     width: min(90%, 70.5rem);
+}
+.container-text {
+    width: min(95%, 75ch);
+    margin: auto;
 }
 .btn-wrapper {
     display: flex;
