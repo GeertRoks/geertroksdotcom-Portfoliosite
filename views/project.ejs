@@ -2,6 +2,11 @@
 
 <img src=<%=project.image%>>
 <article class="project container">
-    <h2><%= project.title %></h2>
+    <div>
+        <h2><%= project.title %></h2>
+        <p class="date">
+        <%= new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric" }).format(project.date) %>
+        </p>
+    </div>
     <p><%- project.contentHTML %></p>
 </article>

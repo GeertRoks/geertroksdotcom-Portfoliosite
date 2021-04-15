@@ -4,7 +4,7 @@ textarea {
 #title {
     font-size: 2em;
     font-weight: bold;
-    height: 1.25em;
+    height: max-content;
 }
 #snippet {
     height: 7em;
@@ -16,8 +16,14 @@ textarea {
 .form-group {
     margin: 0.7em 0;
 }
-input {
+label {
+    display: inline-block;
+}
+input, label {
     width: 100%;
+}
+select {
+    width: 10em;
 }
 
 .btn.selected {

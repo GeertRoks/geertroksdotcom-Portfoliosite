@@ -10,7 +10,9 @@
         <div class="project-content">
             <div class="header">
                 <h1><%= project.title%></h1>
-                <p class ="date">MMM YYYY</p>
+                <p class="date">
+                <%= new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric" }).format(project.date) %>
+                </p>
             </div>
             <% if (project.snippet != null) { %>
                 <p><%= project.snippet %></p>

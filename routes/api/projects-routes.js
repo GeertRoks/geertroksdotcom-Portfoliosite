@@ -30,6 +30,7 @@ router.post('/',  async (req, res) => {
     // create new project
     let project = new Project({
         title: req.body.title,
+        date: new Date(req.body.year, req.body.month),
         contentMD: req.body.contentMD,
         image: req.body.image,
         snippet: req.body.snippet,
@@ -50,7 +51,11 @@ router.post('/',  async (req, res) => {
 
 router.patch('/:slug', (req, res) => {
     // update specific project by slug
-    Project.findOneAndUpdate({ slug: req.params.slug }, req.body)
+    const changes = req.body;
+    changes.date = new Date(changes.year, changes.month);
+    delete changes.year;
+    delete changes.month;
+    Project.findOneAndUpdate({ slug: req.params.slug }, changes)
         .then(result => {
             res.redirect('/cms/projects');
         })

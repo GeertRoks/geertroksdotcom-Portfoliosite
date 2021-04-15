@@ -6,7 +6,6 @@ const fileUpload = require('express-fileupload');
 const mongoose = require('mongoose');
 const path = require('path');
 const cors = require('cors');
-const datefns = require('date-fns');
 const methodOverride = require('method-override');
 
 const config = require('./config');
@@ -45,7 +44,6 @@ app.get('/', (req, res) => {
         .then(projects => {
             res.render('index', {
                 projects: projects,
-                datefns: datefns
             });
         });
 });
