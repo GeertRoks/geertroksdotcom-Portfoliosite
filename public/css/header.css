@@ -3,6 +3,7 @@ header{
     font-size: 1em;
     margin: 0;
     position: sticky;
+    z-index: 100;
     top: 0;
     background-color: var(--clr-light);
 }

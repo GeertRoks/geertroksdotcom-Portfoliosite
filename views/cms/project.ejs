@@ -1,12 +1,14 @@
 <link rel="stylesheet" href="/css/project.css">
 <link rel="stylesheet" href="/css/cms/project.css">
 
-<img src=<%=project.image%>>
-<article id="<%= project.slug %>" class="project container-text">
-    <% if (type == "new") { %>
-        <%- include('./partials/form-new-project.ejs') %>
-    <% } else { %>
-        <%- include('./partials/form-update-project.ejs') %>
-    <% } %>
+<img class="project-image" src=<%=project.image%>>
+<article id="<%= project.slug %>" class="project">
+    <div class="container-text">
+        <% if (type == "new") { %>
+            <%- include('./partials/form-new-project.ejs') %>
+        <% } else { %>
+            <%- include('./partials/form-update-project.ejs') %>
+        <% } %>
+    </div>
 </article>
 

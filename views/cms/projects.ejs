@@ -1,27 +1,28 @@
 <link rel="stylesheet" href="/css/cms/projects.css">
+<div class="container">
+    <a class="btn btn-dark" href="/cms/projects/new">Add new project</a>
 
-<a class="btn btn-dark" href="/cms/projects/new">Add new project</a>
-
-<% projects.forEach(project => { %>
-    <article class="project" id=<%=project.slug%> >
-        <% if (project.image != null) { %>
-            <img src= <%= project.image %> />
-        <% } %>
-        <div class="project-content">
-            <div class="header">
-                <h1><%= project.title%></h1>
-                <h4 class="date">
-                <%= new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric" }).format(project.date) %>
-                </h4>
-            </div>
-            <% if (project.snippet != null) { %>
-                <p><%= project.snippet %></p>
-            <% } else { %>
-                <p><%= project.content.substr(0,80)%>...</p>
+    <% projects.forEach(project => { %>
+        <article class="project" id=<%=project.slug%> >
+            <% if (project.image != null) { %>
+                <img src= <%= project.image %> />
             <% } %>
-        </div>
-    </article>
-<% }); %>
+            <div class="project-content">
+                <div class="header">
+                    <h1><%= project.title%></h1>
+                    <h4 class="date">
+                        <%= new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric" }).format(project.date) %>
+                    </h4>
+                </div>
+                <% if (project.snippet != null) { %>
+                    <p><%= project.snippet %></p>
+                <% } else { %>
+                    <p><%= project.content.substr(0,80)%>...</p>
+                <% } %>
+            </div>
+        </article>
+    <% }); %>
+</div>
 
 <script>
     let projects = document.getElementsByClassName('project');

@@ -1,16 +1,16 @@
-article.project {
-    background-color: var(--clr-light);
-    margin-top: 4em;
-    z-index: 3;
-    box-shadow: 0px 3em 3em 8em var(--clr-light);
-}
-img {
-    position: relative;
+.project-image {
+    position: fixed;
     z-index: -1;
+    top: 4em;
     height: 25em;
     width: 100%;
     object-fit: cover;
-    margin-bottom: -3em;
+}
+article.project {
+    background-color: var(--clr-light);
+    box-shadow: 0px 3em 3em 8em var(--clr-light);
+    margin-top: 25em;
+    padding: 3em 0;
 }
 .project-header {
     display: flex;
