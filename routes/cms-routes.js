@@ -43,7 +43,11 @@ router.get('/projects/:slug', (req, res) => {
 });
 
 router.get('/about', (req, res) => {
-    res.render('cms/about.ejs', { layout: 'layouts/cms-layout' });
+    const about = {};
+    res.render('cms/about.ejs', {
+        layout: 'layouts/cms-layout',
+        about: about
+    });
 });
 
 module.exports = router;

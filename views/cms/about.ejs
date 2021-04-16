@@ -1,3 +1,71 @@
+<link rel="stylesheet" href="/css/cms/form.css">
+
+<article class="about-me">
+    <div class="container-text">
+
+        <div class="about-preview hidden"></div>
+
+        <div class="about-edit">
+
+            <div class="form-group">
+                <label for="greeting">Greeting</label>
+                <input required type="text" name="greeting" id="greeting" value="<%= about.greeting %>" >
+            </div>
+            <div class="form-group">
+                <label for="about-image">Image</label>
+                <input required type="file" name="about-image" id="about-image">
+            </div>
+            <div class="form-group">
+                <label for="bio">Short bio</label>
+                <textarea name="bio" id="bio"><%= about.bio %></textarea>
+            </div>
+            <div class="form-group">
+                <label for="content">Main about</label>
+                <textarea required name="contentMD" id="content"><%= about.contentMD %></textarea>
+            </div>
+
+        </div>
+    </div>
+
+</article>
+
 <div class="container-text">
-    <p>About page</p>
+    <div class="btn-wrapper">
+        <button type="submit" class="btn btn-dark">Save</button>
+        <div id="preview-btn" class="btn btn-toggle">Preview</div>
+        <a href="/cms/projects" class="btn btn-light">Cancel</a>
+    </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+    // preview toggle
+    let preview_btn = document.getElementById('preview-btn');
+    let preview_window = document.querySelector('.about-preview');
+    preview_btn.addEventListener('click', event => {
+        if (event.target.innerHTML == "Edit") {
+            preview_btn.innerHTML = "Preview";
+            document.querySelector('.about-preview').classList.add('hidden');
+            document.querySelector('.about-edit').classList.remove('hidden');
+            while(preview_window.firstChild) {
+                preview_window.removeChild(preview_window.lastChild);
+            }
+        } else if(event.target.innerHTML =="Preview") {
+            preview_btn.innerHTML = "Edit";
+            document.querySelector('.about-preview').classList.remove('hidden');
+            document.querySelector('.about-edit').classList.add('hidden');
+
+            let headerdiv = document.createElement('div');
+            headerdiv.classList.add('about-header');
+            let title = document.createElement('h1');
+            title.innerHTML = document.querySelector('input#greeting').value;
+            headerdiv.appendChild(title);
+            preview_window.appendChild(headerdiv);
+
+            let contentdiv = document.createElement('div');
+            contentdiv.classList.add('about-content');
+            contentdiv.innerHTML = marked(document.querySelector('textarea#content').value);
+            preview_window.appendChild(contentdiv);
+        }
+    });
+</script>
