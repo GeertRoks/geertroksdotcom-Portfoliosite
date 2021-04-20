@@ -1,6 +1,9 @@
+.project-image-container {
+    height:25em;
+}
 .project-image {
     position: fixed;
-    z-index: -1;
+    z-index: -20;
     top: 4em;
     height: 25em;
     width: 100%;
@@ -9,7 +12,6 @@
 article.project {
     background-color: var(--clr-light);
     box-shadow: 0px 3em 3em 8em var(--clr-light);
-    margin-top: 25em;
     padding: 3em 0;
 }
 .project-header {

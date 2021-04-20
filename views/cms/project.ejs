@@ -1,7 +1,13 @@
 <link rel="stylesheet" href="/css/project.css">
+<link rel="stylesheet" href="/css/cms/project.css">
 <link rel="stylesheet" href="/css/cms/form.css">
 
-<img class="project-image" src=<%=project.image%>>
+<div class="project-image-container">
+    <img class="project-image" src=<%=project.image%>>
+    <div class="project-image-options">
+        <div class="btn">Change image</div>
+    </div>
+</div>
 <article id="<%= project.slug %>" class="project">
     <div class="container-text">
         <% if (type == "new") { %>
