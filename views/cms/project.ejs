@@ -6,15 +6,58 @@
     <img class="project-image" src=<%=project.image%>>
     <div class="project-image-options">
         <div class="btn">Change image</div>
+        <!-- <form method="post" enctype="multipart/form-data" action="/upload"> -->
+            <!-- <input type="file" name="file"> -->
+            <!-- <input type="submit" value="Submit"> -->
+        <!-- </form> -->
     </div>
 </div>
 <article id="<%= project.slug %>" class="project">
     <div class="container-text">
         <% if (type == "new") { %>
-            <%- include('./partials/form-new-project.ejs') %>
+            <form action="/api/projects" method="POST" class="">
         <% } else { %>
-            <%- include('./partials/form-update-project.ejs') %>
+            <form action="/api/projects/<%- project.slug %>?_method=PATCH" method="POST">
         <% } %>
+        <%- include('./partials/form-fields.ejs') %>
+        <div class="btn-wrapper">
+            <button type="submit" class="btn btn-dark">Save</button>
+            <div id="preview-btn" class="btn btn-toggle">Preview</div>
+            <a href="/cms/projects" class="btn btn-light">Cancel</a>
+            <% if (type != "new") { %>
+                <div id="delete-btn" class="btn btn-danger">Delete</div>
+            <% } %>
+        </div>
+        </form>
     </div>
 </article>
+
+<% if (type != "new") { %>
+    <script>
+        const deleteProject = (slug) => {
+            const url = "http://localhost:3000/api/projects/" + slug;
+            fetch(url, {
+                method: 'Delete',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                cache: "no-cache",
+                redirect: "follow",
+                body: null
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = "/cms/projects";
+                }
+            })
+            .catch(err => {
+                console.log(err);
+            });
+        }
+        const delete_btn = document.getElementById('delete-btn');
+        delete_btn.addEventListener('click', event => {
+            deleteProject(event.target.closest('article').id);
+        });
+    </script>
+<% } %>
 

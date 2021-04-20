@@ -8,7 +8,7 @@
     </div>
     <div class="form-group">
         <label for="date">Date</label>
-        <select required id="date-month" name="month" value="<%= project.date.getMonth() %>">
+        <select required id="date-month" name="month">
             <option value="0">Jan</option>
             <option value="1">Feb</option>
             <option value="2">Mar</option>
@@ -22,7 +22,7 @@
             <option value="10">Nov</option>
             <option value="11">Dec</option>
         </select>
-        <select id="date-year" name="year" value="<%= project.date.getFullYear() %>">
+        <select id="date-year" name="year">
         </select>
     </div>
     <div class="form-group">
@@ -35,10 +35,11 @@
     </div>
 
 </div>
-
 <script>
-    // load year options for date-picker
+    // load year and month options for date-picker
     const year_selector = document.getElementById('date-year');
+    const month_selector = document.getElementById('date-month');
+
     window.addEventListener('load', event => {
         let earliest_year = 2015;
         let current_year = new Date().getFullYear();
@@ -48,8 +49,17 @@
             option.innerHTML = year;
             year_selector.appendChild(option);
         }
+        <% if (type == "new") { %>
+            month_selector.value = new Date().getMonth();
+            year_selector.value = new Date().getFullYear();
+        <% } else { %>
+            month_selector.value = <%= project.date.getMonth() %>;
+            year_selector.value = <%= project.date.getFullYear() %>;
+        <% } %>
     });
+
 </script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
