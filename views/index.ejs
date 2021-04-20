@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="/css/index.css">
-<link rel="stylesheet" href="/css/card.css">
 
 <!-- Quick about view -->
 <section id="about">
@@ -24,25 +23,7 @@
 <section id="portfolio">
     <div class="container">
         <div class="cards">
-            <% projects.forEach(project => { %>
-                <article class="card" id=<%=project.slug%> >
-                    <% if (project.image != null) { %>
-                        <img src= <%= project.image %> />
-                    <% }%>
-                    <div class="card-content">
-                        <h1><%= project.title %></h1>
-                        <h4 class="date">
-                        <%= new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric" }).format(project.date) %>
-                        </h4>
-                        <% if (project.snippet != null) { %>
-                            <p><%= project.snippet %></p>
-                        <% } else { %>
-                            <p><%= project.content.substr(0,80)%>... <a href="#">read more</a> </p>
-                        <% } %>
-                    </div>
-                </article>
-
-            <% }); %>
+            <%- include('./partials/project-card.ejs') %>
         </div>
         <div class="btn-wrapper btn-wrapper-center">
             <div class="btn btn-big btn-light">See more</div>
