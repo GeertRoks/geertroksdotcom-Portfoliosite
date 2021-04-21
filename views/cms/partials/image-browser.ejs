@@ -11,12 +11,12 @@
                     <!-- <input type="file" name="file"> -->
                     <!-- <input type="submit" value="Submit"> -->
                 <!-- </form> -->
-                <div class="btn">Save</div>
+                <div class="btn" onclick="saveSelectedImage()">Save</div>
             </div>
         </header>
         <div class="image-container">
             <% images.forEach( image => { %>
-                <div class="card card--image-only" id="<%=image%>">
+                <div class="card card--image-only" id="<%=image%>" onclick="toggleSelectedImage(event)">
                     <img src="/images/<%=image%>" alt="" />
                 </div>
             <% }); %>
@@ -34,4 +34,21 @@
     open_btn.addEventListener('click', event => {
         image_browser.classList.remove('hidden');
     });
+</script>
+
+<script>
+    function toggleSelectedImage(event) {
+        const image_divs = document.querySelector('.image-container');
+        for (div of Array.from(image_divs.children)) {
+            div.classList.remove('selected');
+        }
+        const selected_div = event.target.closest('div.card--image-only');
+        selected_div.classList.add('selected');
+    }
+    function saveSelectedImage() {
+        const selected_div = document.querySelector('div.card--image-only.selected');
+        document.querySelector('input#image').value = "/images/"+ selected_div.id;
+        document.querySelector('img.project-image').src ="/images/" + selected_div.id;
+        image_browser.classList.add('hidden');
+    }
 </script>
