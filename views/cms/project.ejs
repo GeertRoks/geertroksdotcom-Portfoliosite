@@ -5,13 +5,10 @@
 <div class="project-image-container">
     <img class="project-image" src=<%=project.image%>>
     <div class="project-image-options">
-        <div class="btn">Change image</div>
-        <!-- <form method="post" enctype="multipart/form-data" action="/upload"> -->
-            <!-- <input type="file" name="file"> -->
-            <!-- <input type="submit" value="Submit"> -->
-        <!-- </form> -->
+        <div id="change-image-btn" class="btn">Change image</div>
     </div>
 </div>
+<%- include('./partials/image-browser.ejs') %>
 <article id="<%= project.slug %>" class="project">
     <div class="container-text">
         <% if (type == "new") { %>

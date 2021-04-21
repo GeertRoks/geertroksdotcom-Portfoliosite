@@ -3,6 +3,9 @@ const router = express.Router();
 
 const Project = require('../models/project-model.js');
 
+const fs = require('fs');
+const images = fs.readdirSync(__dirname + '/../public/images');
+
 router.get('/', (req, res) => {
     res.render('cms/index.ejs', { layout: 'layouts/cms-layout' });
 });
@@ -24,7 +27,8 @@ router.get('/projects/new', (req, res) => {
     res.render('cms/project.ejs', {
         layout: 'layouts/cms-layout',
         project: new Project(),
-        type: "new"
+        type: "new",
+        images: images
     });
 });
 
@@ -34,7 +38,8 @@ router.get('/projects/:slug', (req, res) => {
             res.render('cms/project.ejs', {
                 layout: 'layouts/cms-layout',
                 project: project,
-                type: "edit"
+                type: "edit",
+                images: images
             });
         })
         .catch(err => {

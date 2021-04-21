@@ -2,6 +2,11 @@
 
 <div class="project-edit">
 
+    <div class="form-group hidden">
+        <label for="image">Image</label>
+        <input type="text" name="image" id="image" value="<%= project.image %>" >
+    </div>
+
     <div class="form-group">
         <label for="title">Title</label>
         <input required type="text" name="title" id="title" value="<%= project.title %>" >

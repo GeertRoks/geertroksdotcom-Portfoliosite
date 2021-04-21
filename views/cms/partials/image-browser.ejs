@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/css/cms/image-browser.css">
+<link rel="stylesheet" href="/css/card.css">
+
+<div class="overlay hidden">
+    <div class="image-browser">
+        <header>
+            <div id="cancel-btn" class="btn">Cancel</div>
+            <div class="btn-wrapper">
+                <div class="btn">Upload</div>
+                <!-- <form method="post" enctype="multipart/form-data" action="/upload"> -->
+                    <!-- <input type="file" name="file"> -->
+                    <!-- <input type="submit" value="Submit"> -->
+                <!-- </form> -->
+                <div class="btn">Save</div>
+            </div>
+        </header>
+        <div class="image-container">
+            <% images.forEach( image => { %>
+                <div class="card card--image-only" id="<%=image%>">
+                    <img src="/images/<%=image%>" alt="" />
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</div>
+
+<script>
+    const image_browser = document.querySelector('.overlay');
+    const cancel_btn = image_browser.querySelector('#cancel-btn');
+    const open_btn = document.querySelector('#change-image-btn');
+    cancel_btn.addEventListener('click', event => {
+        image_browser.classList.add('hidden');
+    });
+    open_btn.addEventListener('click', event => {
+        image_browser.classList.remove('hidden');
+    });
+</script>
