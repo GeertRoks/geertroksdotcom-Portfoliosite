@@ -3,8 +3,9 @@ const router = express.Router();
 
 const Project = require('../models/project-model.js');
 
+const path = require('path');
 const fs = require('fs');
-const images = fs.readdirSync(__dirname + '/../public/images');
+let images = fs.readdirSync(__dirname + '/../public/images');
 
 router.get('/', (req, res) => {
     res.render('cms/index.ejs', { layout: 'layouts/cms-layout' });
@@ -53,6 +54,29 @@ router.get('/about', (req, res) => {
         layout: 'layouts/cms-layout',
         about: about
     });
+});
+
+router.post('/images/upload', (req, res) => {
+    if (!req.files || Object.keys(req.files).length === 0) {
+        return res.status(400).send("No files were uploaded.");
+    }
+
+    const image = req.files.image;
+    console.log(image);
+
+    if (image != null && (image.mimetype == 'image/jpeg' || image.mimetype == 'image/png')) {
+        image.mv(path.join(__dirname, '/../public/images/', image.name))
+            .then((file) => {
+                images = fs.readdirSync(__dirname + '/../public/images');
+                res.status(201).send(file);
+            })
+            .catch((err) => {
+                console.log(err);
+                res.status(500).send(err);
+            });
+    } else {
+        res.status(400).send("No .jpg or .png image submited");
+    }
 });
 
 module.exports = router;

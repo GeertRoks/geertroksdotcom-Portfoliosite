@@ -22,6 +22,9 @@
 }
 .image-container {
     overflow-y: scroll;
+    height: calc(100% - 4em);
+}
+.image-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1em;
