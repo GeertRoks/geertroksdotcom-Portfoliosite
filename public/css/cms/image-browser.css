@@ -1,5 +1,6 @@
 .overlay {
     position: absolute;
+    z-index: 100;
     top: 4em;
     left: 20em;
     right: 0;

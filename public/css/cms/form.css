@@ -9,7 +9,7 @@ textarea {
 #snippet, #bio {
     height: 7em;
 }
-#content {
+#content, #main-about {
     min-height: 30em;
 }
 

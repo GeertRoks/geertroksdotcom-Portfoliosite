@@ -79,4 +79,6 @@ app.use('/cms', cms_routes);
 
 // ************* API *************
 const projects_routes = require('./routes/api/projects-routes.js');
+const about_routes = require('./routes/api/about-routes.js');
 app.use('/api/projects', projects_routes);
+app.use('/api/about', about_routes);

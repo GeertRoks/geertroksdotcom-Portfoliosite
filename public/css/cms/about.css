@@ -1,0 +1,34 @@
+.about-image-container {
+    height: 15em;
+    width: 15em;
+    border: 1px solid black;
+}
+.about-image-container .project-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.about-image-container:hover .project-image {
+    opacity: 0.3;
+}
+
+.about-image-container:hover .image-options {
+    opacity: 1;
+}
+.wrapper-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+.wrapper-horizontal {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+}
+.flex-grow {
+    flex: 1;
+}
+.flex-align-btm {
+    align-items: end;
+}

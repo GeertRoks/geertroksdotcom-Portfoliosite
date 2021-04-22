@@ -52,7 +52,8 @@ router.get('/about', (req, res) => {
     const about = {};
     res.render('cms/about.ejs', {
         layout: 'layouts/cms-layout',
-        about: about
+        about: about,
+        images: images
     });
 });
 
