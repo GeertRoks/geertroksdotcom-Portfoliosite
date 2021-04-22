@@ -41,6 +41,7 @@ app.use(express.static('public'));
 // Main
 app.get('/', (req, res) => {
     Project.find()
+        .sort({ date: 'desc' })
         .then(projects => {
             res.render('index', {
                 projects: projects,
@@ -53,6 +54,7 @@ app.get('/about', (req, res) => {
 });
 app.get('/projects', (req, res) => {
     Project.find()
+        .sort({ date: 'desc' })
         .then( projects => {
             res.render('projects', {
                 projects: projects

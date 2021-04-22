@@ -31,12 +31,3 @@
     </div>
 </section>
 
-<script>
-    let projects = document.getElementsByClassName('card');
-        Array.from(projects).forEach(project => {
-                project.addEventListener('click', (event) => {
-                        let slug = event.target.closest(".card").id;
-                        window.location = '/projects/' + slug;
-                    });
-            });
-</script>

@@ -7,6 +7,7 @@ const Project = require('../../models/project-model.js');
 router.get('/', (req, res) => {
     // get all projects
     Project.find()
+        .sort({date: 'descending'})
         .then(result => {
             res.send(result);
         })
