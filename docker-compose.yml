@@ -17,7 +17,7 @@ services:
     links:
       - "db:mongo"
     volumes:
-      - .:/usr/src/app
+      - ./frontend:/usr/src/app
 
 volumes:
   data:
