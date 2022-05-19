@@ -28,8 +28,8 @@
       "
     >
       <div class="flex items-center justify-between">
-        <a
-          href="/"
+        <router-link
+          to="/"
           class="
             text-xl
             font-bold
@@ -38,7 +38,7 @@
             hover:text-grey-400
           "
           >Geert Roks
-        </a>
+        </router-link>
         <!-- Mobile menu button -->
         <div @click="toggleNav" class="flex md:hidden">
           <button
@@ -69,11 +69,11 @@
         "
       >
         <li class="text-black-800 cursor-pointer">
-        <a href="/projects">Projects</a>
+        <router-link to="/projects">Projects</router-link>
         </li>
         <!--<li class="text-gray-100 hover:text-indigo-400">About</li>-->
         <li class="text-black-800 cursor-pointer">
-        <a href="/contact">Contact</a>
+        <router-link to="/contact">Contact</router-link>
         </li>
       </ul>
     </nav>

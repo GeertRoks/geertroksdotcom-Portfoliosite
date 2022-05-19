@@ -2,8 +2,8 @@
 
   <!-- About quick view -->
 
-  <section class="bg-orange-300 py-16">
-  <div class="m-auto max-w-6xl px-6 md:p-0 md:grid md:grid-cols-2 lg:grid-cols-5">
+  <section class="bg-orange-300 pb-16 md:py-16">
+  <div class="m-auto max-w-6xl px-6 md:pl-6 md:grid md:grid-cols-2 lg:grid-cols-5">
     <div class="md:my-auto md:pr-16 lg:col-span-3">
     <h1 class="text-6xl font-bold text-center w-full py-20 leading-tight md:text-left md:py-10">Geert <br class="sm:hidden"> Roks</h1>
     <p>
