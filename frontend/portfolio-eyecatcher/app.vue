@@ -4,7 +4,5 @@
       <Navbar />
     </div>
   </header>
-  <div class="m-auto max-w-6xl px-6">
-    <NuxtPage />
-  </div>
+  <NuxtPage />
 </template>
