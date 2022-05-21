@@ -28,7 +28,7 @@
       "
     >
       <div class="flex items-center justify-between">
-        <router-link
+        <NuxtLink
           to="/"
           class="
             text-xl
@@ -38,7 +38,7 @@
             hover:text-grey-400
           "
           >Geert Roks
-        </router-link>
+        </NuxtLink>
         <!-- Mobile menu button -->
         <div @click="toggleNav" class="flex md:hidden">
           <button
@@ -69,11 +69,11 @@
         "
       >
         <li class="text-black-800 cursor-pointer">
-        <router-link to="/projects">Projects</router-link>
+        <NuxtLink to="/projects">Projects</NuxtLink>
         </li>
         <!--<li class="text-gray-100 hover:text-indigo-400">About</li>-->
         <li class="text-black-800 cursor-pointer">
-        <router-link to="/contact">Contact</router-link>
+        <NuxtLink to="/contact">Contact</NuxtLink>
         </li>
       </ul>
     </nav>
