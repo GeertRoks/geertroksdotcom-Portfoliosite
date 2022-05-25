@@ -21,22 +21,22 @@
   <!-- Projects quick view -->
 
   <section id="projects" class="py-16 m-auto max-w-6xl ">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
-  <article class="cursor-pointer hover:bg-gray-100" v-for="index in 6" :key="index">
-    <img src="https://source.unsplash.com/featured/?creative" alt="project-image" class="w-full aspect-square object-cover">
-    <div class="px-6">
-      <h1 class="text-2xl font-bold">Title</h1>
-      <h3 class="text-lg">Jan 2022</h3>
-      <ul class="flex flex-row space-x-2">
-        <li class="text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-gray-200 text-gray-700 rounded-full">tag-1</li>
-        <li class="text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-gray-200 text-gray-700 rounded-full">tag-2</li>
-        <li class="text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-gray-200 text-gray-700 rounded-full">tag-3</li>
-      </ul>
-      <p>
-        Snippet of the project describtion. Describing what it is about in about 150 characters.
-      </p>
-    </div>
-  </article>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2 mb-12">
+      <article class="cursor-pointer hover:bg-gray-100" v-for="index in 6" :key="index">
+        <img src="https://source.unsplash.com/featured/?creative" alt="project-image" class="w-full aspect-square object-cover">
+        <div class="px-6">
+          <h1 class="text-2xl font-bold">Title</h1>
+          <h3 class="text-lg">Jan 2022</h3>
+          <ul class="flex flex-row space-x-2">
+            <li class="text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-gray-200 text-gray-700 rounded-full">tag-1</li>
+            <li class="text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-gray-200 text-gray-700 rounded-full">tag-2</li>
+            <li class="text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-gray-200 text-gray-700 rounded-full">tag-3</li>
+          </ul>
+          <p>
+            Snippet of the project describtion. Describing what it is about in about 150 characters.
+          </p>
+        </div>
+      </article>
 
     </div>
     <button class="w-full border-2 border-orange-400 text-orange-400 font-bold py-5 my-2 m-auto" onclick="window.location.href='/projects';">See more</button>
