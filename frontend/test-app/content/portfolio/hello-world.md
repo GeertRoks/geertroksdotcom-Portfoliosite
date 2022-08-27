@@ -4,6 +4,7 @@ description: 'Just wanting to say hi to the world.'
 tags: [ test,  c++ ]
 featured: false
 date: 2019-06
+image: http://localhost:3434/images/city.jpg
 ---
 
 ## Hello

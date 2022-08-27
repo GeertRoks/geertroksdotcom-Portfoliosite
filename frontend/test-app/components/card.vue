@@ -1,7 +1,7 @@
 <template>
   <nuxt-link :to="{ path: 'project/' + project.slug }">
   <article class="cursor-pointer hover:bg-gray-100">
-    <img src="https://source.unsplash.com/featured/?creative" alt="project-image" class="w-full aspect-square object-cover">
+    <img v-bind:src="project.image" alt="project-image" class="w-full aspect-square object-cover">
     <div class="px-6">
       <h1 class="text-2xl font-bold">{{ project.title }}</h1>
       <h3 class="text-lg">{{ project.date }} {{ project.year }}</h3>

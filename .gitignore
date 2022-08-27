@@ -29,7 +29,7 @@ coverage
 bower_components
 
 # node-waf configuration
-.lock-wscript
+.lock-wscrip
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
@@ -88,3 +88,9 @@ sw.*
 
 # Vim swap files
 *.swp
+
+#-------------------------------------------------------------------------
+#Custom additions
+*.jpg
+static-file-server/public
+package-lock.json
