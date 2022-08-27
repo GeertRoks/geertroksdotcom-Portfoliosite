@@ -7,15 +7,13 @@
       <div class="m-auto max-w-6xl px-6 md:pl-6 md:grid md:grid-cols-2 lg:grid-cols-5">
         <div class="md:my-auto md:pr-16 lg:col-span-3">
           <h1 class="text-6xl font-bold text-center w-full py-20 leading-tight md:text-left md:py-10">Geert <br class="sm:hidden"> Roks</h1>
-          <p>
-            I am Geert. I have a broad range of intrests; from Linux to hardware to music and art.
-          </p>
+          <p>{{ about.description }}</p>
           <div class="md:flex md:flex-row md:space-x-4">
             <button class="w-full bg-yellow-600 text-white font-bold py-4 my-2" onclick="window.location.href='/projects';">Projects</button>
             <button class="w-full border-2 border-yellow-600 text-yellow-600 font-bold py-4 my-2" onclick="window.location.href='/contact';">Contact me</button>
           </div>
         </div>
-        <img src="https://source.unsplash.com/featured/?face,creative,portrait" alt="picture of me" class="w-full aspect-square object-cover my-10 md:p-10 md:my-auto lg:col-span-2">
+        <img v-bind:src="about.image" alt="picture of me" class="w-full aspect-square object-cover my-10 md:p-10 md:my-auto lg:col-span-2">
       </div>
     </section>
 
@@ -40,7 +38,9 @@ export default {
       .where({ featured: true })
       .sortBy("date", 'desc')
       .fetch();
-      return {projects};
+    const about = await $content("about")
+      .fetch();
+      return {projects, about};
   },
 }
 </script>
