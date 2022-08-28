@@ -4,14 +4,17 @@
 
     <!-- Project page -->
 
-    <article class="project-content">
+    <article class="w-article">
+      <img v-bind:src="project.image" alt="project image" class="h-screen-60 w-full object-cover">
+      <div class="w-text">
       <h1 class="text-5xl font-medium text-gray-900 leading-tight mt-0 mb-2">{{ project.title }}</h1>
       <h3 class="text-lg font-semibold text-gray-600 mb-2">{{ project.description }}</h3>
       <ul class="flex flex-row space-x-2">
-        <li v-for="tag of project.tags" class="text-xs inline-block py-2 px-3.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-gray-200 text-gray-700 rounded-full">{{ tag }}</li>
+        <tag v-for="tag of project.tags" :key="tag" :tag="tag" />
       </ul>
       <div class="mt-4 mx-auto">
         <nuxt-content class="max-w-none" :document="project" />
+      </div>
       </div>
     </article>
 
@@ -28,7 +31,11 @@ export default {
 </script>
 
 <style>
-  .project-content {
+  .w-article {
+    max-width: 120ch;
+    margin: auto;
+  }
+  .w-text {
     max-width: 90ch;
     margin: auto;
   }

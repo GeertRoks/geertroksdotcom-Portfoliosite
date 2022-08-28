@@ -6,7 +6,7 @@
       <h1 class="text-2xl font-bold">{{ project.title }}</h1>
       <h3 class="text-lg">{{ project.date }} {{ project.year }}</h3>
       <ul class="flex flex-row space-x-2">
-        <li v-for="tag of project.tags" class="text-xs inline-block py-2 px-3.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-gray-200 text-gray-700 rounded-full">{{ tag }}</li>
+        <tag v-for="tag of project.tags" :key="tag" :tag="tag" />
       </ul>
       <p>{{ project.description }}</p>
     </div>

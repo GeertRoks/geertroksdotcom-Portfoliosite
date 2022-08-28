@@ -18,11 +18,22 @@
 <script>
   export default {
     name: 'ContactPage',
-    async asyncData({$content, params}) {
+    async asyncData({$content, query}) {
+      let query_tags = [];
+      if (query.tags) {
+        query_tags = query.tags.split(',');
+        console.log("query.tags: " + query_tags + ", " + typeof(query_tags));
+      }
       const projects = await $content("portfolio")
-      .sortBy("date", 'desc')
-      .fetch();
+        .where({'tags': {$contains: query_tags} })
+        .sortBy("date", 'desc')
+        .fetch();
       return {projects};
+    },
+    watch: {
+      '$route.query'() {
+        this.$nuxt.refresh();
+      }
     },
   }
 </script>
