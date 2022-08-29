@@ -1,10 +1,12 @@
 ---
 title: Hello World!!
-description: 'Just wanting to say hi to the world.'
-tags: [ test,  c++ ]
-featured: false
-date: 2019-06
+description: "Just wanting to say hi to the world."
 image: http://localhost:3434/images/city.jpg
+date: 2019-06
+featured: false
+tags:
+ - test
+ - c++
 ---
 
 ## Hello

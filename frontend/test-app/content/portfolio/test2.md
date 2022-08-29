@@ -1,10 +1,13 @@
 ---
 title: Test nr.2
-description: 'Just wanting to say hi to the world.'
-tags: [ test,  c++, hello ]
-featured: true
-date: 2022-02
+description: "Just wanting to say hi to the world."
 image: http://localhost:3434/images/street1.jpg
+date: 2022-02
+featured: true
+tags:
+  - test
+  - c++
+  - hello
 ---
 
 ## Testing the test...

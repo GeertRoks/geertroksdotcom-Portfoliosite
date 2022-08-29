@@ -1,10 +1,12 @@
 ---
 title: Why not?!
-description: 'Some things are just not done, but why not?'
-tags: [ test,  questions ]
-featured: true
-date: 2021-12
+description: "Some things are just not done, but why not?"
 image: http://localhost:3434/images/hands.jpg
+date: 2021-12
+featured: true
+tags:
+  - test
+  - questions
 ---
 
 ## But why though?
