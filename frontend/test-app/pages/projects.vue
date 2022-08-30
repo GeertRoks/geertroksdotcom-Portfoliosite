@@ -1,14 +1,16 @@
 <template>
-  <div id="page">
+  <div id="page" class="flex flex-col h-screen">
     <Navbar />
 
     <!-- projects -->
-    <section class="py-16 m-auto max-w-6xl">
-      <ProjectGrid :projects="projects" />
-      <!-- -->
-    </section>
+    <main class="flex-grow">
+      <section class="py-16 m-auto max-w-6xl">
+        <ProjectGrid :projects="projects" />
+        <!-- -->
+      </section>
+    </main>
 
-    <footer class="h-48 bg-yellow-300"></footer>
+    <Footer />
   </div>
 </template>
 
