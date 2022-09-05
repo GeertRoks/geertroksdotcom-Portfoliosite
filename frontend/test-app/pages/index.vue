@@ -4,7 +4,7 @@
 
     <main class="flex-grow">
       <!-- About quick view -->
-      <section class="bg-yellow-400 pb-16 md:py-16">
+      <section class="bg-primary pb-16 md:py-16">
         <div
           class="m-auto max-w-6xl px-6 md:pl-6 md:grid md:grid-cols-2 lg:grid-cols-5"
         >
@@ -18,13 +18,13 @@
             <p>{{ about.description }}</p>
             <div class="md:flex md:flex-row md:space-x-4">
               <button
-                class="w-full bg-yellow-600 text-white font-bold py-4 my-2"
+                class="w-full bg-accent-light text-white font-bold py-4 my-2"
                 onclick="window.location.href='/projects';"
               >
                 Projects
               </button>
               <button
-                class="w-full border-2 border-yellow-600 text-yellow-600 font-bold py-4 my-2"
+                class="w-full border-2 border-accent-light text-accent-light font-bold py-4 my-2"
                 onclick="window.location.href='/contact';"
               >
                 Contact me

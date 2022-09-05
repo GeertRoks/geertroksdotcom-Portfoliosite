@@ -1,3 +1,11 @@
+:root {
+  --clr-secondary: #FAD54C;
+  --clr-primary: #EFBC06;
+  --clr-accent-light: #4C87A9;
+  --clr-accent-dark: #975635;
+  --clr-white: #FFFFFF;
+  --clr-black: #1C1C1C;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -20,5 +28,47 @@
   }
   .h-screen-60 {
     height: 60vh;
+  }
+
+  /* Custom colors */
+  /*Primary*/
+  .bg-primary {
+    background-color: var(--clr-primary);
+  }
+  .text-primary {
+    color: var(--clr-primary);
+  }
+  .border-primary {
+    border-color: var(--clr-primary);
+  }
+  /*Secondary*/
+  .bg-secondary {
+    background-color: var(--clr-secondary);
+  }
+  .text-secondary {
+    color: var(--clr-secondary);
+  }
+  .border-secondary {
+    border-color: var(--clr-secondary);
+  }
+  /*Secondary-light*/
+  .bg-accent-light {
+    background-color: var(--clr-accent-light);
+  }
+  .text-secondary-light {
+    color: var(--clr-accent-light);
+  }
+  .border-accent-light {
+    border-color: var(--clr-accent-light);
+  }
+  /*Secondary-dark*/
+  .bg-accent-dark {
+    background-color: var(--clr-accent-dark);
+  }
+  .text-accent-dark {
+    color: var(--clr-accent-dark);
+  }
+  .border-accent-dark {
+    border-color: var(--clr-accent-dark);
   }
 }

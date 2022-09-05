@@ -8,7 +8,7 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
     - [x] projects page filtering via query
     - [ ] tag filter feature in projects page
     - [ ] list all tags that are used in the posts (with amount, e.g.: cpp (6) )
-    - [ ] ? multiple tags query
+    - [ ] rewrite tag query to tag path
   - [x] footer
   - [ ] integrate more of primary color into projects, single project and contact pages
   - [ ] mobile friendly site
