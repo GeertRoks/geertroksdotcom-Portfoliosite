@@ -1,6 +1,7 @@
 <template>
   <div id="page" class="flex flex-col h-screen">
-    <Navbar />
+    <Navbar :showMenu.sync="showMenu"/>
+    <div class="md:hidden opacity-60 bg-black absolute inset-0" v-if="showMenu"></div>
 
     <!-- projects -->
     <main class="flex-grow">
@@ -29,21 +30,10 @@ export default {
       return { error };
     }
   },
-  watch: {
-    "$route.query"() {
-      this.$nuxt.refresh();
-    },
+  data() {
+    return {
+      showMenu: false
+    }
   },
-  //methods: {
-  //  getTags: function() {
-  //    let tags = [];
-  //    for (let i = 0; i < projects.length; i++) {
-  //      console.log(projects[i].tags);
-  //      //tags = tags.concat(project.tags);
-  //    }
-  //    console.log("tags: " + tags + ", " + projects.length);
-  //    return { tags }
-  //  }
-  //}
 };
 </script>

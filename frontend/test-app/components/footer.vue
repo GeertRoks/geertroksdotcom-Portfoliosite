@@ -1,9 +1,9 @@
 <template>
   <footer class="h-24 bg-yellow-300 border-t-4 border-gray-400 flex-shrink-0">
     <div
-      class="max-w-6xl h-full m-auto md:px-12 flex flex-row justify-between items-center"
+      class="max-w-6xl h-full m-auto px-4 md:px-12 flex flex-row justify-between items-center"
     >
-      <p class="text-gray-700">2022 | Copyright © Geert Roks</p>
+      <p class="text-gray-700"> {{ new Date().getFullYear() }} &copy; <span class="hidden sm:inline">Copyright,</span> Geert Roks</p>
 
       <ul class="flex flex-row justify-center space-x-3">
         <li>

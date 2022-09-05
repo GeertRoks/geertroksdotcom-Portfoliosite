@@ -1,6 +1,7 @@
 <template>
   <div id="page" class="flex flex-col h-screen">
-    <Navbar />
+    <Navbar :showMenu.sync="showMenu"/>
+    <div class="md:hidden opacity-60 bg-black absolute inset-0" v-if="showMenu"></div>
 
     <!-- contact -->
     <main class="flex-grow">
@@ -38,5 +39,10 @@
 <script>
 export default {
   name: "ContactPage",
+  data() {
+    return {
+      showMenu: false
+    }
+  },
 };
 </script>

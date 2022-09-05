@@ -17,17 +17,19 @@
 }
 
 @layer utilities {
-  .aspect-square {
-    aspect-ratio: 1 / 1;
-  }
-  .h-screen-40 {
-    height: 40vh;
-  }
-  .h-screen-50 {
-    height: 50vh;
-  }
-  .h-screen-60 {
-    height: 60vh;
+  @variants responsive {
+    .aspect-square {
+      aspect-ratio: 1 / 1;
+    }
+    .h-screen-40 {
+      height: 40vh;
+    }
+    .h-screen-50 {
+      height: 50vh;
+    }
+    .h-screen-60 {
+      height: 60vh;
+    }
   }
 
   /* Custom colors */

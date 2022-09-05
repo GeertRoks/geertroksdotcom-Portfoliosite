@@ -1,6 +1,7 @@
 <template>
   <div id="page" class="flex flex-col h-screen">
-    <Navbar />
+    <Navbar :showMenu.sync="showMenu"/>
+    <div class="md:hidden opacity-60 bg-black absolute inset-0" v-if="showMenu"></div>
 
     <main class="flex-grow">
       <!-- About quick view -->
@@ -60,6 +61,7 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import ProjectGrid from "../components/project-grid.vue";
 export default {
     name: "IndexPage",
@@ -71,6 +73,11 @@ export default {
         const about = await $content("about").fetch();
         return { featured_projects, about };
     },
-    components: { ProjectGrid }
+    components: { ProjectGrid },
+    data() {
+      return {
+        showMenu: false
+      }
+    },
 };
 </script>

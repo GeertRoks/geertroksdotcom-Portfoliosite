@@ -1,6 +1,7 @@
 <template>
   <div id="page" class="flex flex-col h-screen">
-    <Navbar />
+    <Navbar :showMenu.sync="showMenu"/>
+    <div class="md:hidden opacity-60 bg-black absolute inset-0" v-if="showMenu"></div>
 
     <!-- Project page -->
     <main class="flex-grow mb-12">
@@ -8,11 +9,11 @@
         <img
           v-bind:src="project.image"
           alt="project image"
-          class="h-screen-60 w-full object-cover"
+          class="h-screen-40 md:h-screen-60 w-full object-cover"
         />
-        <div class="w-text">
+        <div class="w-text px-4">
           <h1
-            class="text-5xl font-medium text-gray-900 leading-tight mt-0 mb-2"
+            class="text-5xl font-medium text-gray-900 leading-tight mt-0 mb-3 sm:mb-2"
           >
             {{ project.title }}
           </h1>
@@ -38,6 +39,11 @@ export default {
   async asyncData({ $content, params }) {
     const project = await $content("portfolio", params.slug).fetch();
     return { project };
+  },
+  data() {
+    return {
+      showMenu: false
+    }
   },
 };
 </script>

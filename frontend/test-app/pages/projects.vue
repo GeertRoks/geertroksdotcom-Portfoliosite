@@ -1,6 +1,7 @@
 <template>
   <div id="page" class="flex flex-col h-screen">
-    <Navbar />
+    <Navbar :showMenu.sync="showMenu"/>
+    <div class="md:hidden opacity-60 bg-black absolute inset-0" v-if="showMenu"></div>
 
     <!-- projects -->
     <main class="flex-grow">
@@ -26,6 +27,11 @@ export default {
       return { projects };
     } catch (error) {
       return { error };
+    }
+  },
+  data() {
+    return {
+      showMenu: false
     }
   },
 };
