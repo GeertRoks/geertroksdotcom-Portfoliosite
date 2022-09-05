@@ -5,6 +5,7 @@
     <!-- projects -->
     <main class="flex-grow">
       <section class="py-16 m-auto max-w-6xl">
+        <h1 class="text-5xl mb-8">My Projects</h1>
         <ProjectGrid :projects="projects" />
         <!-- -->
       </section>
@@ -17,14 +18,9 @@
 <script>
 export default {
   name: "projectsPage",
-  async asyncData({ $content, query }) {
+  async asyncData({ $content }) {
     try {
-      let query_tags = [];
-      if (query.tags) {
-        query_tags = query.tags.split(",");
-      }
       const projects = await $content("portfolio")
-        .where({ tags: { $contains: query_tags } })
         .sortBy("date", "desc")
         .fetch();
       return { projects };
@@ -32,21 +28,5 @@ export default {
       return { error };
     }
   },
-  watch: {
-    "$route.query"() {
-      this.$nuxt.refresh();
-    },
-  },
-  //methods: {
-  //  getTags: function() {
-  //    let tags = [];
-  //    for (let i = 0; i < projects.length; i++) {
-  //      console.log(projects[i].tags);
-  //      //tags = tags.concat(project.tags);
-  //    }
-  //    console.log("tags: " + tags + ", " + projects.length);
-  //    return { tags }
-  //  }
-  //}
 };
 </script>

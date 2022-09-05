@@ -41,15 +41,9 @@
 
       <!-- Projects quick view -->
       <section class="py-16 m-auto max-w-6xl">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2 mb-12">
-          <client-only>
-            <Card
-              v-for="project in projects"
-              :key="project.slug"
-              :project="project"
-            />
-          </client-only>
-        </div>
+
+        <ProjectGrid :projects="featured_projects" />
+
         <div class="w-full flex items-center">
           <button
             class="border-2 border-yellow-600 text-yellow-600 font-bold py-5 my-2 mx-auto px-32"
@@ -66,15 +60,17 @@
 </template>
 
 <script>
+import ProjectGrid from "../components/project-grid.vue";
 export default {
-  name: "IndexPage",
-  async asyncData({ $content, params }) {
-    const projects = await $content("portfolio")
-      .where({ featured: true })
-      .sortBy("date", "desc")
-      .fetch();
-    const about = await $content("about").fetch();
-    return { projects, about };
-  },
+    name: "IndexPage",
+    async asyncData({ $content, params }) {
+        const featured_projects = await $content("portfolio")
+            .where({ featured: true })
+            .sortBy("date", "desc")
+            .fetch();
+        const about = await $content("about").fetch();
+        return { featured_projects, about };
+    },
+    components: { ProjectGrid }
 };
 </script>
