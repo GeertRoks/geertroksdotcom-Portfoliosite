@@ -6,10 +6,12 @@
         alt="project-image"
         class="w-full aspect-square object-cover"
       />
-      <div class="px-6">
-        <h1 class="text-2xl font-bold">{{ project.title }}</h1>
-        <h3 class="text-lg">{{ project.date }} {{ project.year }}</h3>
-        <ul class="flex flex-row space-x-2">
+      <div class="px-4">
+        <div class="flex flex-row justify-between mb-2 space-x-2">
+          <h1 class="text-2xl font-bold">{{ project.title }}</h1>
+          <h3 class="text-lg flex-shrink-0">{{ project.date | formatDate }}</h3>
+        </div>
+        <ul class="flex flex-row space-x-2 mb-1">
           <Tag
             v-for="tag of project.tags"
             :key="project.slug + '-' + tag"

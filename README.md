@@ -8,9 +8,9 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
     - [x] projects page filtering via query
     - [x] rewrite tag query to tag path
   - [x] footer
-  - [ ] Make projects load staticaly on the server (ie. remove client-only tags, but without the hydration error popping up)
   - [ ] integrate more of primary color into projects, single project and contact pages
-  - [ ] fix card date (move it to right upper corner, just below the image)
+  - [ ] Make projects load staticaly on the server (ie. remove client-only tags, but without the hydration error popping up)
+  - [x] fix card date (move it to right upper corner, just below the image)
   - [ ] fix nav bar scroll issue with long scrolls (it disappears at a random time; probably because of a wrapper for the footer and overflow in the wrong div) It acctually looks good though, but has to be implementent in a more asteatically pleasing way then. For example disappear when passing the tags in a post and reapearing when scrolling up (firefox style)
   - [x] make copyright year dependent on current year
   - [x] mobile friendly site
@@ -21,6 +21,7 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
     - [x] fix footer in mobile form
 
 #### Production:
+  - [ ] write content
   - [ ] dockerize project
     - [ ] dockerize nuxt project
     - [ ] dockerize static file server

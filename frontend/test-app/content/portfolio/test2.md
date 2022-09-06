@@ -1,5 +1,5 @@
 ---
-title: Test nr.2
+title: Long title with a lot of words in it
 description: "Just wanting to say hi to the world."
 image: http://localhost:3434/images/street1.jpg
 date: 2022-02

@@ -12,11 +12,10 @@
           class="h-screen-40 md:h-screen-60 w-full object-cover"
         />
         <div class="w-text px-4">
-          <h1
-            class="text-5xl font-medium text-gray-900 leading-tight mt-0 mb-3 sm:mb-2"
-          >
-            {{ project.title }}
-          </h1>
+        <div class="flex flex-row justify-between mb-2 space-x-2 items-end">
+          <h1 class="text-5xl font-medium text-gray-900 leading-tight mt-0 mb-3 sm:mb-2">{{ project.title }}</h1>
+          <h3 class="text-2xl flex-shrink-0 mb-5">{{ project.date | formatDate }}</h3>
+        </div>
           <h3 class="text-lg font-semibold text-gray-600 mb-2">
             {{ project.description }}
           </h3>
