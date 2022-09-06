@@ -1,5 +1,5 @@
 <template>
-  <div id="page" class="flex flex-col h-screen">
+  <div id="page" class="flex flex-col h-screen overflow-scroll">
     <Navbar :showMenu.sync="showMenu"/>
     <div class="md:hidden opacity-60 bg-black absolute inset-0" v-if="showMenu"></div>
 
