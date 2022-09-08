@@ -19,6 +19,8 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
     - [x] give text a little margin in mobile view
     - [x] fix navbar mobile menu drop down behavior into overlay behavior
     - [x] fix footer in mobile form
+  - [ ] make contact form operational
+    - [ ] send data to email
 
   - optional:
     - [ ] Let navbar disapear when scrolling long, so more room for reading, but reapear when scrolling up (firefox app style)
@@ -26,8 +28,8 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
 #### Production:
   - [ ] write content
   - [ ] dockerize project
-    - [ ] dockerize nuxt project
-    - [ ] dockerize static file server
+    - [x] dockerize nuxt project
+    - [x] dockerize static file server
     - [ ] orgestrate with docker compose
   - [ ] use `.env` file for settings
     - [ ] add image server location
