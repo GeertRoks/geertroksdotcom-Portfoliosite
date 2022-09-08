@@ -9,7 +9,7 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
     - [x] rewrite tag query to tag path
   - [x] footer
   - [ ] integrate more of primary color into projects, single project and contact pages
-  - [ ] Make projects load staticaly on the server (ie. remove client-only tags, but without the hydration error popping up)
+  - [x] Make projects load staticaly on the server (ie. remove client-only tags, but without the hydration error popping up) -> only shows in dev mode, so no problem
   - [x] fix card date (move it to right upper corner, just below the image)
   - [x] fix nav bar scroll issue with long scrolls 
   - [x] make copyright year dependent on current year

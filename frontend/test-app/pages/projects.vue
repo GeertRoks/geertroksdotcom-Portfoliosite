@@ -21,10 +21,13 @@ export default {
   name: "projectsPage",
   async asyncData({ $content }) {
     try {
-      const projects = await $content("portfolio")
-        .sortBy("date", "desc")
-        .fetch();
-      return { projects };
+      if (process.server) {
+        const projects = await $content("portfolio")
+          .only(['slug', 'title', 'date', 'description', 'tags', 'image'])
+          .sortBy("date", "desc")
+          .fetch();
+        return { projects };
+      }
     } catch (error) {
       return { error };
     }

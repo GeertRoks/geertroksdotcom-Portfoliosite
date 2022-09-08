@@ -36,8 +36,10 @@
 <script>
 export default {
   async asyncData({ $content, params }) {
-    const project = await $content("portfolio", params.slug).fetch();
-    return { project };
+    if (process.server) {
+      const project = await $content("portfolio", params.slug).fetch();
+      return { project };
+    }
   },
   data() {
     return {

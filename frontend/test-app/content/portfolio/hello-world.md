@@ -6,7 +6,7 @@ date: 2019-06
 featured: false
 tags:
  - test
- - c++
+ - cpp
 ---
 
 ## Hello

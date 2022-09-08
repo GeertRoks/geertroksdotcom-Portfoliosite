@@ -6,7 +6,7 @@ date: 2022-02
 featured: true
 tags:
   - test
-  - c++
+  - cpp
   - hello
 ---
 
