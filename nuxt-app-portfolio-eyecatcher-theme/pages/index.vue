@@ -44,9 +44,9 @@
 
         <ProjectGrid :projects="featured_projects" />
 
-        <div class="w-full flex items-center">
+        <div class="w-full flex items-center justify-center">
           <button
-            class="border-2 border-yellow-600 text-yellow-600 font-bold py-5 my-2 mx-auto px-32"
+            class="border-2 border-yellow-600 text-yellow-600 font-bold text-lg py-4 my-2 max-w-sm w-full"
             onclick="window.location.href='/projects';"
           >
             See more
