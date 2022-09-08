@@ -19,6 +19,7 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
     - [x] give text a little margin in mobile view
     - [x] fix navbar mobile menu drop down behavior into overlay behavior
     - [x] fix footer in mobile form
+    - [x] homepage avatar above name in mobile view
   - [ ] make contact form operational
     - [ ] send data to email
 

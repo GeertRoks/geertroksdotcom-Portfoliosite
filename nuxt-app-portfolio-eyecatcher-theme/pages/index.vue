@@ -5,27 +5,26 @@
 
     <main class="flex-grow">
       <!-- About quick view -->
-      <section class="bg-primary pb-16 md:py-16">
+      <section class="bg-primary py-8 md:py-16">
         <div
-          class="m-auto max-w-6xl px-6 md:pl-6 md:grid md:grid-cols-2 lg:grid-cols-5"
+          class="m-auto max-w-6xl px-6 md:pl-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5"
         >
           <div class="md:my-auto md:pr-16 lg:col-span-3">
             <h1
-              class="text-6xl font-bold text-center w-full py-20 leading-tight md:text-left md:py-10"
+              class="text-5xl text-center pb-3 font-bold w-full leading-tight lg:text-6xl md:text-left md:py-10"
             >
-              Geert <br class="sm:hidden" />
-              Roks
+              Geert Roks
             </h1>
             <p>{{ about.description }}</p>
-            <div class="md:flex md:flex-row md:space-x-4">
+            <div class="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-4">
               <button
-                class="w-full bg-accent-light text-white font-bold py-4 my-2"
+                class="w-full bg-accent-light text-white font-bold py-4"
                 onclick="window.location.href='/projects';"
               >
                 Projects
               </button>
               <button
-                class="w-full border-2 border-accent-light text-accent-light font-bold py-4 my-2"
+                class="w-full border-2 border-accent-light text-accent-light font-bold py-4"
                 onclick="window.location.href='/contact';"
               >
                 Contact me
@@ -35,13 +34,13 @@
           <img
             v-bind:src="about.image"
             alt="picture of me"
-            class="w-full aspect-square object-cover my-10 md:p-10 md:my-auto lg:col-span-2"
+            class="w-8/12 sm:w-6/12 order-first m-auto md:order-none md:w-full aspect-square object-cover mb-7 md:p-10 md:my-auto lg:col-span-2"
           />
         </div>
       </section>
 
       <!-- Projects quick view -->
-      <section class="py-16 m-auto max-w-6xl">
+      <section class="py-8 md:py-16 m-auto max-w-6xl">
 
         <ProjectGrid :projects="featured_projects" />
 
