@@ -92,6 +92,9 @@ sw.*
 #-------------------------------------------------------------------------
 #Custom additions
 *.jpg
+*.png
+*.mp3
+*.mp4
 nuxt-app-portfolio-eyecatcher-theme/dist
 static-file-server/public
 package-lock.json

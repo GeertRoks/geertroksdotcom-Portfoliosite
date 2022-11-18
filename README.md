@@ -23,6 +23,17 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
   - [ ] make contact form operational
     - [ ] send data to email
     - [ ] setup form endpoint
+  - [ ] Media support for project pages
+    - [ ] video support
+      - [ ] mp4
+      - [ ] Youtube
+    - [ ] image support
+      - [ ] jpg
+      - [ ] Gallery option
+      - [ ] size option (max-width, max-height)
+      - [ ] placement options (left, right, center)
+    - [ ] audio support
+      - [ ] mp3
 
   - optional:
     - [ ] Let navbar disapear when scrolling long, so more room for reading, but reapear when scrolling up (firefox app style)
