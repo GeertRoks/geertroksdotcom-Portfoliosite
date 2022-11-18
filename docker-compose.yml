@@ -1,23 +1,17 @@
 version: '3'
 services:
-  db:
-    container_name: PW-mongo-db
-    image: mongo
-    ports:
-      - '27017:27017'
-    volumes:
-      - data:/data/db
-
-  api:
-    container_name: PW-node-api
+  nuxt:
+    container_name: Eyecatcher-nuxt
     restart: always
-    build: .
+    build: ./nuxt-app-portfolio-eyecatcher-theme/.
     ports:
-      - '3000:3000'
-    links:
-      - "db:mongo"
-    volumes:
-      - ./frontend:/usr/src/app
+      - '80:3000'
 
-volumes:
-  data:
+  images:
+    container_name: Eyecatcher-static-file-server
+    restart: always
+    build: ./static-file-server/.
+    ports:
+      - '3434:3434'
+    volumes:
+      - ./static-file-server/public/images/:/usr/src/app/public/images/

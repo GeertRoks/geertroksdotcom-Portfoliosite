@@ -22,9 +22,11 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
     - [x] homepage avatar above name in mobile view
   - [ ] make contact form operational
     - [ ] send data to email
+    - [ ] setup form endpoint
 
   - optional:
     - [ ] Let navbar disapear when scrolling long, so more room for reading, but reapear when scrolling up (firefox app style)
+    - [ ] add blog
 
 #### Production:
   - [ ] write content
