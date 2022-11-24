@@ -1,17 +1,17 @@
 <template>
   <nuxt-link :to="{ path: '/project/' + project.slug }">
-    <article class="cursor-pointer hover:bg-gray-100">
+    <article class="h-full cursor-pointer bg-white border-accent-light hover:shadow-xl">
       <img
         v-bind:src="project.image"
         alt="project-image"
         class="w-full aspect-square object-cover"
       />
-      <div class="px-4">
-        <div class="flex flex-row justify-between mb-2 space-x-2">
+      <div class="px-4 pt-3 pb-4">
+        <div class="flex flex-row justify-between mb-4 space-x-2">
           <h1 class="text-2xl font-bold">{{ project.title }}</h1>
           <h3 class="text-lg flex-shrink-0">{{ project.date | formatDate }}</h3>
         </div>
-        <ul class="flex flex-row space-x-2 mb-1">
+        <ul class="flex flex-row space-x-2 mb-2">
           <Tag
             v-for="tag of project.tags"
             :key="project.slug + '-' + tag"

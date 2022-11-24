@@ -1,22 +1,22 @@
 <template>
-  <div id="page" class="flex flex-col h-screen overflow-scroll">
+  <div id="page" class="flex flex-col h-screen overflow-scroll bg-gray-100">
     <Navbar :showMenu.sync="showMenu"/>
     <div class="md:hidden opacity-60 bg-black absolute inset-0" v-if="showMenu"></div>
 
     <!-- Project page -->
-    <main class="flex-grow mb-12">
-      <article class="w-article">
+    <main class="flex-grow">
+      <article class="w-article bg-white pb-12">
         <img
           v-bind:src="project.image"
           alt="project image"
           class="h-screen-40 md:h-screen-60 w-full object-cover"
         />
-        <div class="w-text px-4">
+        <div class="w-text px-4 py-4">
         <div class="flex flex-row justify-between mb-2 space-x-2 items-end">
-          <h1 class="text-5xl font-medium text-gray-900 leading-tight mt-0 mb-3 sm:mb-2">{{ project.title }}</h1>
-          <h3 class="text-2xl flex-shrink-0 mb-5">{{ project.date | formatDate }}</h3>
+          <h1 class="text-3xl md:text-5xl font-medium text-gray-900 leading-tight mt-0 mb-3 sm:mb-2">{{ project.title }}</h1>
+          <h3 class="text-lg md:text-2xl flex-shrink-0 mb-5">{{ project.date | formatDate }}</h3>
         </div>
-          <h3 class="text-lg font-semibold text-gray-600 mb-2">
+          <h3 class="text-lg text-justify font-semibold text-gray-600 mb-2">
             {{ project.description }}
           </h3>
           <ul class="flex flex-row space-x-2">

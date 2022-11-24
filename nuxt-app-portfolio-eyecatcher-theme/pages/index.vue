@@ -1,5 +1,5 @@
 <template>
-  <div id="page" class="flex flex-col h-screen overflow-scroll">
+  <div id="page" class="flex flex-col h-screen overflow-scroll bg-gray-100">
     <Navbar :showMenu.sync="showMenu"/>
     <div class="md:hidden opacity-60 bg-black absolute inset-0" v-if="showMenu"></div>
 
@@ -18,13 +18,13 @@
             <p>{{ about.description }}</p>
             <div class="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-4">
               <button
-                class="w-full bg-accent-light text-white font-bold py-4"
+                class="btn btn-primary"
                 onclick="window.location.href='/projects';"
               >
                 Projects
               </button>
               <button
-                class="w-full border-2 border-accent-light text-accent-light font-bold py-4"
+                class="btn btn-secondary"
                 onclick="window.location.href='/contact';"
               >
                 Contact me
@@ -42,11 +42,11 @@
       <!-- Projects quick view -->
       <section class="py-8 md:py-16 m-auto max-w-6xl">
 
-        <ProjectGrid :projects="featured_projects" />
+        <ProjectGrid :projects="featured_projects" class="mb-8" />
 
         <div class="w-full flex items-center justify-center">
           <button
-            class="border-2 border-yellow-600 text-yellow-600 font-bold text-lg py-4 my-2 max-w-sm w-full"
+            class="btn btn-large btn-primary"
             onclick="window.location.href='/projects';"
           >
             See more

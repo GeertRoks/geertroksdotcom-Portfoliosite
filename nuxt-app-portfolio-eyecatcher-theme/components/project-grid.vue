@@ -1,5 +1,5 @@
 <template>
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-9">
     <Card v-for="project in projects" :key="project.slug" :project="project" />
   </div>
 </template>

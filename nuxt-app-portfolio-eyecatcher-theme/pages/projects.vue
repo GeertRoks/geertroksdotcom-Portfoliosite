@@ -1,12 +1,12 @@
 <template>
-  <div id="page" class="flex flex-col h-screen overflow-scroll">
+  <div id="page" class="flex flex-col h-screen overflow-scroll bg-gray-100">
     <Navbar :showMenu.sync="showMenu"/>
     <div class="md:hidden opacity-60 bg-black absolute inset-0" v-if="showMenu"></div>
 
     <!-- projects -->
     <main class="flex-grow">
       <section class="py-16 m-auto max-w-6xl">
-        <h1 class="text-5xl mb-8">My Projects</h1>
+        <h1 class="text-4xl font-bold mb-8">My Projects</h1>
         <ProjectGrid :projects="projects" />
         <!-- -->
       </section>

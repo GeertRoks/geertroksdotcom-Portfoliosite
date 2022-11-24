@@ -48,3 +48,18 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
   - [ ] use `.env` file for settings
     - [ ] add image server location
   - [ ] GitHub actions for automatic updating of content to server
+
+
+### Color feedback
+  - all buttons same color + hover
+  - line under navbar
+  - hover over navbar elements + color for active page
+  - line under headings for extra color
+  - hover over social buttons (same as local links)
+  - footer white for less attention
+  - buttons under project page for other projects and back to all projects
+  - tags not clickable in cards, but use a filter on top
+  - Social buttons svg gray-100 (same as background)
+  - headers left allign or center?
+  - vertical line left next to homepage title/about for accent  (possiblity)
+  - contact page: alternative layout with 2/3 contact form on left and picture on right

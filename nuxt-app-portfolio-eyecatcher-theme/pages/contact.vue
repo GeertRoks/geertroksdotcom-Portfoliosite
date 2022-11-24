@@ -1,45 +1,41 @@
 <template>
-  <div id="page" class="flex flex-col h-screen overflow-scroll">
+  <div id="page" class="flex flex-col h-screen overflow-scroll bg-primary">
     <Navbar :showMenu.sync="showMenu"/>
     <div class="md:hidden opacity-60 bg-black absolute inset-0" v-if="showMenu"></div>
 
     <!-- contact -->
     <main class="flex-grow">
-      <section id="contact" class="py-16 m-auto max-w-6xl px-6 bg-primary">
-        <div class="text-center">
-          <h1
-            class="text-4xl font-bold text-center w-full leading-tight"
-          >
-            Contact
-          </h1>
-          <p class="text-center">Reach out to me</p>
+      <section id="contact" class="py-10 my-20 m-auto max-w-6xl bg-gray-100 ">
+        <div class="">
+          <h1 class="text-4xl font-bold w-full leading-tight">Contact</h1>
+          <p class="">Reach out to me</p>
         </div>
-        <form action="" class="w-10/12 m-auto">
-          <label for="name" class="font-bold text-sm">Name</label><br />
-          <input type="text" id="name" class="border-2 w-full h-12 mb-4" v-model="form.name" /><br />
+        <form action="" class="w-10/12 m-auto px-12 py-6">
+          <label for="name" class="font-bold text-sm text-accent-light">Name</label><br />
+          <input type="text" id="name" class="w-full h-12 mb-4 border-b-4 bg-transparent border-accent-light active:border-none" v-model="form.name" /><br />
 
           <label for="email" class="font-bold text-sm">E-mail address</label><br />
-          <input type="text" id="email" class="border-2 w-full h-12 mb-4" v-model="form.email" /><br />
+          <input type="text" id="email" class="w-full h-12 mb-4 border-b-4 bg-transparent border-accent-light" v-model="form.email" /><br />
 
           <label for="subject" class="font-bold text-sm">Subject</label><br />
-          <input type="text" id="subject" class="border-2 w-full h-12 mb-4" v-model="form.subject" /><br />
+          <input type="text" id="subject" class="w-full h-12 mb-4 border-b-4 bg-transparent border-accent-light" v-model="form.subject" /><br />
 
           <label for="message" class="font-bold text-sm">Message</label><br />
           <textarea
             name="message"
             id="message"
-            rows="10"
-            class="border-2 w-full mb-12"
+            rows="5"
+            class="w-full mb-12 border-b-4 bg-transparent border-accent-light"
             v-model="form.message"
           ></textarea>
           <br />
-          <div class="w-full flex items-center justify-center">
-            <input type="submit" value="Send" class="max-w-sm w-full m-auto py-4">
+          <div class="w-full flex">
+            <input type="submit" value="Send" class="w-48 py-4 bg-accent-light">
           </div>
         </form>
       </section>
 
-      <!-- Debug -->
+      <!--
       <div class="max-w-6xl m-auto">
         <h3 class="text-2xl">Form Data</h3>
         <p>name: {{form.name}}</p>
@@ -47,7 +43,7 @@
         <p>subject: {{form.subject}}</p>
         <p class="whitespace-pre-line">message: {{form.message}}</p>
       </div>
-      <!-- /Debug -->
+      -->
     </main>
 
     <Footer />

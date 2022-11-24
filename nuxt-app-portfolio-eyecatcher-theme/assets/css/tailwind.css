@@ -1,8 +1,8 @@
 :root {
-  --clr-secondary: #FAD54C;
-  --clr-primary: #EFBC06;
-  --clr-accent-light: #4C87A9;
-  --clr-accent-dark: #975635;
+  --clr-primary: #FFC030;
+  --clr-background: #E6E6E6;
+  --clr-accent: #4C87A9;
+  --clr-accent-100: #E6F0F5;
   --clr-white: #FFFFFF;
   --clr-black: #1C1C1C;
 }
@@ -13,6 +13,24 @@
 @layer base {
   p {
     @apply mb-2 text-justify;
+  }
+  a.nuxt-link-exact-active:not(#nav-home) {
+    @apply border-b-2 border-primary;
+  }
+  button.btn-primary {
+    @apply bg-accent-500 text-white hover:bg-accent-700;
+  }
+  button.btn-secondary {
+    @apply border-2 border-accent-500 text-accent-500 hover:bg-accent-700 hover:text-white;
+  }
+  button.btn {
+    @apply w-full font-bold py-4;
+  }
+  button.btn-large {
+    @apply text-lg my-2 max-w-sm;
+  }
+  span.btn-svg {
+    @apply text-accent-500 hover:text-accent-700;
   }
 }
 
@@ -34,6 +52,7 @@
 
   /* Custom colors */
   /*Primary*/
+  /*
   .bg-primary {
     background-color: var(--clr-primary);
   }
@@ -43,27 +62,21 @@
   .border-primary {
     border-color: var(--clr-primary);
   }
-  /*Secondary*/
-  .bg-secondary {
-    background-color: var(--clr-secondary);
-  }
-  .text-secondary {
-    color: var(--clr-secondary);
-  }
-  .border-secondary {
-    border-color: var(--clr-secondary);
-  }
+  */
   /*Secondary-light*/
+  /*
   .bg-accent-light {
-    background-color: var(--clr-accent-light);
+    background-color: var(--clr-accent);
   }
-  .text-secondary-light {
-    color: var(--clr-accent-light);
+  .text-accent-light {
+    color: var(--clr-accent);
   }
   .border-accent-light {
-    border-color: var(--clr-accent-light);
+    border-color: var(--clr-accent);
   }
+  */
   /*Secondary-dark*/
+  /*
   .bg-accent-dark {
     background-color: var(--clr-accent-dark);
   }
@@ -73,4 +86,5 @@
   .border-accent-dark {
     border-color: var(--clr-accent-dark);
   }
+  */
 }
