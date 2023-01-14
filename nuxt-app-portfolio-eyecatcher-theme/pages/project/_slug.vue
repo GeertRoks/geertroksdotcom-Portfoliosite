@@ -23,7 +23,7 @@
             <tag v-for="tag of project.tags" :key="tag" :tag="tag" />
           </ul>
           <div class="mt-4 mx-auto">
-            <nuxt-content class="max-w-none" :document="project" />
+            <ContentDoc class="max-w-none" :document="project" />
           </div>
         </div>
       </article>
