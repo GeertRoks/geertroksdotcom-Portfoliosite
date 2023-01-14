@@ -1,10 +1,10 @@
 <template>
   <nuxt-link :to="{ path: '/project/' + project.slug }">
-    <article class="h-full cursor-pointer bg-white border-accent-light hover:shadow-xl">
+    <article class="h-full cursor-pointer bg-white shadow-md hover:shadow-xl border-b border-accent-500 sm:rounded-md">
       <img
         v-bind:src="project.image"
         alt="project-image"
-        class="w-full aspect-square object-cover"
+        class="w-full aspect-square object-cover rounded-t-md"
       />
       <div class="px-4 pt-3 pb-4">
         <div class="flex flex-row justify-between mb-4 space-x-2">

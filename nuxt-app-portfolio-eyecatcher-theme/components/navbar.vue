@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full bg-gray-100 sticky top-0 z-50 border-b-4 border-primary">
+  <header class="w-full bg-white sticky top-0 z-50 border-b-4 border-primary-500">
     <div class="max-w-6xl m-auto px-6">
       <nav class="py-6 md:py-8 mx-auto md:flex md:justify-between md:items-center">
         <div class="flex items-center justify-between">
@@ -26,7 +26,7 @@
         <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
         <div
           :class="showMenu ? 'block absolute left-0 right-0 top-16 px-12 pb-12' : ''"
-          class="bg-gray-100 md:static md:pb-0"
+          class="bg-white md:static md:pb-0"
         >
           <ul
             :class="showMenu ? 'flex' : 'hidden'"

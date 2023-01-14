@@ -15,7 +15,7 @@
     @apply mb-2 text-justify;
   }
   a.nuxt-link-exact-active:not(#nav-home) {
-    @apply border-b-2 border-primary;
+    @apply border-b-2 border-primary-500;
   }
   button.btn-primary {
     @apply bg-accent-500 text-white hover:bg-accent-700;
@@ -24,7 +24,7 @@
     @apply border-2 border-accent-500 text-accent-500 hover:bg-accent-700 hover:text-white;
   }
   button.btn {
-    @apply w-full font-bold py-4;
+    @apply w-full font-bold py-4 rounded-full;
   }
   button.btn-large {
     @apply text-lg my-2 max-w-sm;

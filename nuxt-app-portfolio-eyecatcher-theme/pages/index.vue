@@ -1,11 +1,11 @@
 <template>
-  <div id="page" class="flex flex-col h-screen overflow-scroll bg-gray-100">
+  <div id="page" class="flex flex-col h-screen overflow-scroll bg-white">
     <Navbar :showMenu.sync="showMenu"/>
     <div class="md:hidden opacity-60 bg-black absolute inset-0" v-if="showMenu"></div>
 
     <main class="flex-grow">
       <!-- About quick view -->
-      <section class="bg-primary py-8 md:py-16">
+      <section class="bg-primary-500 py-8 md:py-16">
         <div
           class="m-auto max-w-6xl px-6 md:pl-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5"
         >

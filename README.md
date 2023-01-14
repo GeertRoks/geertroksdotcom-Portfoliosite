@@ -8,7 +8,7 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
     - [x] projects page filtering via query
     - [x] rewrite tag query to tag path
   - [x] footer
-  - [ ] integrate more of primary color into projects, single project and contact pages
+  - [x] integrate more of primary color into projects, single project and contact pages
   - [x] Make projects load staticaly on the server (ie. remove client-only tags, but without the hydration error popping up) -> only shows in dev mode, so no problem
   - [x] fix card date (move it to right upper corner, just below the image)
   - [x] fix nav bar scroll issue with long scrolls 
@@ -22,7 +22,7 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
     - [x] homepage avatar above name in mobile view
   - [ ] make contact form operational
     - [ ] send data to email
-    - [ ] setup form endpoint
+    - [ ] setup form endpoint (formspree.io? or selfhosted?)
   - [ ] Media support for project pages
     - [ ] video support
       - [ ] mp4
@@ -34,6 +34,7 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
       - [ ] placement options (left, right, center)
     - [ ] audio support
       - [ ] mp3
+    - [ ] project view next/prev project if it is a series. Add a line under the article and then two buttons
 
   - optional:
     - [ ] Let navbar disapear when scrolling long, so more room for reading, but reapear when scrolling up (firefox app style)

@@ -2,7 +2,18 @@ module.exports = {
   content: [],
   theme: {
     colors: {
-      'primary': '#FFC030',
+      'primary': {
+        50:  '#FFF9EB',
+        100: '#FFEDC2',
+        200: '#FFE099',
+        300: '#FFD470',
+        400: '#FFC847',
+        500: '#FFC030',
+        600: '#FFB60A',
+        700: '#F5AB00',
+        800: '#CC8F00',
+        900: '#A37200'
+      },
       'accent': {
         50:  '#B9D1DF',
         100: '#9CBFD3',

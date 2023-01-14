@@ -1,5 +1,5 @@
 <template>
-  <div id="page" class="flex flex-col h-screen overflow-scroll bg-gray-100">
+  <div id="page" class="flex flex-col h-screen overflow-scroll bg-white">
     <Navbar :showMenu.sync="showMenu"/>
     <div class="md:hidden opacity-60 bg-black absolute inset-0" v-if="showMenu"></div>
 
@@ -9,7 +9,7 @@
         <img
           v-bind:src="project.image"
           alt="project image"
-          class="h-screen-40 md:h-screen-60 w-full object-cover"
+          class="h-screen-40 md:h-screen-60 w-full object-cover rounded-b-md"
         />
         <div class="w-text px-4 py-4">
         <div class="flex flex-row justify-between mb-2 space-x-2 items-end">
