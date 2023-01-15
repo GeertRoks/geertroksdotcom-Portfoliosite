@@ -59,22 +59,32 @@
   </div>
 </template>
 
+<script setup>
+const { data: featured_projects } = await useAsyncData('featured_projects', () => queryContent('/portfolio')
+  .where({ featured: true })
+  .limit(6)
+  .only(['slug', 'title', 'date', 'description', 'tags', 'image'])
+  .sort({ date: -1})
+  .find())
+const { data: about } = await useAsyncData('about', () => queryContent('/about').find())
+</script>
+
 <script>
 import ProjectGrid from "../components/project-grid.vue";
 export default {
     name: "IndexPage",
-    async asyncData({ $content }) {
-      if (process.server) {
-        const featured_projects = await $content("portfolio")
-            .where({ featured: true })
-            .only(['slug', 'title', 'date', 'description', 'tags', 'image'])
-            .sortBy("date", "desc")
-            .limit(6)
-            .fetch();
-        const about = await $content("about").fetch();
-        return { featured_projects, about };
-      }
-    },
+    //async asyncData({ $content }) {
+    //  if (process.server) {
+    //    const featured_projects = await $content("portfolio")
+    //        .where({ featured: true })
+    //        .only(['slug', 'title', 'date', 'description', 'tags', 'image'])
+    //        .sortBy("date", "desc")
+    //        .limit(6)
+    //        .fetch();
+    //    const about = await $content("about").fetch();
+    //    return { featured_projects, about };
+    //  }
+    //},
     components: { ProjectGrid },
     data() {
       return {

@@ -16,22 +16,14 @@
   </div>
 </template>
 
+<script setup>
+const { data: projects } = await useAsyncData('projects', () => queryContent('/portfolio').only(['slug', 'title', 'date', 'description', 'tags', 'image']).sort({ date: -1}).find())
+console.log("projects: ", projects)
+</script>
+
 <script>
 export default {
   name: "projectsPage",
-  async asyncData({ $content }) {
-    try {
-      if (process.server) {
-        const projects = await $content("portfolio")
-          .only(['slug', 'title', 'date', 'description', 'tags', 'image'])
-          .sortBy("date", "desc")
-          .fetch();
-        return { projects };
-      }
-    } catch (error) {
-      return { error };
-    }
-  },
   data() {
     return {
       showMenu: false

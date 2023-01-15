@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="{ path: '/project/' + project.slug }">
+  <NuxtLink :to="{ path: '/project/' + project.slug }">
     <article class="h-full cursor-pointer bg-white shadow-md hover:shadow-xl border-b border-accent-500 sm:rounded-md">
       <img
         v-bind:src="project.image"
@@ -9,7 +9,7 @@
       <div class="px-4 pt-3 pb-4">
         <div class="flex flex-row justify-between mb-4 space-x-2">
           <h1 class="text-2xl font-bold">{{ project.title }}</h1>
-          <h3 class="text-lg flex-shrink-0">{{ project.date | formatDate }}</h3>
+          <h3 class="text-lg flex-shrink-0">{{ $formatDate(project.date) }}</h3>
         </div>
         <ul class="flex flex-row space-x-2 mb-2">
           <Tag
@@ -21,7 +21,7 @@
         <p>{{ project.description }}</p>
       </div>
     </article>
-  </nuxt-link>
+  </NuxtLink>
 </template>
 
 <script>

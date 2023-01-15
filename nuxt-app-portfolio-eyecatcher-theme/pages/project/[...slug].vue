@@ -14,7 +14,7 @@
         <div class="w-text px-4 py-4">
         <div class="flex flex-row justify-between mb-2 space-x-2 items-end">
           <h1 class="text-3xl md:text-5xl font-medium text-gray-900 leading-tight mt-0 mb-3 sm:mb-2">{{ project.title }}</h1>
-          <h3 class="text-lg md:text-2xl flex-shrink-0 mb-5">{{ project.date | formatDate }}</h3>
+          <h3 class="text-lg md:text-2xl flex-shrink-0 mb-5">{{ $formatDate(project.date) }}</h3>
         </div>
           <h3 class="text-lg text-justify font-semibold text-gray-600 mb-2">
             {{ project.description }}
@@ -23,7 +23,7 @@
             <tag v-for="tag of project.tags" :key="tag" :tag="tag" />
           </ul>
           <div class="mt-4 mx-auto">
-            <ContentDoc class="max-w-none" :document="project" />
+            <ContentRenderer class="max-w-none" :value="project" />
           </div>
         </div>
       </article>
@@ -33,14 +33,18 @@
   </div>
 </template>
 
+<script setup>
+  const { data: project } = await useAsyncData('project', () => queryContent('/portfolio').findOne())
+</script>
+
 <script>
 export default {
-  async asyncData({ $content, params }) {
-    if (process.server) {
-      const project = await $content("portfolio", params.slug).fetch();
-      return { project };
-    }
-  },
+  //async asyncData({ $content, params }) {
+  //  if (process.server) {
+  //    const project = await $content("portfolio", params.slug).fetch();
+  //    return { project };
+  //  }
+  //},
   data() {
     return {
       showMenu: false

@@ -6,7 +6,7 @@
     <!-- projects -->
     <main class="flex-grow">
       <section class="py-16 m-auto max-w-6xl">
-        <h1 class="text-5xl mb-8">Filtered tag: {{ this.$route.params.slug }}</h1>
+        <h1 class="text-5xl mb-8">Filtered tag: {{ route.params.slug[0] }}</h1>
         <ProjectGrid :projects="projects" />
         <!-- -->
       </section>
@@ -16,20 +16,14 @@
   </div>
 </template>
 
+<script setup>
+const route = useRoute()
+const { data: projects } = await useAsyncData('tag-projects', () => queryContent('/portfolio').where({ tags: { $contains: route.params.slug } }).sort({ date: -1 }).find())
+</script>
+
 <script>
 export default {
   name: "tagPage",
-  async asyncData({ $content, params }) {
-    try {
-      const projects = await $content("portfolio")
-        .where({ tags: { $contains: params.slug } })
-        .sortBy("date", "desc")
-        .fetch();
-      return { projects };
-    } catch (error) {
-      return { error };
-    }
-  },
   data() {
     return {
       showMenu: false
