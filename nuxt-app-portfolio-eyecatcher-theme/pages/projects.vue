@@ -6,8 +6,8 @@
     <!-- projects -->
     <main class="flex-grow">
       <section class="py-16 m-auto max-w-6xl">
-        <h1 class="text-4xl font-bold mb-8">My Projects</h1>
-        <ProjectGrid :projects="projects" />
+        <h1 class="text-4xl font-bold mb-8 mx-2">My Projects</h1>
+        <ProjectGrid :projects="projects" class="sm:mx-2" />
         <!-- -->
       </section>
     </main>
@@ -17,8 +17,7 @@
 </template>
 
 <script setup>
-const { data: projects } = await useAsyncData('projects', () => queryContent('/portfolio').only(['slug', 'title', 'date', 'description', 'tags', 'image']).sort({ date: -1}).find())
-console.log("projects: ", projects)
+const { data: projects } = await useAsyncData('projects', () => queryContent('/project').only(['_path', 'title', 'date', 'description', 'tags', 'image']).sort({ date: -1}).find())
 </script>
 
 <script>
