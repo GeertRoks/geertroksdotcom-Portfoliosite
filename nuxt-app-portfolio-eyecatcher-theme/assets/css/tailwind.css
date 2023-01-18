@@ -14,19 +14,22 @@
   p {
     @apply mb-2 text-justify;
   }
-  a.nuxt-link-exact-active:not(#nav-home) {
-    @apply border-b-2 border-primary-500;
+  a.router-link-active.nav-link {
+    @apply border-b-4 border-primary-500;
   }
-  button.btn-primary {
+  .router-link-active.tag * {
+    @apply bg-primary-200;
+  }
+  .btn-primary {
     @apply bg-accent-500 text-white hover:bg-accent-700;
   }
-  button.btn-secondary {
+  .btn-secondary {
     @apply border-2 border-accent-500 text-accent-500 hover:bg-accent-700 hover:text-white;
   }
-  button.btn {
-    @apply w-full font-bold py-4 rounded-full;
+  .btn {
+    @apply w-full font-bold py-4 rounded-full text-center;
   }
-  button.btn-large {
+  .btn-large {
     @apply text-lg my-2 max-w-sm;
   }
   span.btn-svg {
