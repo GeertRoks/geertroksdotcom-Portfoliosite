@@ -2,7 +2,7 @@
   <!-- projects -->
   <main class="flex-grow">
     <section class="py-16 m-auto max-w-6xl">
-      <h1 class="text-4xl font-bold mb-8 mx-2">My Projects</h1>
+      <h1 class="text-4xl font-bold mb-8 mx-2">Filtered tag: {{ route.params.slug[0] }}</h1>
       <ProjectGrid :projects="projects" class="sm:mx-2" />
       <!-- -->
     </section>
@@ -11,12 +11,13 @@
 </template>
 
 <script setup>
-const { data: projects } = await useAsyncData('projects', () => queryContent('/project').only(['_path', 'title', 'date', 'description', 'tags', 'image']).sort({ date: -1}).find())
+const route = useRoute()
+const { data: projects } = await useAsyncData('tag-projects', () => queryContent('/project').where({ tags: { $contains: route.params.slug } }).sort({ date: -1 }).find())
 </script>
 
 <script>
 export default {
-  name: "projectsPage",
+  name: "tagPage",
   data() {
     return {}
   },

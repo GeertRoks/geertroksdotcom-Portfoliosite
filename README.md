@@ -13,6 +13,7 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
   - [x] fix card date (move it to right upper corner, just below the image)
   - [x] fix nav bar scroll issue with long scrolls 
   - [x] make copyright year dependent on current year
+  - [x] fix tag overflow from cards
   - [x] mobile friendly site
     - [x] make nav bar take less height in mobile view
     - [x] make project page image take less height in mobile view
@@ -20,6 +21,7 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
     - [x] fix navbar mobile menu drop down behavior into overlay behavior
     - [x] fix footer in mobile form
     - [x] homepage avatar above name in mobile view
+  - [x] migrate to nuxt v3 when stable
   - [ ] make contact form operational
     - [ ] send data to email
     - [ ] setup form endpoint (formspree.io? or selfhosted?)
@@ -34,9 +36,9 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
       - [ ] placement options (left, right, center)
     - [ ] audio support
       - [ ] mp3
-    - [ ] project view next/prev project if it is a series. Add a line under the article and then two buttons
 
   - optional:
+    - [ ] project view next/prev project if it is a series. Add a line under the article and then two buttons
     - [ ] Let navbar disapear when scrolling long, so more room for reading, but reapear when scrolling up (firefox app style)
     - [ ] add blog
 
