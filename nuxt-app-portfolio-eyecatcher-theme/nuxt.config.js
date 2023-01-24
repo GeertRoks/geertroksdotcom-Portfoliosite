@@ -110,6 +110,7 @@ export default defineNuxtConfig({
     nestedProperties: ["project.tags"],
     markdown: {
       anchorLinks: false,
+      mdc: true,
     },
   },
 
