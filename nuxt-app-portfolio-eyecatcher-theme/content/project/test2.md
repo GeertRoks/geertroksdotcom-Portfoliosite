@@ -105,4 +105,24 @@ table
 
 ## Markdown Components
 
+#### Github code test
 :github
+
+#### Gallery test
+
+::gallery
+---
+images:
+  - link: face1.jpg
+    description: Wow, what a beautifull face! Look at that smile
+  - link: face2.jpg
+    description: Handsome guy, right? Very creative
+  - link: face1.jpg
+  - link: street1.jpg
+  - link: hands.jpg
+  - link: city.jpg
+  - link: texture.jpg
+  - link: face1.jpg
+  - link: face2.jpg
+---
+::

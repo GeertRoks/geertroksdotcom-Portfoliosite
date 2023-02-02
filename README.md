@@ -30,8 +30,8 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
       - [ ] mp4
       - [ ] Youtube
     - [ ] image support
-      - [ ] jpg
-      - [ ] Gallery option
+      - [x] jpg
+      - [x] Gallery option
       - [ ] size option (max-width, max-height)
       - [ ] placement options (left, right, center)
     - [ ] audio support
