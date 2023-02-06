@@ -142,3 +142,11 @@ link: 'showcase-take2-2.mp4'
 video_id: 'iP1AoH2Ab78'
 ---
 ::
+
+#### Audio mp3 test
+
+::audio-mp3
+---
+file: 'audio-test.mp3'
+---
+::

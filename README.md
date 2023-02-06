@@ -34,8 +34,8 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
       - [x] Gallery option
       - [ ] size option (max-width, max-height)
       - [ ] placement options (left, right, center)
-    - [ ] audio support
-      - [ ] mp3
+    - [x] audio support
+      - [x] mp3
 
   - optional:
     - [ ] project view next/prev project if it is a series. Add a line under the article and then two buttons
