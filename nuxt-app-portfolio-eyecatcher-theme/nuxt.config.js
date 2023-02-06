@@ -18,6 +18,11 @@ export default defineNuxtConfig({
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
+  runtimeConfig: {
+    public: {
+      assets_server: process.env.STATIC_ASSETS_SERVER_URL,
+    },
+  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["@/assets/css/tailwind.css"],

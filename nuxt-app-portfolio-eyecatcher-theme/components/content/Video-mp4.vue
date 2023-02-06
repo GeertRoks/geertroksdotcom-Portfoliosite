@@ -1,12 +1,13 @@
 <template>
   <video controls class="w-full aspect-video">
-    <source :src="'http://localhost:3434/images/' + link" type="video/mp4">
+    <source :src="config.assets_server + file" type="video/mp4">
   </video>
 </template>
 
 <script setup>
+const config = useRuntimeConfig();
 defineProps({
-  link: {
+  file: {
     type: String,
     default: ''
   },

@@ -113,17 +113,17 @@ table
 ::gallery
 ---
 images:
-  - link: face1.jpg
+  - file: images/face1.jpg
     description: Wow, what a beautifull face! Look at that smile
-  - link: face2.jpg
+  - file: images/face2.jpg
     description: Handsome guy, right? Very creative
-  - link: face1.jpg
-  - link: street1.jpg
-  - link: hands.jpg
-  - link: city.jpg
-  - link: texture.jpg
-  - link: face1.jpg
-  - link: face2.jpg
+  - file: images/face1.jpg
+  - file: images/street1.jpg
+  - file: images/hands.jpg
+  - file: images/city.jpg
+  - file: images/texture.jpg
+  - file: images/face1.jpg
+  - file: images/face2.jpg
 ---
 ::
 
@@ -131,7 +131,7 @@ images:
 
 ::video-mp4
 ---
-link: 'showcase-take2-2.mp4'
+file: 'images/showcase-take2-2.mp4'
 ---
 ::
 
@@ -147,6 +147,6 @@ video_id: 'iP1AoH2Ab78'
 
 ::audio-mp3
 ---
-file: 'audio-test.mp3'
+file: 'images/audio-test.mp3'
 ---
 ::

@@ -25,15 +25,15 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
   - [ ] make contact form operational
     - [ ] send data to email
     - [ ] setup form endpoint (formspree.io? or selfhosted?)
-  - [ ] Media support for project pages
+  - [x] Media support for project pages
     - [x] video support
       - [x] mp4
       - [x] Youtube
-    - [ ] image support
+    - [x] image support
       - [x] jpg
       - [x] Gallery option
-      - [ ] size option (max-width, max-height)
-      - [ ] placement options (left, right, center)
+      - [x] size option (max-width, max-height) -> using MDC syntax and tailwind classes
+      - [x] placement options (left, right, center) -> using MDC syntax and tailwind classes
     - [x] audio support
       - [x] mp3
 
@@ -48,8 +48,8 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
     - [x] dockerize nuxt project
     - [x] dockerize static file server
     - [ ] orgestrate with docker compose
-  - [ ] use `.env` file for settings
-    - [ ] add image server location
+  - [x] use `.env` file for settings
+    - [x] add image server location
   - [ ] GitHub actions for automatic updating of content to server
 
 
