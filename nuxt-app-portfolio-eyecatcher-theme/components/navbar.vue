@@ -37,7 +37,7 @@
               <NuxtLink to="/projects" @click.native="showMobileMenu = false" class="nav-link">Projects</NuxtLink>
             </li>
             <!--<li class="text-gray-100 hover:text-indigo-400">About</li>-->
-            <li class="text-black-800 hover:text-primary-500 cursor-pointer">
+            <li class="text-black-800 hover:text-primary-500 cursor-pointer" v-if="config.enable_contact">
               <NuxtLink to="/contact" @click.native="showMobileMenu = false" class="nav-link">Contact</NuxtLink>
             </li>
           </ul>
@@ -47,6 +47,10 @@
     <div class="md:hidden opacity-60 bg-black absolute inset-0 z-0 h-screen" v-if="showMobileMenu"></div>
   </header>
 </template>
+
+<script setup>
+const config = useRuntimeConfig();
+</script>
 
 <script>
 export default {

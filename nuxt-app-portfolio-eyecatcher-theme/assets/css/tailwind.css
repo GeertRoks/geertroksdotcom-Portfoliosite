@@ -27,7 +27,7 @@
     @apply border-2 border-accent-500 text-accent-500 hover:bg-accent-700 hover:text-white;
   }
   .btn {
-    @apply w-full font-bold py-4 rounded-full text-center;
+    @apply w-full font-bold py-4 rounded-full text-center md:max-w-sm;
   }
   .btn-large {
     @apply text-lg my-2 max-w-sm;

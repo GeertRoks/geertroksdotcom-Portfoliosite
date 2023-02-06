@@ -11,7 +11,7 @@
           >
             Geert Roks
           </h1>
-          <p>{{ about.description }}</p>
+          <p class="mb-4">{{ about.description }}</p>
           <div class="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-4">
             <NuxtLink
               class="btn btn-primary"
@@ -20,6 +20,7 @@
               Projects
             </NuxtLink>
             <NuxtLink
+              v-if="config.enable_contact"
               class="btn btn-secondary"
               to="/contact"
             >
@@ -54,6 +55,7 @@
 </template>
 
 <script setup>
+const config = useRuntimeConfig();
 const { data: featured_projects } = await useAsyncData('featured_projects', () => queryContent('/project')
   .where({ featured: true })
   .limit(6)

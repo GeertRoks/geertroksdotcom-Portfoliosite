@@ -23,6 +23,7 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
     - [x] homepage avatar above name in mobile view
   - [x] migrate to nuxt v3 when stable
   - [ ] make contact form operational
+    - [x] add option to disable contact page, site-wide
     - [ ] send data to email
     - [ ] setup form endpoint (formspree.io? or selfhosted?)
   - [x] Media support for project pages
