@@ -26,9 +26,9 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
     - [ ] send data to email
     - [ ] setup form endpoint (formspree.io? or selfhosted?)
   - [ ] Media support for project pages
-    - [ ] video support
-      - [ ] mp4
-      - [ ] Youtube
+    - [x] video support
+      - [x] mp4
+      - [x] Youtube
     - [ ] image support
       - [x] jpg
       - [x] Gallery option

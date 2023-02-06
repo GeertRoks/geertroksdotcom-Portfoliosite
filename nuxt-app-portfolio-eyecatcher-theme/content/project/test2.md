@@ -126,3 +126,19 @@ images:
   - link: face2.jpg
 ---
 ::
+
+#### Video mp4 test
+
+::video-mp4
+---
+link: 'showcase-take2-2.mp4'
+---
+::
+
+#### Video YouTube test
+
+::video-yt
+---
+video_id: 'iP1AoH2Ab78'
+---
+::
