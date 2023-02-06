@@ -26,6 +26,12 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
     - [x] add option to disable contact page, site-wide
     - [ ] send data to email
     - [ ] setup form endpoint (formspree.io? or selfhosted?)
+    - [ ] OR develop an endpoint yourself
+      - [ ] Setup database (mongodb of SQL)
+      - [ ] setup UI like a mail service
+      - [ ] filter spam/malicious form entries using regex or already existing service
+      - [ ] email notifications of new messages
+      - [ ] make it a separate git project, so others can use it as well
   - [x] Media support for project pages
     - [x] video support
       - [x] mp4
