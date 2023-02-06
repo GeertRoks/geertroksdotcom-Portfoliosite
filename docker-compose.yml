@@ -1,17 +1,15 @@
 version: '3'
 services:
   nuxt:
-    container_name: Eyecatcher-nuxt
-    restart: always
-    build: ./nuxt-app-portfolio-eyecatcher-theme/.
+    build: ./nuxt-app/.
+    restart: unless-stopped
     ports:
       - '80:3000'
 
-  images:
-    container_name: Eyecatcher-static-file-server
-    restart: always
+  static_file_server:
     build: ./static-file-server/.
+    restart: unless-stopped
     ports:
       - '3434:3434'
     volumes:
-      - ./static-file-server/public/images/:/usr/src/app/public/images/
+      - ./static-file-server/public/:/usr/src/app/public/

@@ -1,5 +1,5 @@
 <template>
-  <video controls class="w-full aspect-video">
+  <video controls class="w-full aspect-video" preload="metadata">
     <source :src="config.assets_server + file" type="video/mp4">
   </video>
 </template>

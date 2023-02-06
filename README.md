@@ -51,10 +51,10 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
 
 #### Production:
   - [ ] write content
-  - [ ] dockerize project
+  - [x] dockerize project
     - [x] dockerize nuxt project
     - [x] dockerize static file server
-    - [ ] orgestrate with docker compose
+    - [x] orgestrate with docker compose
   - [x] use `.env` file for settings
     - [x] add image server location
   - [ ] GitHub actions for automatic updating of content to server
