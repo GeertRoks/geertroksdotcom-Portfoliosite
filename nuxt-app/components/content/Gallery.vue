@@ -1,8 +1,8 @@
 <template>
-  <div class="m-auto w-full bg-gray-100">
+  <div class="m-auto w-full bg-gray-100 my-5">
 
     <div class="relative">
-      <img :src="config.assets_server + images[selected].file" class="object-contain w-full h-full aspect-video m-0"/>
+      <img :src="path + images[selected].file" class="object-contain w-full h-full aspect-video m-0"/>
 
       <div class="absolute inset-0 p-4 text-accent-300">
         <button @click="selected = Math.max(selected - 1, 0);" v-if="selected != 0" class="relative inset-y-1/2 left-0 float-left">
@@ -37,6 +37,10 @@ defineProps({
   images: {
     type: Array,
     default: []
+  },
+  path: {
+    type: String,
+    default: ''
   },
   selected: {
     type: Number,

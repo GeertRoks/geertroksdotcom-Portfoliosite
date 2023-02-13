@@ -4,7 +4,7 @@
     <article class="w-article bg-white pb-12">
       <ContentDoc v-slot="{ doc }">
         <img
-          v-bind:src="doc.image"
+          :src="doc._path + `/` + doc.image"
           alt="project image"
           class="h-screen-40 md:h-screen-60 w-full object-cover rounded-b-md"
         />
@@ -27,6 +27,10 @@
     </article>
   </main>
 </template>
+
+<script setup>
+const config = useRuntimeConfig();
+</script>
 
 <script>
 export default {

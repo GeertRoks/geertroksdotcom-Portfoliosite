@@ -1,7 +1,5 @@
 <template>
-  <audio controls class="w-full my-5">
-    <source :src="file" type="audio/mp3">
-  </audio>
+  <img class="my-5" :src="file"/>
 </template>
 
 <script setup>
@@ -10,5 +8,5 @@ defineProps({
     type: String,
     default: ''
   },
-})
+});
 </script>

@@ -2,7 +2,7 @@
   <NuxtLink :to="project._path">
     <article class="h-full cursor-pointer bg-white shadow-md hover:shadow-xl border-b border-accent-500 sm:rounded-md">
       <img
-        v-bind:src="project.image"
+        v-bind:src="project._path + `/` + project.image"
         alt="project-image"
         class="w-full aspect-square object-cover sm:rounded-t-md"
       />

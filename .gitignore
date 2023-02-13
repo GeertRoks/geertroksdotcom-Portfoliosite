@@ -97,5 +97,5 @@ sw.*
 *.mp3
 *.mp4
 nuxt-app-portfolio-eyecatcher-theme/dist
-static-file-server/public
+public
 package-lock.json

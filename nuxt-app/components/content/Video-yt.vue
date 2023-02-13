@@ -1,5 +1,5 @@
 <template>
-  <iframe controls class="w-full aspect-video" :src="'https://www.youtube.com/embed/' + video_id">
+  <iframe controls class="w-full my-5 aspect-video" :src="'https://www.youtube.com/embed/' + video_id">
   </iframe>
 </template>
 

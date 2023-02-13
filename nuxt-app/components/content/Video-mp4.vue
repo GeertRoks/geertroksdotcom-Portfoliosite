@@ -1,11 +1,12 @@
 <template>
-  <video controls class="w-full aspect-video" preload="metadata">
-    <source :src="config.assets_server + file" type="video/mp4">
+  <video controls class="w-full my-5 aspect-video" preload="metadata">
+    <source :src="file + `.mp4`" type="video/mp4">
+    <source :src="file + `.webm`" type="video/webm">
+    <source :src="file + `.ogg`" type="video/ogg">
   </video>
 </template>
 
 <script setup>
-const config = useRuntimeConfig();
 defineProps({
   file: {
     type: String,

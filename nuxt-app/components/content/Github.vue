@@ -1,5 +1,5 @@
 <template>
-  <div class="px-8 border-2 rounded-full flex flex-row items-center gap-10">
+  <div class="my-5 px-8 border-2 rounded-full flex flex-row items-center gap-10">
 
             <span class="inline-block relative btn-svg ">
               <svg
