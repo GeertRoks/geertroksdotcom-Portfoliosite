@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-const { data: projects } = await useAsyncData('projects', () => queryContent('/project').only(['_path', 'title', 'date', 'description', 'tags', 'image']).sort({ date: -1}).find())
+const { data: projects } = await useAsyncData('projects', () => queryContent('/project').where({draft: { $ne: true}}).only(['_path', 'title', 'date', 'description', 'tags', 'image']).sort({ date: -1}).find())
 </script>
 
 <script>

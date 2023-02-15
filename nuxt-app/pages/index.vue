@@ -5,33 +5,26 @@
       <div
         class="m-auto max-w-6xl px-6 md:pl-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5"
       >
-        <div class="md:my-auto md:pr-16 lg:col-span-3">
-          <h1
-            class="text-5xl text-center pb-3 font-bold w-full leading-tight lg:text-6xl md:text-left md:py-10"
-          >
-            Geert Roks
-          </h1>
-          <p class="mb-4">{{ about.description }}</p>
-          <div class="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-4">
-            <NuxtLink
-              class="btn btn-primary"
-              to="/projects"
-            >
-              Projects
-            </NuxtLink>
-            <NuxtLink
-              v-if="config.enable_contact"
-              class="btn btn-secondary"
-              to="/contact"
-            >
-              Contact me
-            </NuxtLink>
+        <ContentRenderer :value="about">
+	  <div class="md:my-auto md:pr-16 lg:col-span-3">
+
+            <h1 class="text-5xl text-center pb-3 font-bold w-full leading-tight lg:text-6xl md:text-left md:py-10">
+              {{ about.name }}
+            </h1>
+
+            <ContentRendererMarkdown :value="about" class="mb-4" />
+
+            <div class="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-4">
+              <NuxtLink to="/projects" class="btn btn-primary">Projects</NuxtLink>
+              <NuxtLink to="/contact" v-if="config.enable_contact" class="btn btn-secondary">Contact me</NuxtLink>
+            </div>
+
           </div>
-        </div>
+        </ContentRenderer>
         <img
           v-bind:src="about.image"
           alt="picture of me"
-          class="w-8/12 sm:w-6/12 order-first m-auto md:order-none md:w-full aspect-square object-cover mb-7 md:p-10 md:my-auto lg:col-span-2"
+          class="w-8/12 sm:w-6/12 order-first m-auto md:order-none md:w-full aspect-square object-contain mb-7 md:p-10 md:my-auto lg:col-span-2"
         />
       </div>
     </section>
@@ -57,7 +50,7 @@
 <script setup>
 const config = useRuntimeConfig();
 const { data: featured_projects } = await useAsyncData('featured_projects', () => queryContent('/project')
-  .where({ featured: true })
+  .where({ featured: true, draft: { $ne: true } })
   .limit(6)
   .only(['_path', 'title', 'date', 'description', 'tags', 'image'])
   .sort({ date: -1})
