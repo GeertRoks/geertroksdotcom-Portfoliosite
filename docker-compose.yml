@@ -8,10 +8,10 @@ services:
     volumes:
       - ./nuxt-app/public/:/usr/src/app/public/
 
-  static_file_server:
-    build: ./static-file-server/.
-    restart: unless-stopped
-    ports:
-      - '3434:3434'
-    volumes:
-      - ./static-file-server/public/:/usr/src/app/public/
+        #  static_file_server:
+        #    build: ./static-file-server/.
+        #    restart: unless-stopped
+        #    ports:
+        #      - '3434:3434'
+        #    volumes:
+        #      - ./static-file-server/public/:/usr/src/app/public/
