@@ -5,8 +5,8 @@ image: papernime2019-participant.jpg
 date: 2019-06
 featured: false
 tags:
- - HKU
- - Goldsmiths
+ - Bachelor
+ - Internship
  - research
  - EMG
  - sound mapping

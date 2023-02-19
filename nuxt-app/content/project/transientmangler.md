@@ -5,7 +5,7 @@ image: transientMangler.jpg
 date: 2019-11
 featured: false
 tags:
- - HKU
+ - Bachelor
  - Music Information Retrieval
 ---
 

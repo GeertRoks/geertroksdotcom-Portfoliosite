@@ -6,8 +6,8 @@ date: 2022-06
 featured: false
 draft: true
 tags:
- - guitar effect
- - hardware acceleration
- - Master Course
+ - Guitar Effect
+ - Hardware Acceleration
+ - Master
 ---
 

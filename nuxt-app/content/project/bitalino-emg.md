@@ -5,8 +5,8 @@ image: bitalino-emg-case.jpg
 date: 2018-11
 featured: false
 tags:
- - HKU
- - Goldsmiths
+ - Bachelor
+ - Internship
  - 3D printing
  - EMG
 ---

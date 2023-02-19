@@ -1,31 +1,28 @@
 ---
 title: PedalMangler
 description: "Pitch based effect pedal router"
-image: PedalMangler_top_hq2.png
+image: PedalMangler_v1.1_Front1.png
 date: 2020-07
 featured: true
 tags:
- - HKU
+ - Bachelor
  - Music Information Retrieval
  - C++
+ - Guitar Effect
 ---
 
-PedalMangler is an automatic effect pedal router. It changes the pedal chain by listening to the instrument signal, retrieving information about the note being played.
+PedalMangler is an automatic effect pedal router. It allows the user to assign different timbres to distinct ranges of notes on the guitar. See a short demo of PedalMangler in the video below.
 
-The following audio clip is a demo of PedalMangler used on a guitar with a distortion on the low notes and delay on the high notes. Note this is one live guitar through PedalMangler. No cuts and no overdubs.
-
-::Audio-wav
+::Video-mp4
 ---
-file: /project/pedalmangler/PedalMangler-Funkylick.wav
+file: /project/pedalmangler/PedalMangler-ShowReel
 ---
 ::
 
-::Gallery
+The following audio clip is another demo of PedalMangler used on a guitar with a distortion on the low notes and delay on the high notes.
+::Audio-wav
 ---
-path: /project/pedalmangler/
-images:
-- file: PedalMangler_fulldiagram_whitebackground.png
-  description:
+file: /project/pedalmangler/PedalMangler-Funkylick.wav
 ---
 ::
 
@@ -35,24 +32,25 @@ The TransientMangler project exposed us to Music Information Retrieval. It got u
 
 My role within this project was to research and implement a pitch detection algorithm that could return the pitch of the note reliably and in real-time. Next to that, I aslo acted as project manager.
 
-Due to some setbacks, including the global Covid-19 pandamic, we were unable to finish the hardware prototype. So we switched gears and put full focus on developing a fully software based implementation of PedalMangler in a VST and LV2 plugin format. This plugin can be downlaoded [here](https://pedalmangler.com/releases/v0.2/).
+Due to some setbacks, including the global Covid-19 pandamic, we were unable to finish the hardware prototype. So we switched gears and put full focus on developing a fully software based implementation of PedalMangler in a VST and LV2 plugin format.
 
-Our project got nominated for the HKU Awards 2020 in the category inovation.
+PedalMangler is nominated for the HKU Awards 2020 in the category inovation.
 
----
-
-::Video-mp4
----
-file: /project/pedalmangler/PedalMangler-ShowReel
----
-::
 
 ::Gallery
 ---
 path: /project/pedalmangler/
 images:
-- file: PedalMangler_top_hq2.png
+- file: enclosure-v1/PedalMangler_top_hq.png
+  description: Initial user interface design front
+- file: enclosure-v1/PedalMangler_back_hq2.png
+  description: Initial user interface design back
+- file: enclosure-v1/PedalMangler_top_hq2.png
   description: Initial user interface design
+- file: enclosure-v1/PedalMangler_back_hq.png
+  description: Initial user interface design
+- file: PedalMangler_fulldiagram_whitebackground.png
+  description: Schematic showing the signal flows through PedalMangler
 - file: PedalMangler_v1.1-GUI-playtest2.png
   description: User interface of software plugin
 - file: PedalMangler_v1.1_Front1.png
@@ -62,4 +60,3 @@ images:
 
 [Code on Gitlab](https://gitlab.com/csd-netwerk/dpf-plugins/pedalmangler-dpf)
 
-[PedalMangler site](https://pedalmangler.com)
