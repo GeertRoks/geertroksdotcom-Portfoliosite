@@ -1,5 +1,5 @@
 # PersonalWebsite
-The source code for my personal website: www.geertroks.com. Built with NuxtJS.
+The source code for my personal website: www.geertroks.com. Build with NuxtJS, Nuxt Content and TailwindCSS.
 
 ## To Do
 #### Development
@@ -43,6 +43,7 @@ The source code for my personal website: www.geertroks.com. Built with NuxtJS.
       - [x] placement options (left, right, center) -> using MDC syntax and tailwind classes
     - [x] audio support
       - [x] mp3
+    - [ ] Add Gitlab component
 
   - optional:
     - [ ] project view next/prev project if it is a series. Add a line under the article and then two buttons
