@@ -8,6 +8,7 @@ featured: false
 tags:
  - Bachelor
  - Music Information Retrieval
+ - C++
 ---
 
 TransientMangler is a pitch down VST and LV2 plugin for drums. It mimiks the time warping function of Ableton in real-time. This project is a bachelor group project in collaboration with Bram Giesen and Haider Raja.

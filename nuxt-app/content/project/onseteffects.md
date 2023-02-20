@@ -1,7 +1,7 @@
 ---
 title: Onset Effects
 description: "Guitar effects augmented by onset detection"
-image: RandomDelay-UIsketch.png
+image: DSC_0199.JPG
 date: 2020-06
 status: publish
 featured: false
@@ -10,6 +10,7 @@ tags:
  - Music Information Retrieval
  - Onset Detection
  - Guitar Effect
+ - C++
 ---
 
 In my bachlor thesis I researched the use for onset detection in guitar pedals. I looked into which onset detectors work well on electric guitars in a real-time environment. Also, I looked at the the creative possibilities that adding an onset detector to a guitar effect provides.
