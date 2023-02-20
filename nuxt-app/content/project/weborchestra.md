@@ -3,6 +3,7 @@ title: WebOrchestra
 description: "Networked live music system"
 image: WebOrchestra.png
 date: 2019-07
+status: publish
 featured: false
 tags:
  - Bachelor

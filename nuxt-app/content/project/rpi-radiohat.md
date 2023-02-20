@@ -3,6 +3,7 @@ title: Raspberry Pi RadioHAT
 description: A HAT for the Raspberry Pi to allow pwm audio and additional periphrials
 image:
 date: 2022-12
+status: publish
 featured: true
 tags:
   - C++

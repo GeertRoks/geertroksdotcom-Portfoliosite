@@ -3,6 +3,7 @@ title: Onset Effects
 description: "Guitar effects augmented by onset detection"
 image: RandomDelay-UIsketch.png
 date: 2020-06
+status: publish
 featured: false
 tags:
  - Bachelor

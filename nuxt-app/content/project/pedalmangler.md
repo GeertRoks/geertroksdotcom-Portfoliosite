@@ -3,6 +3,7 @@ title: PedalMangler
 description: "Pitch based effect pedal router"
 image: PedalMangler_v1.1_Front1.png
 date: 2020-07
+status: publish
 featured: true
 tags:
  - Bachelor

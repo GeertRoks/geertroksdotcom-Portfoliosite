@@ -50,7 +50,7 @@
 <script setup>
 const config = useRuntimeConfig();
 const { data: featured_projects } = await useAsyncData('featured_projects', () => queryContent('/project')
-  .where({ featured: true, draft: { $ne: true } })
+  .where({ featured: true, status: { $eq: "publish" } })
   .limit(6)
   .only(['_path', 'title', 'date', 'description', 'tags', 'image'])
   .sort({ date: -1})

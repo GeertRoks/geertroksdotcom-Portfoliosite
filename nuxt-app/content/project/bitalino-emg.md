@@ -3,6 +3,7 @@ title: Bitalino EMG Armband
 description: "3D printed enclosures for Bitalino EMG sensors"
 image: bitalino-emg-case.jpg
 date: 2018-11
+status: publish
 featured: false
 tags:
  - Bachelor

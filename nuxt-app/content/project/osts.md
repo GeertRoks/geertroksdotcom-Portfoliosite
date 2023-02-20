@@ -3,6 +3,7 @@ title: OSTS
 description: "Signal plotter tool for C++"
 image: osts.png
 date: 2019-06
+status: publish
 featured: false
 tags:
  - C++

@@ -3,6 +3,7 @@ title: TransientMangler
 description: "Real-Time pitch down effect for drums"
 image: transientMangler.jpg
 date: 2019-11
+status: publish
 featured: false
 tags:
  - Bachelor

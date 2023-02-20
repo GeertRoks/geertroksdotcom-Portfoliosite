@@ -3,6 +3,7 @@ title: Designing Gestures for Continuous Sonic Interaction
 description: "Conference Paper - NIME 2019"
 image: papernime2019-participant.jpg
 date: 2019-06
+status: publish
 featured: false
 tags:
  - Bachelor

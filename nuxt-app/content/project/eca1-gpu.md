@@ -3,6 +3,7 @@ title: GPU accelerated algorithm
 description: "A GPU accelerated 2D convolution algorithm resulting in 230 times increased throughput for distance measuring robot"
 image: eca1-scanning-robot.png
 date: 2022-10
+status: publish
 featured: true
 tags:
  - Hardware Acceleration

@@ -12,7 +12,7 @@
 
 <script setup>
 const route = useRoute()
-const { data: projects } = await useAsyncData('tag-projects', () => queryContent('/project').where({ tags: { $contains: route.params.slug } }).sort({ date: -1 }).find())
+const { data: projects } = await useAsyncData('tag-projects', () => queryContent('/project').where({ tags: { $contains: route.params.slug }, status: { $eq: "publish"} }).sort({ date: -1 }).find())
 </script>
 
 <script>
