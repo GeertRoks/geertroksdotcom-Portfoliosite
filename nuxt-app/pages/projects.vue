@@ -2,7 +2,7 @@
   <!-- projects -->
   <main class="flex-grow">
     <section class="py-16 m-auto max-w-6xl">
-      <h1 class="text-4xl font-bold mb-8 mx-2">My Projects</h1>
+      <h1 class="text-4xl font-bold mb-8 mx-2">All Projects</h1>
       <ProjectGrid :projects="projects" class="sm:mx-2" />
       <!-- -->
     </section>

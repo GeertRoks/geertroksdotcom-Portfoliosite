@@ -32,6 +32,7 @@
     <!-- Projects quick view -->
     <section class="py-8 m-auto md:py-16 max-w-6xl">
 
+      <h1 class="text-4xl font-bold mb-8 mx-2">Featured Projects</h1>
       <ProjectGrid :projects="featured_projects" class="sm:mx-2 mb-8" />
 
       <div class="w-full flex items-center justify-center">
@@ -48,13 +49,13 @@
 </template>
 
 <script setup>
-const config = useRuntimeConfig();
-const { data: featured_projects } = await useAsyncData('featured_projects', () => queryContent('/project')
-  .where({ featured: true, status: { $eq: "publish" } })
-  .limit(6)
-  .only(['_path', 'title', 'date', 'description', 'tags', 'image'])
-  .sort({ date: -1})
-  .find())
+  const config = useRuntimeConfig();
+  const { data: featured_projects } = await useAsyncData('featured_projects', () => queryContent('/project')
+    .where({ featured: true, status: { $eq: "publish" } })
+    .limit(6)
+    .only(['_path', 'title', 'date', 'description', 'tags', 'image'])
+    .sort({ date: -1})
+    .find())
   const { data: about } = await useAsyncData('about', () => queryContent('/').where({title: "About"}).findOne())
 </script>
 
