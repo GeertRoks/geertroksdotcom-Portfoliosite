@@ -7,7 +7,7 @@ RUN npm install
 
 # copy app and build it
 COPY . .
-RUN npx nuxi generate
+RUN npx nuxi build
 
 # serve the app
 EXPOSE 3000
