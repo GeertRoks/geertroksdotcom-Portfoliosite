@@ -3,5 +3,3 @@ npm-debug.log
 .nuxt
 .output
 dist
-
-public/

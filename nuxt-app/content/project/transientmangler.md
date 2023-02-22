@@ -36,4 +36,4 @@ file: /project/transientmangler/transientManglerDemo.wav
 
 This project served as inspiration for my bachelor graduation project _[PedalMangler](/portfolio/pedalmangler/)_ and my bachelor thesis _[Onset Effects](/portfolio/onset_augmented_effects/)_.
 
-[Code on Gitlab](https://gitlab.com/csd-netwerk/dpf-plugins/transientmangler-dpf)
+:Gitlab{href="https://gitlab.com/csd-netwerk/dpf-plugins/transientmangler-dpf"}

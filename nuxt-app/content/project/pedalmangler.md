@@ -59,5 +59,5 @@ images:
 ---
 ::
 
-[Code on Gitlab](https://gitlab.com/csd-netwerk/dpf-plugins/pedalmangler-dpf)
+:Gitlab{href="https://gitlab.com/csd-netwerk/dpf-plugins/pedalmangler-dpf"}
 
