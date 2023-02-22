@@ -2,7 +2,7 @@
 title: Onset Effects
 description: "Guitar effects augmented by onset detection"
 image: hardware_top_1.jpg
-date: 2020-06
+date: 2021-02
 status: publish
 featured: false
 tags:
@@ -19,7 +19,7 @@ I found multiple possible configurations. I presented these configurations to pr
 
 ::Audio-mp3
 ---
-file: /project/onseteffects/Swell_Mode-AutoswellerReverb.mp3
+file: /project/onseteffects/swellmode-autosweller-reverb.mp3
 ---
 ::
 
