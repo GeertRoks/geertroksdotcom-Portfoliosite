@@ -1,16 +1,19 @@
 <template>
   <div class="m-auto w-full bg-gray-100 my-5">
 
-    <div class="relative">
-      <img :src="path + images[selected].file" class="object-contain w-full h-full aspect-video m-0"/>
-
-      <div class="absolute inset-0 p-4 text-accent-300">
-        <button @click="selected = Math.max(selected - 1, 0);" v-if="selected != 0" class="relative inset-y-1/2 left-0 float-left">
+    <div class="flex flex-row items-center text-accent-300">
+      <div class="w-10 flex items-center flex-col">
+        <button @click="selected = Math.max(selected - 1, 0);" v-if="selected != 0">
           <svg height="20" width="20" class="hover:text-primary-300">
             <polygon points="20,0 20,20 0,10" style="fill:currentColor;" />
           </svg>
         </button>
-        <button @click="selected = Math.min(selected + 1, images.length - 1);" v-if="selected != images.length-1" class="relative inset-y-1/2 right-0 float-right">
+      </div>
+
+      <img :src="path + images[selected].file" class="object-contain w-full h-full aspect-video m-0"/>
+
+      <div class="w-10 flex items-center flex-col">
+        <button @click="selected = Math.min(selected + 1, images.length - 1);" v-if="selected != images.length-1">
           <svg height="20" width="20" class="hover:text-primary-300">
             <polygon points="0,0 0,20 20,10" style="fill:currentColor;" />
           </svg>
