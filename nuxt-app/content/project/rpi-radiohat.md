@@ -1,18 +1,16 @@
 ---
 title: Raspberry Pi RadioHAT
-description: A HAT for the Raspberry Pi to allow PWM audio and additional peripherals
+description: A Raspberry Pi HAT for PWM audio and additional peripherals to create easy media player platform
 image: DSC_0151.JPG
 date: 2022-12
 status: publish
 featured: true
 tags:
-  - Raspberry Pi
+  - Linux
   - Electronics
   - C++
   - 3D printing
 ---
-
-<!-- Make an instructables! -->
 
 For a personal need I created a digital radio and Spotify connect player. I used a Raspberry Pi Zero W and developed a custom HAT (Hardware Attached on Top) for it. 
 
@@ -35,6 +33,8 @@ images:
 ---
 ::
 
-This project was very much in my comfort zone, but still I learned a lot of new things. Most importantly, I had never created a manufactured PCB. Until then, I only used perfboard for my projects. I quite liked the process and it was easier than I thought it would be. I will definitely do this more often in the future.
+This project was very much in my comfort zone, but still I learned new things. For example, I was introduced to configuring low level audio devices in Linux using ALSA. Also, I had never created a manufactured PCB. Until then, I only used perfboard for my projects. I quite liked the process and it was easier than I thought it would be. I will definitely do this more often in the future.
 
 :Github{href="https://github.com/GeertRoks/rpi_radioHAT"}
+
+<!-- Make an instructables! -->
