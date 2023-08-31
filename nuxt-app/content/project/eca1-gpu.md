@@ -12,7 +12,7 @@ tags:
  - Master
 ---
 
-This project is part of the course _Embedded Computer Architectures I_ of my master course at the University of Twente. It has been developed in collaboration with Thijs Bink, Jelle Hierck and Luuk van der Weide.
+This project is part of the course _Embedded Computer Architectures I_ of my master Embedded Systems at the University of Twente. It has been developed in collaboration with Thijs Bink, Jelle Hierck and Luuk van der Weide.
 
 Our objective was to improve the performance of a 2D convolution algorithm. The input for the algorithm is the distance data of a scanning robot. The robot scans an arc of about 160&deg; in 80 steps and reports the distance to any objects between itself and 3 meters using the ultrasonic distance sensor. The firmware of the robot has been developed by us as well earlier in the course.
 
