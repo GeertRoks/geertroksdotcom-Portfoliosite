@@ -17,6 +17,12 @@ WebOrchestra is a network installation where multiple computers are combined to 
 
 This project started out as a collaboration project with Bram Giesen and Ward Slager, in the third year of my Bachelor at the Applied University of the Arts Utrecht (HKU). We developed an interactive network installation that generated music and distributed that over multiple computers. My role within this project was to design and develop the network and server. Therefore, I learned myself NodeJS and computer networking during this project.
 
+::Video-mp4
+---
+file: /project/weborchestra/WebOrchestra_firstperformance
+---
+::
+
 After this project was done, I continued on my own. I wanted to implement real-time control, so musicians would be able to play the networked computers.
 
 I developed a network that allows for fast communication from a master to the multiple slaves over Open Sound Control (OSC). The master sends control data to the server over OSC. The server then sends this control data to the right computers. The computers run a browser in which a website is open that runs a javascript synthesizer. The OSC messages from the server control the synthesizer. I build MaxMSP patches to control the synthesizers.
