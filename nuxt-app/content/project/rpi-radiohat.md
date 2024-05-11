@@ -1,7 +1,7 @@
 ---
 title: Raspberry Pi RadioHAT
 description: A Raspberry Pi HAT for PWM audio and additional peripherals to create easy media player platform
-image: DSC_0151.JPG
+image: rpi-radiohat-cover.jpg
 date: 2022-12
 status: publish
 featured: true
