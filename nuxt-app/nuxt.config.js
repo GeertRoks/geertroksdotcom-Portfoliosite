@@ -110,6 +110,7 @@ export default defineNuxtConfig({
   modules: [
     // https://go.nuxtjs.dev/content
     "@nuxt/content",
+    "@nuxt/image",
   ],
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
