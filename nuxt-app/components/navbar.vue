@@ -37,10 +37,10 @@
             <li class="text-black-800 hover:text-primary-500 cursor-pointer">
               <NuxtLink to="/projects" @click.native="showMobileMenu = false" class="nav-link">Projects</NuxtLink>
             </li>
-            <li class="text-black-800 hover:text-primary-500 cursor-pointer" v-if="config.enable_blog">
+            <li class="text-black-800 hover:text-primary-500 cursor-pointer" v-if="config.public.enable_blog">
               <NuxtLink to="/blog" @click.native="showMobileMenu = false" class="nav-link">Blog</NuxtLink>
             </li>
-            <li class="text-black-800 hover:text-primary-500 cursor-pointer" v-if="config.enable_contact">
+            <li class="text-black-800 hover:text-primary-500 cursor-pointer" v-if="config.public.enable_contact">
               <NuxtLink to="/contact" @click.native="showMobileMenu = false" class="nav-link">Contact</NuxtLink>
             </li>
           </ul>
@@ -53,14 +53,7 @@
 
 <script setup>
 const config = useRuntimeConfig();
-</script>
 
-<script>
-export default {
-  data() {
-    return {
-      showMobileMenu: false,
-    }
-  },
-};
+const showMobileMenu = ref(false);
+
 </script>
