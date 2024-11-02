@@ -33,11 +33,14 @@
             :class="showMobileMenu ? 'flex' : 'hidden'"
             class="flex-col mt-8 space-y-12 text-xl md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
           >
+            <!--<li class="text-gray-100 hover:text-indigo-400">About</li>-->
             <li class="text-black-800 hover:text-primary-500 cursor-pointer">
               <NuxtLink to="/projects" @click.native="showMobileMenu = false" class="nav-link">Projects</NuxtLink>
             </li>
-            <!--<li class="text-gray-100 hover:text-indigo-400">About</li>-->
-            <li class="text-black-800 hover:text-primary-500 cursor-pointer" v-if="config.enable_contact">
+            <li class="text-black-800 hover:text-primary-500 cursor-pointer" v-if="config.public.enable_blog">
+              <NuxtLink to="/blog" @click.native="showMobileMenu = false" class="nav-link">Blog</NuxtLink>
+            </li>
+            <li class="text-black-800 hover:text-primary-500 cursor-pointer" v-if="config.public.enable_contact">
               <NuxtLink to="/contact" @click.native="showMobileMenu = false" class="nav-link">Contact</NuxtLink>
             </li>
           </ul>
@@ -50,14 +53,7 @@
 
 <script setup>
 const config = useRuntimeConfig();
-</script>
 
-<script>
-export default {
-  data() {
-    return {
-      showMobileMenu: false,
-    }
-  },
-};
+const showMobileMenu = ref(false);
+
 </script>

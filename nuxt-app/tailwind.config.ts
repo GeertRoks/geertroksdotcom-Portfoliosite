@@ -1,3 +1,5 @@
+import tailwindcssTypography from '@tailwindcss/typography'
+
 export default {
   content: [
   "./components/**/*.{js,vue,ts}",
@@ -50,5 +52,7 @@ export default {
     },
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    tailwindcssTypography,
+  ],
 };
