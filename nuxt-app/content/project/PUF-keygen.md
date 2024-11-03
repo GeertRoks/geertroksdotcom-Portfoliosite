@@ -3,7 +3,7 @@ title: Physical Unclonable Function
 description: "AES secret key generator using a Ring Oscillator Physical Unclonable Function (RO PUF)"
 image: XilinxKV260.png
 date: 2023-07
-status: publish
+status: draft
 featured: true
 tags:
   - FPGA
