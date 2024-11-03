@@ -4,13 +4,12 @@ description: "Networked live music system"
 image: WebOrchestra.png
 date: 2019-07
 status: publish
-featured: false
+featured: true
 tags:
- - Bachelor
- - NodeJs
- - networking
- - midi
+ - NodeJS
+ - Computer networks
  - audio synthesis
+ - Bachelor
 ---
 
 WebOrchestra is a network installation where multiple computers are combined to perform a single piece of music.

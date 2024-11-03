@@ -6,11 +6,10 @@ date: 2021-02
 status: publish
 featured: false
 tags:
- - Bachelor
  - Music Information Retrieval
- - Onset Detection
  - Guitar Effect
  - C++
+ - Bachelor
 ---
 
 In my bachlor thesis I researched the use for onset detection in guitar pedals. I looked into which onset detectors work well on electric guitars in a real-time environment. Also, I looked at the the creative possibilities that adding an onset detector to a guitar effect provides.
