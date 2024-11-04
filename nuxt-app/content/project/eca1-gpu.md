@@ -6,8 +6,8 @@ date: 2022-10
 status: publish
 featured: true
 tags:
- - Hardware Acceleration
- - Nvidia CUDA toolkit
+ - Acceleration
+ - GPU
  - C++
  - Master
 ---

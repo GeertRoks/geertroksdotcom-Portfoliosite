@@ -48,9 +48,12 @@
 
   });
 
+  const showDrafts = import.meta.env.DEV;
+  const statusList = showDrafts ? ['publish', 'draft'] : ['publish'];
+
   const { data: projects } = await useAsyncData(
     'projects', () => queryContent('/project')
-    .where({status: { $eq: "publish"}})
+    .where({status: { $in: statusList }})
     .only(['_path', 'title', 'date', 'description', 'tags', 'image'])
     .sort({ date: -1})
     .find()

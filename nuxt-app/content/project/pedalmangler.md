@@ -6,10 +6,10 @@ date: 2020-07
 status: publish
 featured: true
 tags:
- - Bachelor
  - Music Information Retrieval
- - C++
  - Guitar Effect
+ - C++
+ - Bachelor
 ---
 
 PedalMangler is an automatic effect pedal router. It allows the user to assign different timbres to distinct ranges of notes on the guitar. See a short demo of PedalMangler in the video below.

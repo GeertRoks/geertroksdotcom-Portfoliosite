@@ -50,23 +50,20 @@
 
 <script setup>
   const config = useRuntimeConfig();
-  const { data: featured_projects } = await useAsyncData('featured_projects', () => queryContent('/project')
-    .where({ featured: true, status: { $eq: "publish" } })
+  const showDrafts = import.meta.env.DEV;
+  const statusList = showDrafts ? ['publish', 'draft'] : ['publish'];
+
+  const { data: featured_projects } = await useAsyncData(
+    'featured_projects', () => queryContent('/project')
+    .where({ featured: true, status: { $in: statusList } })
     .limit(6)
     .only(['_path', 'title', 'date', 'description', 'tags', 'image'])
     .sort({ date: -1})
-    .find())
-  const { data: about } = await useAsyncData('about', () => queryContent('/').where({title: "About"}).findOne())
-</script>
-
-<script>
-import ProjectGrid from "../components/project-grid.vue";
-
-export default {
-  name: "IndexPage",
-  components: { ProjectGrid },
-  data() {
-    return {}
-  },
-};
+    .find()
+  )
+  const { data: about } = await useAsyncData(
+    'about', () => queryContent('/')
+    .where({title: "About"})
+    .findOne()
+  )
 </script>
