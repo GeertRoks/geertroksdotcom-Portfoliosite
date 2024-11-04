@@ -13,7 +13,7 @@
           </div>
         </div>
 
-        <transition name="tagFilter" mode="out-in">
+        <transition name="tagFilter" mode="in-out">
         <!-- Todo: add transition style -->
           <ul v-if="filterOpened" class="flex flex-row flex-wrap justify-center gap-2 mb-2">
           <Tag
@@ -31,17 +31,30 @@
 
 </template>
 
-<script setup>
-const { data: projects } = await useAsyncData('projects', () => queryContent('/project').where({status: { $eq: "publish"}}).only(['_path', 'title', 'date', 'description', 'tags', 'image']).sort({ date: -1}).find());
-const { data: tags } = await useFetch('/api/getUniqueTags');
-const filterOpened = ref(false);
+<script setup lang="ts">
+  const filterOpened = ref(false);
+
+  const { data: projects } = await useAsyncData(
+    'projects', () => queryContent('/project')
+    .where({status: { $eq: "publish"}})
+    .only(['_path', 'title', 'date', 'description', 'tags', 'image'])
+    .sort({ date: -1})
+    .find()
+  );
+  const { data: tags } = await useFetch('/api/getUniqueTags');
 </script>
 
-<script>
-export default {
-  name: "projectsPage",
-  data() {
-    return {}
-  },
-};
-</script>
+<style scoped>
+.tagFilter-enter-from {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+.tagFilter-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+.tagFilter-leave-active,
+.tagFilter-enter-active {
+  transition: all 0.2s;
+}
+</style>
