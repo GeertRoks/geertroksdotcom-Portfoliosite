@@ -14,12 +14,6 @@
   p {
     @apply mb-2 text-justify;
   }
-  a.router-link-active.nav-link {
-    @apply border-b-4 border-primary-500;
-  }
-  .router-link-active.tag * {
-    @apply bg-primary-200;
-  }
   .btn-primary {
     @apply bg-accent-500 text-white hover:bg-accent-700;
   }
