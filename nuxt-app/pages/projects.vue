@@ -25,7 +25,8 @@
           </ul>
         </transition>
       </div>
-      <ProjectGrid :projects="projects" class="sm:mx-2" />
+      <LoadingComponent v-if="isLoading" />
+      <ProjectGrid v-else :projects="projects" class="sm:mx-2" />
       <!-- -->
     </section>
   </main>
@@ -36,7 +37,19 @@
   const filterOpened = ref(false);
   const route = useRoute();
 
-  const filteredTag = ref(route.query.tag);
+  const filteredTag = ref<string | null>(route.query.tag);
+
+  const showDrafts = import.meta.env.DEV;
+  const statusList = showDrafts ? ['publish', 'draft'] : ['publish'];
+  const isLoading = ref(true);
+
+  const { data: fetchedProjects } = await useAsyncData(
+    'projects', () => queryContent('/project')
+    .where({status: { $in: statusList }})
+    .only(['_path', 'title', 'date', 'description', 'tags', 'image'])
+    .sort({ date: -1})
+    .find()
+  );
 
   watchEffect(() => {
     const newQuery = route.query;
@@ -44,20 +57,27 @@
     // Check for specific query parameters
     if (newQuery.tag) {
       filteredTag.value = newQuery.tag;
+      console.log(filteredTag.value);
+      if (fetchedProjects && Array.isArray(fetchedProjects)) {
+        const filtered = filteredTag.value ? fetchedProjects.filter(project => project.tags && project.tags.includes(filteredTag.value)) : fetchedProjects;
+        console.log(filtered);
+      }
     }
+
 
   });
 
-  const showDrafts = import.meta.env.DEV;
-  const statusList = showDrafts ? ['publish', 'draft'] : ['publish'];
 
-  const { data: projects } = await useAsyncData(
-    'projects', () => queryContent('/project')
-    .where({status: { $in: statusList }})
-    .only(['_path', 'title', 'date', 'description', 'tags', 'image'])
-    .sort({ date: -1})
-    .find()
-  );
+  const projects = ref([]);
+
+  watch(fetchedProjects, (newProjects) => {
+    projects.value = newProjects || [];
+    console.log(projects);
+    isLoading.value = false;
+  }, { immediate: true});
+
+  const filteredProjects = computed(() => {
+  });
   const { data: tags } = await useFetch('/api/getUniqueTags');
 </script>
 
