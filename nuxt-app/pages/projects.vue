@@ -20,6 +20,7 @@
             v-for="tag of tags"
             :key="tag"
             :tag="tag"
+            :filtered="filteredTag.value"
             />
           </ul>
         </transition>
@@ -33,6 +34,19 @@
 
 <script setup lang="ts">
   const filterOpened = ref(false);
+  const route = useRoute();
+
+  const filteredTag = ref(route.query.tag);
+
+  watchEffect(() => {
+    const newQuery = route.query;
+
+    // Check for specific query parameters
+    if (newQuery.tag) {
+      filteredTag.value = newQuery.tag;
+    }
+
+  });
 
   const { data: projects } = await useAsyncData(
     'projects', () => queryContent('/project')
