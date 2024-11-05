@@ -27,4 +27,8 @@ video_id: iP1AoH2Ab78
 
 I worked mainly on designing and testing the software framework, as well as assist during the workshop. I learned a lot about scientific research and writing, as well as Machine Learning.
 
-The full paper can be found on [ResearchGate](https://www.researchgate.net/publication/333699768_Designing_Gestures_for_Continuous_Sonic_Interaction)
+
+::paper{link="https://www.researchgate.net/publication/333699768_Designing_Gestures_for_Continuous_Sonic_Interaction"}
+
+Read the full paper on ResearchGate
+::
