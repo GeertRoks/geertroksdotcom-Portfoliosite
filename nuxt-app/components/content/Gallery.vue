@@ -1,5 +1,5 @@
 <template>
-  <div class="m-auto w-full bg-gray-100 my-5">
+  <div class="m-auto w-full bg-gray-100 my-5 p-8">
 
     <div class="relative overflow-hidden">
       <div class="flex flex-row justify-between text-primary-300 text-opacity-40 absolute h-full w-full z-30">
@@ -24,7 +24,7 @@
             :name="transitionDirection"
             mode="out-in"
         >
-        <NuxtImg :src="path + images[selected].file" :key="selected" preload class="object-contain w-full h-full aspect-video m-0"/>
+        <NuxtImg :src="path + images[selected].file" :key="selected" preload class="object-contain w-full h-full m-auto aspect-video bg-gray-200"/>
       </Transition>
     </div>
 
@@ -35,7 +35,7 @@
     </div>
 
 
-    <p class="text-center pt-2 pb-10 px-10">
+    <p class="text-center m-0 pt-4 px-10 italic text-gray-400">
       {{ images[selected].description }}
     </p>
 
