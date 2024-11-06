@@ -27,11 +27,16 @@ images:
 ---
 ::
 
-To efficiently map the algorithm to the platform I performed a design-space exploration to understand the bandwidth of each computation component and the data movement between these components. From this multiple configurations were created, which reduced the design space to five parameters to investigate. The best performing configuration showed that this proposed system was limited by data movement (especially PCIe data movement). Comparing the system against a PLF calculation running on one high-end CPU core we can observe up to 10.6x faster performance, however when the CPU implementation uses more CPU cores we see similar performance (8 cores) or our system performing worse (16 cores). On the other hand, the PLF on the presented Versal-based system can still achieve up to 11x speedup compared to previous efforts.
+To efficiently map the algorithm to the platform I performed a design-space exploration to understand the bandwidth of each computation component and the data movement between these components. From this multiple configurations were created, which reduced the design space to five parameters to investigate. The best performing configuration showed that this proposed system was limited by data movement (especially PCIe data movement). Comparing the system against a PLF calculation running on one high-end CPU core we can observe up to 10.6x faster performance, however when the CPU implementation uses more CPU cores we see similar performance (8 cores) or our system performing worse (16 cores). On the other hand, the PLF on the presented Versal-based system can still achieve up to 11x speedup compared to a previous FPGA effort. 
 
-<!--
-Image of results
--->
+::Gallery
+---
+path: /project/versal-plf/
+images:
+  - file: versal-results.webp
+    description: "Throughput results of acceleration effort compared against a modern CPU implementation using AVX2 vector intrinsics tested on two high-end server CPUs and compared against two modern FPGA implementations. Two performance measurements are shown for the Versal implementation: with and without PCIe transfer times included, where the times without PCIe data movement indicate the performance to expect when using the ARM core that is also present on the Versal architecture for the host program."
+---
+::
 
 This project has taught me a lot about myself, including that I am very detail-oriented, so much so that I sometimes lose sight of the bigger picture. Now that I am aware of this, I try to take a step back more often to see wheter the particular detail I am working on helps the project as a whole. Additionally, I also confirmed for myself that I really enjoy to work on optimizing a certain application for a specific platform, where the optimization can be in reduced execution time, reduce power consumption or any other metric. These kind of high-performance computing projects (especially using heterogeneous computing architectures) really excite me.
 
