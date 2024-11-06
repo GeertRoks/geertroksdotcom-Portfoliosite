@@ -1,5 +1,5 @@
 <template>
-  <div class="m-auto w-full bg-gray-100 my-5 p-8">
+  <div class="m-auto w-full bg-gray-100 my-5 md:p-8 sm:p-4 p-2">
 
     <div class="relative overflow-hidden">
       <div class="flex flex-row justify-between text-primary-300 text-opacity-40 absolute h-full w-full z-30">
@@ -35,7 +35,7 @@
     </div>
 
 
-    <p class="text-center m-0 pt-4 px-10 italic text-gray-400">
+    <p class="text-center m-0 pt-4 md:px-10 italic text-gray-400 text-sm">
       {{ images[selected].description }}
     </p>
 
