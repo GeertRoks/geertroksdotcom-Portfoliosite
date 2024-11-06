@@ -1,8 +1,8 @@
 <template>
-  <header class="w-full bg-white sticky top-0 z-50 border-b-4 border-primary-500">
+  <header class="w-full bg-white sticky top-0 z-40 border-b-4 border-primary-500">
     <div class="max-w-6xl m-auto px-6 z-50 relative bg-white">
       <nav class="py-6 md:py-8 mx-auto md:flex md:justify-between md:items-center">
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between z-50">
           <NuxtLink
             to="/"
             class="text-xl font-bold text-gray-800 md:text-2xl hover:text-grey-400"
@@ -27,7 +27,7 @@
         <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
         <div
           :class="showMobileMenu ? 'block absolute left-0 right-0 top-16 px-12 pb-12' : ''"
-          class="bg-white md:static md:pb-0"
+          class="bg-white md:static md:pb-0 z-40"
         >
           <ul
             :class="showMobileMenu ? 'flex' : 'hidden'"
@@ -47,7 +47,9 @@
         </div>
       </nav>
     </div>
-    <div class="md:hidden opacity-60 bg-black absolute inset-0 z-0 h-screen" v-if="showMobileMenu"></div>
+    <Transition name="nav-underlay" mode="out-in">
+      <div class="md:hidden opacity-60 bg-black absolute inset-0 z-0 h-screen" v-if="showMobileMenu"></div>
+    </Transition>
   </header>
 </template>
 
@@ -57,3 +59,19 @@ const config = useRuntimeConfig();
 const showMobileMenu = ref(false);
 
 </script>
+
+<style scoped>
+.nav-underlay-leave-to,
+.nav-underlay-enter-from {
+  opacity: 0;
+  transform: translateY(-300px);
+}
+.nav-underlay-leave-from,
+.nav-underlay-enter-to {
+  @apply opacity-60;
+}
+.nav-underlay-leave-active,
+.nav-underlay-enter-active {
+  transition: all 0.2s;
+}
+</style>

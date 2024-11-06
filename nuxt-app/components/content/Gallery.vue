@@ -35,7 +35,7 @@
     </div>
 
 
-    <p class="text-center m-0 pt-4 md:px-10 italic text-gray-400 text-sm">
+    <p class="text-center m-0 pt-4 md:px-10 italic text-gray-400 sm:text-sm text-xs">
       {{ images[selected].description }}
     </p>
 

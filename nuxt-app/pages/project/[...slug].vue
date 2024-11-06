@@ -9,10 +9,8 @@
           class="h-screen-40 md:h-screen-60 w-full object-cover rounded-b-md"
         />
         <div class="w-text px-4 py-4">
-          <div class="flex flex-row justify-between mb-2 space-x-2 items-end">
-            <h1 class="text-3xl md:text-5xl font-medium text-gray-900 leading-tight mt-0 mb-3 sm:mb-2">{{ doc.title }}</h1>
-            <h3 class="text-lg md:text-2xl flex-shrink-0 mb-5">{{ $formatDate(doc.date) }}</h3>
-          </div>
+          <h1 class="text-3xl md:text-5xl font-medium text-gray-900 leading-tight mt-0 mb-3 sm:mb-2">{{ doc.title }}</h1>
+          <h3 class="text-lg md:text-2xl flex-shrink-0 mb-3 font-light">{{ $formatDate(doc.date) }}</h3>
           <h3 class="text-lg text-justify font-semibold text-gray-600 mb-2">
             {{ doc.description }}
           </h3>
@@ -32,15 +30,7 @@
 const config = useRuntimeConfig();
 </script>
 
-<script>
-export default {
-  data() {
-    return {}
-  },
-};
-</script>
-
-<style>
+<style scoped>
 .w-article {
   max-width: 120ch;
   margin: auto;
