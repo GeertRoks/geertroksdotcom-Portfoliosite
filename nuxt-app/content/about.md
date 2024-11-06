@@ -1,10 +1,12 @@
 ---
 title: About
 name: Geert Roks
+subtitle: I build a hardware-software symbiosis
 image: GeertRoks-aboutme.png
 ---
 
-My name is Geert and I am a master student at the Univeristy of Twente specializing in Embedded Systems. At my Bachelor in Music and Technology, I focused on using soft- and hardware to design new musical instruments and experiences. At my master I am deepening my knowledge of embedded devices and Real-Time computing. I aspire to become an Embedded Linux Engineer, working on projects that have a positive effect on people and the planet. Some of my other interests are open-source technology, making and windsurfing.
+A recent graduate form the master Embedded Systems at the University of Twente, currently based in Zürich Switserland. I am passionate about creating software that makes full use of the hardware that it runs on. I'd love to spent my working days on improving the systems that benefit our society. Have a look around, my portfolio displays personal projects as well as bachelor and master projects that I am proud of.
+
 
 <!--
 I am always in the pursuit of knowledge and improving my skills.
