@@ -1,4 +1,4 @@
-FROM node:16-alpine3.16
+FROM node:20-alpine
 
 # install node_modules
 WORKDIR /usr/src/app
