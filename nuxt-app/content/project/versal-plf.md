@@ -1,7 +1,7 @@
 ---
 title: Phylogenetic Likelihood Function using AMD Versal SoC
 description: "Accelerator for important calculation in genetics using heterogenous platform with FPGA and AI engines. This project is the product of my Master thesis and confirmed my professional interest in acceleration and high-performance computing projects"
-image: amd-versal.jpg
+image: amd-versal.webp
 date: 2024-10
 status: publish
 featured: true
@@ -38,7 +38,11 @@ images:
 ---
 ::
 
-This project has taught me a lot about myself, including that I am very detail-oriented, so much so that I sometimes lose sight of the bigger picture. Now that I am aware of this, I try to take a step back more often to see wheter the particular detail I am working on helps the project as a whole. Additionally, I also confirmed for myself that I really enjoy to work on optimizing a certain application for a specific platform, where the optimization can be in reduced execution time, reduce power consumption or any other metric. These kind of high-performance computing projects (especially using heterogeneous computing architectures) really excite me.
+The project and thesis were a great success and is highly relevant to ongoing research at the university. The research I have undertaken and the reporting on it has rewarded me with the cum laude distinction on my masters degree.
+
+> The student translated the problem into well-defined research questions. The complexity of the engineering task was high, and he did very good and thorough analysis of it. Worked systematically and performed a thorough design space exploration on the hardware platform.
+
+This project has taught me a lot about myself, including that I am very detail-oriented, so much so that I sometimes lose sight of the bigger picture. Now that I am aware of this, I try to take a step back more often and evaluate the progress. Additionally, I confirmed for myself that I really enjoy to work on optimizing a certain application for a specific platform, where the optimization can be in reduced execution time, reduced power consumption or any other metric. These kind of high-performance computing projects (especially using heterogeneous computing architectures) really excite me.
 
 ::paper{link="https://essay.utwente.nl/103959/"}
 Read my thesis
