@@ -3,7 +3,7 @@ title: Physical Unclonable Function
 description: "An FPGA based framework for an AES secret key generator using a Ring Oscillator Physical Unclonable Function that reliably generates unique and unpredictable 128-bit AES keys"
 image: XilinxKV260.png
 date: 2023-07
-status: draft
+status: publish
 featured: true
 tags:
   - FPGA
