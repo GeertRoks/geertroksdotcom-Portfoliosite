@@ -3,8 +3,7 @@
   <main class="flex-grow">
     <article class="w-article bg-white pb-12">
       <ContentDoc v-slot="{ doc }">
-        <img
-          :src="doc._path + `/` + doc.image"
+        <NuxtImg :src="doc._path + `/` + doc.image"
           alt="project image"
           class="h-screen-40 md:h-screen-60 w-full object-cover rounded-b-md"
         />

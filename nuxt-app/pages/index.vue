@@ -24,8 +24,7 @@
             </div>
           </div>
         </ContentRenderer>
-        <img
-          v-bind:src="about.image"
+        <NuxtImg :src="about.image"
           alt="picture of me"
           class="w-8/12 sm:w-6/12 order-first m-auto md:order-none md:w-full aspect-square object-contain mb-7 md:p-10 md:my-auto lg:col-span-2"
         />

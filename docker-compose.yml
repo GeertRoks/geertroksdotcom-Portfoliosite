@@ -5,7 +5,8 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - ./nuxt-app/public/:/usr/src/app/public/
+      - ./nuxt-app/public/project/:/usr/src/app/.output/public/project/
+      - ./nuxt-app/public/GeertRoks-aboutme.png:/usr/src/app/.output/public/GeertRoks-aboutme.png
 
         #  static_file_server:
         #    build: ./static-file-server/.
