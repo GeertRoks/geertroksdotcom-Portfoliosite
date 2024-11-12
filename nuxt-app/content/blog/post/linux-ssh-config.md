@@ -1,7 +1,7 @@
 ---
 title: SSH configuration file
 description: "This tutorial shows how to use the SSH config file to easily use ssh keys to connect to a server"
-image: 
+image: ssh-config-blog-thumbnail.webp
 date: 2024-06
 status: publish
 featured: false
@@ -13,6 +13,10 @@ tags:
 
 [//]: # (blog post about ~/.ssh/config file)
 [//]: # (Refer to ansible as that was why I looked at it)
+As I was exploring Ansible for managing my servers, I came accross the use of the ssh config file. I was used to using a password to ssh into any machine, but for an automatic configuration system this is not practical. Therefore we want to use cryptographic SSH keys as the authentication method to start the ssh session.
+
+Since I learned this I use this for any machine I manage, as it takes just a minute set up and saves so much time when SSH'ing into the machine as I don't have to look up the randomly generated pasword in my password manager. In this post I summarize everything I have learned about using ssh keys and managing these keys using the SSH config file.
+
 
 ## Step 1: Generate SSH keys
 To connect to a server using ssh keys, we first need an ssh key. This key can be generated using the `ssh-keygen` command.
@@ -95,7 +99,7 @@ Some other useful options for the ssh configuration file are:
   - `IdentitiesOnly`: specifies whether only the configured identity (ssh key) can be used (default: no)
   - `ForwardX11`: automatically allows for graphical apps to forward their display over the ssh connection, which is similar to specifying `ssh -X server1` (default: no)
 
-All SSH configuration options can be found using the command `man ssh_config` or on the [ssh_config man page](https://www.man7.org/linux/man-pages/man5/ssh_config.5.html).
+All SSH configuration options can be found using the command ```man ssh_config``` or on the [ssh_config man page](https://www.man7.org/linux/man-pages/man5/ssh_config.5.html).
 
 ## Example configuration
 ```
