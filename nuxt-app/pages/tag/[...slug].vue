@@ -12,7 +12,16 @@
 
 <script setup>
 const route = useRoute()
-const { data: projects } = await useAsyncData('tag-projects', () => queryContent('/project').where({ tags: { $contains: route.params.slug }, status: { $eq: "publish"} }).sort({ date: -1 }).find())
+
+const showDrafts = import.meta.env.DEV;
+const statusList = showDrafts ? ['publish', 'draft'] : ['publish'];
+
+const { data: projects } = await useAsyncData(
+  'tag-projects', () => queryContent('/project')
+  .where({ tags: { $contains: route.params.slug }, status: { $in: statusList} })
+  .sort({ date: -1 })
+  .find()
+)
 </script>
 
 <script>

@@ -1,16 +1,13 @@
 <template>
   <NuxtLink :to="project._path">
     <article class="h-full cursor-pointer bg-white shadow-md hover:shadow-xl border-b border-accent-500 sm:rounded-md">
-      <img
-        v-bind:src="project._path + `/` + project.image"
+      <NuxtImg :src="project._path + `/` + project.image"
         alt="project-image"
         class="w-full aspect-square object-cover sm:rounded-t-md"
       />
       <div class="px-4 pt-3 pb-4">
-        <div class="flex flex-row justify-between mb-4 space-x-2">
-          <h1 class="text-2xl font-bold">{{ project.title }}</h1>
-          <h3 class="text-lg flex-shrink-0">{{ $formatDate(project.date) }}</h3>
-        </div>
+        <h1 class="text-2xl font-bold mb-1">{{ project.title }}</h1>
+        <h3 class="text-lg mb-4 font-light">{{ $formatDate(project.date) }}</h3>
         <ul class="flex flex-row flex-wrap gap-1.5 mb-2">
           <Tag
             v-for="tag of project.tags"

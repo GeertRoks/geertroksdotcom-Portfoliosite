@@ -98,3 +98,28 @@ Some other useful options for the ssh configuration file are:
 All SSH configuration options can be found using the command `man ssh_config` or on the [ssh_config man page](https://www.man7.org/linux/man-pages/man5/ssh_config.5.html).
 
 ## Example configuration
+```
+Host server1
+  HostName 192.168.1.4
+  User geert
+  IdentityFile ~/.ssh/server1
+  Port 2222
+  ForwardX11 yes
+
+Host github.com
+  IdentityFile= ~/.ssh/github
+  User git
+  Hostname github.com
+
+Host gitlab.com
+  IdentityFile =~/.ssh/gitlab
+  User git
+  Hostname gitlab.com
+
+# Add this setting to stop getting the 'Too many authentication failures' error
+# it forces each configuration in this file to only try the specified identity file
+# and for machines for which no ssh-key is exchanged, it will no try any keys and go
+# straight for a password authenticaiton
+Host *
+  IdentitiesOnly=yes
+```
