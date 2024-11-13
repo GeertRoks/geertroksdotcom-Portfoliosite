@@ -31,6 +31,11 @@
   const props = defineProps({
     project: Object,
     selectedTag: String,
+    postType: {
+      type: String,
+      default: 'projects',
+      validator: (value: string) => ['projects', 'blog'].includes(value)
+    }
   });
   const tagClick = (tag) => {
     if (getTagFromUrl.value === tag) {
@@ -39,7 +44,7 @@
       router.replace({ query: queryParams });
     } else {
       useRouter().push({
-        name: 'projects',
+        name: props.postType,
         query: { tag: tag }
       });
     }

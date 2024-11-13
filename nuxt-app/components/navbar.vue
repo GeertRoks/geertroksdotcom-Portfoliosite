@@ -74,4 +74,7 @@ const showMobileMenu = ref(false);
 .nav-underlay-enter-active {
   transition: all 0.2s;
 }
+a.router-link-active.nav-link {
+  @apply border-b-4 border-primary-500;
+}
 </style>

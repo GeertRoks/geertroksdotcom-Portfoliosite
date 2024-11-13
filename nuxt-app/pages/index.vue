@@ -35,7 +35,7 @@
     <section class="py-8 m-auto md:py-16 max-w-6xl">
 
       <h1 class="text-4xl font-bold mb-8 mx-2">Featured Projects</h1>
-      <ProjectGrid :projects="featured_projects" class="sm:mx-2 mb-8" />
+      <ProjectGrid :projects="featured_projects" postType="projects" class="sm:mx-2 mb-8" />
 
       <div class="w-full flex items-center justify-center">
         <NuxtLink
