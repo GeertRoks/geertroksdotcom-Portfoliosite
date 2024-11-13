@@ -17,7 +17,7 @@
   const { data: projects } = await useAsyncData(
     'projects', () => queryContent('/project')
     .where({status: { $in: statusList }})
-    .only(['_path', 'title', 'date', 'description', 'tags', 'image'])
+    .only(['_path', 'status', 'title', 'date', 'description', 'tags', 'image'])
     .sort({ date: -1})
     .find()
   );

@@ -6,7 +6,7 @@
         class="w-full aspect-square object-cover sm:rounded-t-md"
       />
       <div class="px-4 pt-3 pb-4">
-        <h1 class="text-2xl font-bold mb-1">{{ project.title }}</h1>
+        <h1 class="text-2xl font-bold mb-1">{{ project.title }}<span v-if="isDraft(project)" class="text-gray-400 font-semibold italic"> (draft)</span></h1>
         <h3 class="text-lg mb-4 font-light">{{ $formatDate(project.date) }}</h3>
         <ul class="flex flex-row flex-wrap gap-1.5 mb-2">
           <Tag
@@ -53,6 +53,10 @@
     const urlParams = new URLSearchParams(route.query);
     return urlParams.get('tag');
   });
+
+  const isDraft = (project: object):boolean => {
+    return project.status === "draft";
+  }
 
 </script>
 

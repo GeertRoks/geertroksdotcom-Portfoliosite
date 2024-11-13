@@ -16,8 +16,8 @@
 
   const { data:posts } = await useAsyncData(
     'post', () => queryContent('/blog/post')
-    .where({status: { $eq: "publish"}})
-    .only(['_path', 'title', 'date', 'description', 'tags', 'image'])
+    .where({status: { $in: statusList}})
+    .only(['_path', 'status', 'title', 'date', 'description', 'tags', 'image'])
     .sort({ date: -1})
     .find()
   );
