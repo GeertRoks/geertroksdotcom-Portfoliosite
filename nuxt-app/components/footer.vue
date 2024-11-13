@@ -3,7 +3,10 @@
     <div
       class="max-w-6xl h-full m-auto px-4 md:px-12 flex flex-row justify-between items-center"
     >
-      <p class="text-gray-700"> {{ new Date().getFullYear() }} &copy; <span class="hidden sm:inline">Copyright,</span> Geert Roks</p>
+      <div class="flex flex-col text-gray-700">
+        <p class="m-0"> {{ new Date().getFullYear() }} &copy; <span class="hidden sm:inline">Copyright,</span> Geert Roks</p>
+        <p class="text-xs">designed and built by <NuxtLink to="https://github.com/GeertRoks/geertroksdotcom-Portfoliosite" class="border-b border-primary-500">myself</NuxtLink></p>
+      </div>
 
       <ul class="flex flex-row justify-center space-x-3">
         <li>
