@@ -14,7 +14,7 @@
             {{ doc.description }}
           </h3>
           <ul class="flex flex-row flex-wrap gap-1.5">
-            <tag v-for="tag of doc.tags" :key="tag" :tag="tag" />
+            <tag v-for="tag of doc.tags" :key="tag" :tag="tag" clickable @click="tagClick(tag)" />
           </ul>
           <div class="mt-4 mx-auto">
             <ContentRenderer :value="doc" class="prose max-w-none" />
@@ -26,7 +26,13 @@
 </template>
 
 <script setup>
-const config = useRuntimeConfig();
+  const config = useRuntimeConfig();
+  const tagClick = (tag) => {
+    useRouter().push({
+      name: 'projects',
+      query: { tag: tag }
+    });
+  }
 </script>
 
 <style scoped>
