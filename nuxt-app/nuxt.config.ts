@@ -1,7 +1,7 @@
-
 export default defineNuxtConfig({
   // Target: https://go.nuxtjs.dev/config-target
   devtools: { enabled: true },
+
   target: "static",
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
+
   runtimeConfig: {
     public: {
       assets_server: process.env.STATIC_ASSETS_SERVER_URL,
@@ -35,6 +36,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   //plugins: [
   //  {src: '~/plugins/formatDate.js', mode:'client'}
@@ -66,5 +68,7 @@ export default defineNuxtConfig({
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {},
+
+  compatibilityDate: "2024-11-13"
 })
