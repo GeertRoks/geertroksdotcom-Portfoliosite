@@ -13,6 +13,9 @@
             v-for="tag of project.tags"
             :key="project.slug + '-' + tag"
             :tag="tag"
+            :highlight="props.selectedTag === tag"
+            clickable
+            @click.prevent="tagClick(tag)"
           />
         </ul>
         <p>{{ project.description }}</p>
@@ -21,13 +24,30 @@
   </NuxtLink>
 </template>
 
-<script>
-export default {
-  props: {
-    project: {
-      type: Object,
-      required: true
-    },
-  },
-};
+<script setup lang="ts">
+  const route = useRoute();
+  const router = useRouter();
+
+  const props = defineProps({
+    project: Object,
+    selectedTag: String,
+  });
+  const tagClick = (tag) => {
+    if (getTagFromUrl.value === tag) {
+      const queryParams = { ...route.query };
+      delete queryParams.tag;
+      router.replace({ query: queryParams });
+    } else {
+      useRouter().push({
+        name: 'projects',
+        query: { tag: tag }
+      });
+    }
+  }
+  const getTagFromUrl = computed<string | null>(() => {
+    const urlParams = new URLSearchParams(route.query);
+    return urlParams.get('tag');
+  });
+
 </script>
+
