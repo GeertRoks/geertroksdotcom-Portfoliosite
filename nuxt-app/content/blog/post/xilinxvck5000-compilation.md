@@ -137,7 +137,20 @@ The host program uses the [Device API](https://xilinx.github.io/XRT/2022.2/html/
 ## Makefile
 These are a lot of steps to do each time and therefore a build system like a Makefile is a useful tool to make the process easy and repeatable.
 
-This example is quite large and has some complex parts, but it shows that this approach allows to create complex build systems that exactly fit to your needs. Especially the connectivity part is very dynamic in this way. If you go the route of defining the PL AIE connections using the config file, then you need to make a config file for every number of connections.
+This example is quite large and has some complex parts, but it shows that this approach allows to create complex build systems that exactly fit to your needs. Especially the connectivity part is very dynamic in this way. If you go the route of defining the PL AIE connections using the config file, then you need to make a config file for every number of connections, while this method allows you to create very dynamic configurations.
+
+This makefile creates a `define` statment that generates the correct connectivity flags based on an input parameter (`VPP_CONNECTION_FLAGS`). The parameter (`$(1)`) in this case defines how many instances are created, where one instance refers to a set of the three PL kernels. The figure below shows the connections that are made with this define.
+
+::SingleImage
+---
+path: /blog/post/xilinxvck5000-compilation/
+image:
+  file: kernel-connections.webp
+  description: "Connections between PL kernels and the AIE graph for i instances"
+---
+::
+
+Additionally, I used the `AIE` and `PL` variables for defining kernel alternatives. So the `AIE` variable points to the aie-graph directory in the `aie/src/` folder and the `PL` variable contains a suffix that is added after the hls source file names: `hls/src/kernel1_$(PL).cpp`. Since the hls compile command sets only the part before the underscore as the kernel name (`-k $(firstword $(subst _, ,$*))`), we don't need any changes to our connectivity code when testing alternate versions of a kernel and only need to change the `PL` variable. These variables can be set from the command line, when calling the make command: `make xclbin AIE=aie-graph PL=test1`.
 
 
 ```
