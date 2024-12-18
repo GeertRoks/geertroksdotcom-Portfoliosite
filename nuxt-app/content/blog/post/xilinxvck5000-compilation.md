@@ -1,7 +1,7 @@
 ---
 title: Compiling and linking applications for the AMD Versal VCK5000 datacenter card
 description: "A tutorial on how to compile projects for the AMD Versal-based VCK5000 datacenter card using only command-line tools, including a Makefile"
-image: versal-vck5000.png
+image: versal-vck5000.webp
 date: 2024-03
 status: publish
 featured: true
