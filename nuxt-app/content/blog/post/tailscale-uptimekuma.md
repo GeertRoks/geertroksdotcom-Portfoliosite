@@ -155,3 +155,8 @@ volumes:
 This will let Uptime Kuma first search within your Tailnet and when it can't find a service, then it will search for it on the public DNS servers. It is important that the Tailscale nameserver comes first. That is because if you use the Magic DNS name entries for any of your monitors, then these will first look on the public DNS server for the `.net` and `ts.net` entries, which they will find. But your tailnet name, will be offline and thus the monitor will always say down.
 
 ***Note:*** It is definitely possible to get a global nameserver working in your Tailnet and then this `dns:` entry in the docker compose will not be necessary. But since I currently only need this Uptime Kuma container to reach public nameservers, I do not mind this workaround.
+
+## Conclusion
+This setup allows you to monitor your services with the reliability of an offsite VPS without having to open it up to the world.
+
+Tailscale sidecaring can be used for many other services making them directly available on your Tailnet. These sidecars have the advantage that when you move them between physical hosts, their tailnet IP and hostname don't change (as long as you keep using the same key). This makes them very portable.
