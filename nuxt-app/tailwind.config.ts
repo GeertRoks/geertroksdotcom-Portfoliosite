@@ -1,6 +1,6 @@
-import tailwindcssTypography from '@tailwindcss/typography'
+const plugin = require('tailwindcss/plugin')
 
-export default {
+module.exports = {
   content: [
   "./components/**/*.{js,vue,ts}",
   "./layouts/**/*.vue",
@@ -53,6 +53,12 @@ export default {
     extend: {},
   },
   plugins: [
-    tailwindcssTypography,
+    require('@tailwindcss/typography'),
+    plugin(function ({addVariant}) {
+      addVariant(
+        'prose-inline-code',
+        '&.prose :where(:not(pre)>code):not(:where([class~="not-prose"] *))'
+      );
+    })
   ],
 };

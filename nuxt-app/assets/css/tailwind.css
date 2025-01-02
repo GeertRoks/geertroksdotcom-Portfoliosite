@@ -31,6 +31,19 @@
   }
 }
 
+@layer components {
+  :not(pre) > code {
+    @apply bg-gray-200 font-mono px-2 py-0.5 rounded-md;
+  }
+  .prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    @apply font-extralight;
+  }
+  .prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *))::before,
+  .prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *))::after {
+    content: "";
+  }
+}
+
 @layer utilities {
   .aspect-square {
     aspect-ratio: 1 / 1;
