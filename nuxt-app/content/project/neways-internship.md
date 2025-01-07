@@ -3,7 +3,7 @@ title: NXP i.MX8M boot process security
 description: Internship project where I researched the boot security measures of the NXP i.MX8M SoC in order for it to be deployed as edge device in the wild. Gathered detailed knowledge of Secure boot, ARM TrustZone, as well as inter-processor communication using RPMsg for the cooperation between an ARM application processor and ARM real-time processor.
 image: variscite-nxp-som.jpg
 date: 2023-12
-status: draft
+status: publish
 featured: true
 tags:
   - Yocto
@@ -30,7 +30,7 @@ image:
 
 To enable Secure Boot I needed to create a custom Linux image using the Yocto Project. This was my first experience with building custom images and learned a lot about the boot process of Linux based systems. 
 
-Furthermore, since I progressed quickly, we decided to increase the scope of the project and also look into establashing a Trusted Execution Environment (TEE) with the ARM TrustZone technology. This TEE is only able to run cryptographically verified applications that can be used to offload data sensitive tasks in the user space, ie. signing a message with a private key. A user space app asks the TEE for a message to be signed and receives the signed messages, without having to know what the keys is.
+Furthermore, since I progressed quickly, we decided to increase the scope of the project and also look into establishing a Trusted Execution Environment (TEE) with the ARM TrustZone technology. This TEE is only able to run cryptographically verified applications that can be used to offload data sensitive tasks in the user space, for example signing a message with a private key. A user space app asks the TEE for a message to be signed and receives the signed messages, without having to know what the keys is.
 
 Finally, the company wanted to know how to establish a bidirectional communication channel between the main processor and a real-time co-processor on the SoC. I researched three methods on how to establish this connection: 1) shared memory, 2) Mailboxes and 3) Remote Processor Messaging (RPMsg). Where RPMsg is a framework integrated in the Linux Kernel that uses shared memory and mailboxes under the hood and provides an abstraction layer for easy usage in user space.
 
@@ -54,4 +54,10 @@ Geert's report was very comprehensive, particularly in its review of the state-o
 -- <cite>University supervisor</cite>
 
 
-// TODO: add PDF download button for report
+::Document
+---
+path: /project/neways-internship/
+file: internship-report.pdf
+---
+Download my internship report
+::
