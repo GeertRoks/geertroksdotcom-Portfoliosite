@@ -53,11 +53,3 @@ Geert's report was very comprehensive, particularly in its review of the state-o
 
 -- <cite>University supervisor</cite>
 
-
-::Document
----
-path: /project/neways-internship/
-file: internship-report.pdf
----
-Download my internship report
-::
