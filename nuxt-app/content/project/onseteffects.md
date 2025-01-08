@@ -4,7 +4,7 @@ description: "Guitar effects augmented by onset detection"
 image: hardware_top_1.jpg
 date: 2021-02
 status: publish
-featured: false
+featured: true
 tags:
  - Music Information Retrieval
  - Guitar Effect
