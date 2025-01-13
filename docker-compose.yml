@@ -7,11 +7,3 @@ services:
     volumes:
       - ./nuxt-app/public/project/:/usr/src/app/.output/public/project/
       - ./nuxt-app/public/GeertRoks-aboutme.png:/usr/src/app/.output/public/GeertRoks-aboutme.png
-
-        #  static_file_server:
-        #    build: ./static-file-server/.
-        #    restart: unless-stopped
-        #    ports:
-        #      - '3434:3434'
-        #    volumes:
-        #      - ./static-file-server/public/:/usr/src/app/public/
