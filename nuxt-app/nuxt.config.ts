@@ -21,9 +21,9 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      assets_server: process.env.STATIC_ASSETS_SERVER_URL,
       enable_contact: process.env.ENABLE_CONTACT != undefined ? process.env.ENABLE_CONTACT.toLowerCase() === 'true' : false,
       enable_blog: process.env.ENABLE_BLOG != undefined ? process.env.ENABLE_BLOG.toLowerCase() === 'true' : false,
+      cdn_url: process.env.CDN_URL,
     },
   },
 

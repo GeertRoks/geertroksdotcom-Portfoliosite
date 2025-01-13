@@ -1,5 +1,5 @@
 <template>
-  <a :href="path + file" target="_blank" :download="file" class="max-w-fit my-5 px-8 border-2 rounded-full flex flex-row items-center gap-10 hover:bg-gray-100">
+  <a :href="config.public.cdn_url + path + file" target="_blank" :download="file" class="max-w-fit my-5 px-8 border-2 rounded-full flex flex-row items-center gap-10 hover:bg-gray-100">
       <span class="inline-block relative btn-svg ">
         <svg fill="#000000" height="30px" width="30px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <path d="M437.402,129.686c-0.769-0.769-71.194-71.184-124.207-124.197C309.738,2.032,304.918,0,299.944,0h-212.1 C77.499,0,69.112,8.387,69.112,18.732v474.537c0,10.345,8.387,18.732,18.732,18.732h336.313c10.345,0,18.732-8.387,18.732-18.732 V142.932C442.889,138.2,440.955,133.239,437.402,129.686z M318.679,63.955c8.557,8.555,52.229,52.228,60.25,60.249h-60.25V63.955 z M405.426,474.537H106.575V37.463h174.642v105.472c0,10.345,8.387,18.732,18.732,18.732h105.477V474.537z"></path> <path d="M166.87,161.667h60.567c10.345,0,18.732-8.387,18.732-18.732s-8.387-18.732-18.732-18.732H166.87 c-10.345,0-18.732,8.387-18.732,18.732C148.138,153.282,156.524,161.667,166.87,161.667z"></path> <path d="M148.138,210.032c0,10.345,8.387,18.732,18.732,18.732h178.262c10.345,0,18.732-8.387,18.732-18.732 c0-10.346-8.387-18.732-18.732-18.732H166.87C156.525,191.301,148.138,199.688,148.138,210.032z"></path> <path d="M345.132,258.396H166.87c-10.345,0-18.732,8.387-18.732,18.732s8.387,18.732,18.732,18.732h178.262 c10.345,0,18.732-8.387,18.732-18.732C363.864,266.782,355.477,258.396,345.132,258.396z"></path> <path d="M345.132,325.491H166.87c-10.345,0-18.732,8.387-18.732,18.732s8.387,18.732,18.732,18.732h178.262 c10.345,0,18.732-8.387,18.732-18.732S355.477,325.491,345.132,325.491z"></path> <path d="M345.132,392.587H166.87c-10.345,0-18.732,8.387-18.732,18.732c0,10.345,8.387,18.732,18.732,18.732h178.262 c10.345,0,18.732-8.387,18.732-18.732C363.864,400.973,355.477,392.587,345.132,392.587z"></path> </g> </g> </g> </g></svg>
       </span>
@@ -8,6 +8,8 @@
 </template>
 
 <script setup lang="ts">
+const config = useRuntimeConfig();
+
 const props = defineProps<{
   path: string
   file: string
