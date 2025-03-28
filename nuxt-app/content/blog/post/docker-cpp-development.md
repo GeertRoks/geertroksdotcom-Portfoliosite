@@ -105,15 +105,42 @@ Devcontainers also provide many [template images](https://github.com/devcontaine
 
 For more info on dev container look at the [Visual Studio documentation](https://code.visualstudio.com/docs/devcontainers/tutorial).
 
-# scripts / run things in docker without entering interactive mode
+# Some final things to make life easier
+
+## Alias for docker run command
+The docker run command gets quite long. So you might want to create an alias to not keep typing this command in. You can add a simple bash alias to your `.bashrc` file, or even better, since the alias is specific to your git project, you can create a git alias that is local to your repository.
+
+Here I create a git alias called dr (for docker run) that performs a shell command (indicated by the ! at the begining). It maps the root directory of your git repo to the workspace of your container. The name of the alias can be changed to whatever you like and you can make multiple for different docker commands you might need.
+
+The alias will be stored in `.git/config` of your repository.
+
+```sh
+git config --local alias.dr '!docker run --rm -it -v $(git rev-parse --show-toplevel):/workspace --user $(id -u):$(id -g) my_cpp_dev_environment bash'
+```
+
+## Build script
+If the build steps of your program are always the same, you can save yourself some time to create a script that performs these steps. Then instead of entering the bash shell of your development container, you can start the container with this script. When the build is finished the container will clean itself up again (as long as you use `--rm`), meaning you only have to do call one command to build your project. The interactive mode flags (`-it`) can then me removed from your docker run command.
+
+```sh
+docker run --rm -v /home/geert/projects/cpp-project:/workspace --user $(id -u):$(id -g) my_cpp_dev_environment /workspace/build.sh
+```
+
+Additionally, you can also run your program directly by the docker run command by replacing the build script with your program. If you want your program to compile and run, you can also combine them in one command using
+
+```sh
+docker run --rm -v /home/geert/projects/cpp-project:/workspace --user $(id -u):$(id -g) my_cpp_dev_environment bash -c "/workspace/build.sh && /workspace/program.exe"
+```
+
 
 # Interesting discussions
-Throughout the evening, we had some interesting discussions. Below I highlight a few of those.
+It was a fun and educational evening. Throughout the event, we had some interesting discussions. So I will wrap up this post with few highlights of these discussions.
 
 ## Guix/Nix vs Docker
-## mount vs COPY
+Why use a docker dev container, when you can also define custom shell environments using Guix or Nix? This is a nice discussion and falls down to personal preference and what you are used to. We can achieve a similar development environment with these functional package managers and when you are not so familiar with Docker, it may be not worth it setting up a Docker container. However, an advantage of the Docker approach is that you can reuse your development Dockerfile for your CI/CD pipelines to create builds, run tests and package your software.
+
 ## Ubuntu vs Alpine Linux as docker base
-## --mount vs -v
-## ENTRYPOINT in dockerfile?
-When you create a Dockerfile to serve an app, you end the dockerfile often with an `ENTRYPOINT` command. However, since we only want to create an environment
+There are many base images to use for your Dockerfile. The ubuntu image includes quite a lot of tools, which may make your docker image relatively large. To reduce the size of your docker image, you can use a minimal image like the Alpine Linux image as a base. It is a personal preference whether you want to spent the extra time getting an Alpine Linux image working for your project, as you may need some more dependencies that were standard in Ubuntu, for maybe a slightly leaner docker image. When you are first trying it out, the ubuntu base image is probably the best way to start.
+
+## bind mount vs COPY
+Dockerfiles have the COPY command to copy files from the host to the docker image at build time. We can add our source code of our project to the image at build time and then don't have to map a bind mount. An adavantage of this is that we can compile our code during build time, meaning we don't have to type our build commands in the shell of the container. The disadvantage of this approach, however, is that you need to rebuild your docker image each time you change your source code, while a bind mount shares all changes between the host and container. Additionally, you would lose your intermediate artefacts that speedup builds, as they were never copied back to your host. That would mean a large C++ project needs to rebuild all .o files, which can be quite inefficient if you only change one. With large C++ projects sometimes needing multiple minutes or even hours to compile fully, you would waste a lot of time waiting on builds. A Dockerfile does cache its build steps, but it sees a make compile command, as one build step. Therefore if you want to recompile, you would always need to recompile fully. So, a bind mount approach is highly recommended over the COPY approach.
 
