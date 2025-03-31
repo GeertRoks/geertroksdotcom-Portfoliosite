@@ -6,4 +6,5 @@ services:
       - '3000:3000'
     volumes:
       - ./nuxt-app/public/project/:/usr/src/app/.output/public/project/
+      - ./nuxt-app/public/blog/:/usr/src/app/.output/public/blog/
       - ./nuxt-app/public/GeertRoks-aboutme.png:/usr/src/app/.output/public/GeertRoks-aboutme.png
