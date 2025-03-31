@@ -7,7 +7,7 @@ status: publish
 featured: true
 tags:
   - AMD Versal
-  - compilation
+  - Toolchain
   - FPGA
   - High-Performance Computing
 ---
