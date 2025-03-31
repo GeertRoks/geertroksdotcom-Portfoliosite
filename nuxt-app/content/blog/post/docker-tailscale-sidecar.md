@@ -1,13 +1,13 @@
 ---
 title: Tailscale sidecar for Uptime Kuma
 description: "This tutorial shows how to setup an Uptime Kuma container with access to both the public internet as your private Tailnet using a Tailscale sidecar"
-image: ssh-config-blog-thumbnail.webp
+image: tailscale-sidecar-thumbnail.webp
 date: 2025-01
-status: draft
+status: publish
 featured: false
 tags:
   - Tailscale
-  - docker
+  - Docker
   - IT
   - Homelab
 ---
@@ -106,7 +106,10 @@ volumes:
 
 Now we have an Uptime Kuma container with a Tailscale sidecar container. This extends the Uptime Kuma image with tailscale functionality, without having to create a custom image.
 
-*Pedantry Corner: Actually the Uptime Kuma container is the sidecar here, as we attach this container to the tailscale container. This extends the functionality of the Tailscale container with the Uptime Kuma service. But since it is more logical to think about extending the actual service you want with tailscale, it is easier to say that we sidecar Tailscale in this case.*
+<details>
+<summary><i>Pendantry Croner</i></summary>
+Actually the Uptime Kuma container is the sidecar here, as we attach this container to the tailscale container. This extends the functionality of the Tailscale container with the Uptime Kuma service. But since it is more logical to think about extending the actual service you want with tailscale, it is easier to say that we sidecar Tailscale in this case.*
+</details>
 
 ## Monitor Services outside your Tailnet
 The main reason I wrote this blog post is that I had trouble trying to monitor both inside and outside my Tailnet. The sidecarring process also gives the Uptime Kuma container the same nameserver as the tailscale container, which points to the nameserver within your Tailnet. This allowed me only to monitor tailnet devices, when I had the side car, and only monitor devices outside my tailnet when I removed the sidecar.
