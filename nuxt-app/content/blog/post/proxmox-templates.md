@@ -1,9 +1,9 @@
 ---
 title: Easily spin up Virtual Machines in Proxmox with Cloud Init
-description: ""
-image: 
+description: "Setting up a virtual machines by following the steps of the installer in a regular Linux ISO, is very repetitive and wastes a lot of time. So, in this tutorial we'll make a template for virtual machines in Proxmox. These are used to quickly spin one up."
+image: proxmox-templates-thumbnail.webp
 date: 2025-04
-status: draft
+status: publish
 featured: false
 tags:
   - Proxmox
