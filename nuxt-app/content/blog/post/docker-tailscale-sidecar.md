@@ -107,7 +107,7 @@ volumes:
 Now we have an Uptime Kuma container with a Tailscale sidecar container. This extends the Uptime Kuma image with tailscale functionality, without having to create a custom image.
 
 <details>
-<summary><i>Pendantry Croner</i></summary>
+<summary><i>Pendantry Corner</i></summary>
 Actually the Uptime Kuma container is the sidecar here, as we attach this container to the tailscale container. This extends the functionality of the Tailscale container with the Uptime Kuma service. But since it is more logical to think about extending the actual service you want with tailscale, it is easier to say that we sidecar Tailscale in this case.*
 </details>
 
